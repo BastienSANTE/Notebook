@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-716ac2781953f575f480.json",
+					"jsonFile" : "directory-.-Debug-13681fd2a66b1fdf916d.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "NoteBook::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-NoteBook-Debug-6519a595aa2bf9bacccb.json",
+					"jsonFile" : "target-NoteBook-Debug-f837c9bbbf24935f6686.json",
 					"name" : "NoteBook",
 					"projectIndex" : 0
 				},

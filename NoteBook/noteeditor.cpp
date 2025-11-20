@@ -1,3 +1,11 @@
 #include "noteeditor.h"
+#include "documentlist.h"
 
-NoteEditor::NoteEditor() {}
+NoteEditor::NoteEditor() {
+}
+
+void NoteEditor::Setup(QMainWindow* mainWindow){
+    this->currentDocument =
+}
+
+

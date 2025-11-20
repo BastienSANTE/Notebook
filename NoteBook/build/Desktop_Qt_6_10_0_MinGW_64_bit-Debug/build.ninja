@@ -81,6 +81,14 @@ build CMakeFiles/NoteBook.dir/noteeditor.cpp.obj: CXX_COMPILER__NoteBook_unscann
   OBJECT_DIR = CMakeFiles\NoteBook.dir
   OBJECT_FILE_DIR = CMakeFiles\NoteBook.dir
 
+build CMakeFiles/NoteBook.dir/documentlist.cpp.obj: CXX_COMPILER__NoteBook_unscanned_Debug C$:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/documentlist.cpp || cmake_object_order_depends_target_NoteBook
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\NoteBook.dir\documentlist.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui -isystem C:/VulkanSDK/1.4.321.1/Include
+  OBJECT_DIR = CMakeFiles\NoteBook.dir
+  OBJECT_FILE_DIR = CMakeFiles\NoteBook.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target NoteBook
@@ -89,7 +97,7 @@ build CMakeFiles/NoteBook.dir/noteeditor.cpp.obj: CXX_COMPILER__NoteBook_unscann
 #############################################
 # Link the executable NoteBook.exe
 
-build NoteBook.exe: CXX_EXECUTABLE_LINKER__NoteBook_Debug CMakeFiles/NoteBook.dir/NoteBook_autogen/mocs_compilation.cpp.obj CMakeFiles/NoteBook.dir/main.cpp.obj CMakeFiles/NoteBook.dir/mainwindow.cpp.obj CMakeFiles/NoteBook.dir/noteeditor.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || NoteBook_autogen NoteBook_autogen_timestamp_deps
+build NoteBook.exe: CXX_EXECUTABLE_LINKER__NoteBook_Debug CMakeFiles/NoteBook.dir/NoteBook_autogen/mocs_compilation.cpp.obj CMakeFiles/NoteBook.dir/main.cpp.obj CMakeFiles/NoteBook.dir/mainwindow.cpp.obj CMakeFiles/NoteBook.dir/noteeditor.cpp.obj CMakeFiles/NoteBook.dir/documentlist.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || NoteBook_autogen NoteBook_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -176,7 +184,7 @@ build NoteBook_autogen_timestamp_deps: phony
 #############################################
 # Utility command for NoteBook_autogen
 
-build NoteBook_autogen: phony CMakeFiles/NoteBook_autogen NoteBook_autogen/include/ui_mainwindow.h NoteBook_autogen/timestamp NoteBook_autogen/mocs_compilation.cpp NoteBook_autogen_timestamp_deps
+build NoteBook_autogen: phony CMakeFiles/NoteBook_autogen NoteBook_autogen/timestamp NoteBook_autogen/mocs_compilation.cpp NoteBook_autogen_timestamp_deps
 
 
 #############################################
@@ -193,7 +201,7 @@ build NoteBook_autogen/timestamp NoteBook_autogen/mocs_compilation.cpp | ${cmake
 #############################################
 # Phony custom command for CMakeFiles\NoteBook_autogen
 
-build CMakeFiles/NoteBook_autogen NoteBook_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/NoteBook_autogen ${cmake_ninja_workdir}NoteBook_autogen/include/ui_mainwindow.h: phony NoteBook_autogen/timestamp || NoteBook_autogen_timestamp_deps
+build CMakeFiles/NoteBook_autogen | ${cmake_ninja_workdir}CMakeFiles/NoteBook_autogen: phony NoteBook_autogen/timestamp || NoteBook_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

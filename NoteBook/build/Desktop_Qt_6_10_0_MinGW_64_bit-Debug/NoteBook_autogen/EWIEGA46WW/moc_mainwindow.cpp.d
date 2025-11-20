@@ -121,12 +121,14 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_Min
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtversionchecks.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qtypes.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/qurl.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qvariant.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qyieldcpu.h \
+  C:/Qt/6.10.0/mingw_64/include/QtGui/QTextDocument \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qbrush.h \
@@ -147,6 +149,7 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_Min
   C:/Qt/6.10.0/mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qrgba64.h \
+  C:/Qt/6.10.0/mingw_64/include/QtGui/qtextdocument.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qtguiglobal.h \
@@ -373,4 +376,5 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_Min
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
+  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/DocumentList.h

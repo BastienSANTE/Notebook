@@ -51,7 +51,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 25,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 68,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 49,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
@@ -384,18 +384,18 @@
 				0,
 				1,
 				2,
-				6
+				5
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "NoteBook_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "NoteBook_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "NoteBook_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "NoteBook::@6890427a1f51a3e7e1df",
@@ -508,7 +508,7 @@
 				0,
 				1,
 				2,
-				6
+				5
 			]
 		},
 		{
@@ -516,14 +516,6 @@
 			"sourceIndexes" : 
 			[
 				3,
-				5,
-				7
-			]
-		},
-		{
-			"name" : "Forms",
-			"sourceIndexes" : 
-			[
 				4
 			]
 		},
@@ -531,14 +523,14 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				8
+				6
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				9
+				7
 			]
 		}
 	],
@@ -570,11 +562,6 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "mainwindow.ui",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 4,
 			"path" : "noteeditor.h",
 			"sourceGroupIndex" : 1
 		},
@@ -587,20 +574,14 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/include/ui_mainwindow.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/timestamp",
-			"sourceGroupIndex" : 3
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/timestamp.rule",
-			"sourceGroupIndex" : 4
+			"sourceGroupIndex" : 3
 		}
 	],
 	"type" : "EXECUTABLE"

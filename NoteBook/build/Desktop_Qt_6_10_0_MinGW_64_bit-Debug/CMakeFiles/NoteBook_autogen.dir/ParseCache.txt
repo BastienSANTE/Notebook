@@ -122,12 +122,14 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qtversionchecks.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qtypes.h
+ mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qurl.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qutf8stringview.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qvariant.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qvarlengtharray.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qversiontagging.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qxptype_traits.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/qyieldcpu.h
+ mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/QTextDocument
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qaction.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qbitmap.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qbrush.h
@@ -148,6 +150,7 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qregion.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qtextdocument.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qtguiexports.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtGui/qtguiglobal.h
@@ -375,10 +378,13 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
+ mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/documentlist.h
  mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/moc_predefs.h
  mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h
 C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/noteeditor.h
 C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/main.cpp
+C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/documentlist.cpp
 C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.cpp
  uic:./ui_mainwindow.h
 C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/noteeditor.cpp
+C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/documentlist.h

@@ -481,6 +481,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/documentlist.h",
+			"MU",
+			"EWIEGA46WW/moc_documentlist.cpp",
+			null
+		],
+		[
 			"C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -565,6 +571,11 @@
 	"SETTINGS_FILE" : "C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/CMakeFiles/NoteBook_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/documentlist.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/main.cpp",
 			"MU",
