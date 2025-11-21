@@ -1,0 +1,21 @@
+# ninja log v6
+31	153	7853579706853451	NoteBook_autogen/timestamp	51f3bdb6100bab5
+31	153	7853579706853451	NoteBook_autogen/mocs_compilation.cpp	51f3bdb6100bab5
+390	1464	7852630910699182	CMakeFiles/NoteBook.dir/main.cpp.obj	486b62933585692
+315	3990	7853372092046254	CMakeFiles/NoteBook.dir/mainwindow.cpp.obj	945ccfd8b09414e
+31	153	7853579706853451	C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/timestamp	51f3bdb6100bab5
+31	153	7853579706853451	C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/mocs_compilation.cpp	51f3bdb6100bab5
+1251	1365	7853579719045106	NoteBook.exe	b9c7cf2f6e7d7872
+387	1446	7852630910665081	CMakeFiles/NoteBook.dir/NoteBook_autogen/mocs_compilation.cpp.obj	b46c4edf013fe1db
+154	1251	7853579708079616	CMakeFiles/NoteBook.dir/noteeditor.cpp.obj	f768d8dd659566b5
+45	428	7853592837756796	NoteBook_autogen/timestamp	51f3bdb6100bab5
+45	428	7853592837756796	NoteBook_autogen/mocs_compilation.cpp	51f3bdb6100bab5
+45	428	7853592837756796	C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/timestamp	51f3bdb6100bab5
+45	428	7853592837756796	C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/mocs_compilation.cpp	51f3bdb6100bab5
+435	1429	7853592838287747	CMakeFiles/NoteBook.dir/documentlist.cpp.obj	5d3996508b8b7f5d
+22	351	7853593258634584	NoteBook_autogen/timestamp	51f3bdb6100bab5
+22	351	7853593258634584	NoteBook_autogen/mocs_compilation.cpp	51f3bdb6100bab5
+22	351	7853593258634584	C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/timestamp	51f3bdb6100bab5
+22	351	7853593258634584	C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/NoteBook_autogen/mocs_compilation.cpp	51f3bdb6100bab5
+354	1431	7853593259056621	CMakeFiles/NoteBook.dir/main.cpp.obj	486b62933585692
+352	1459	7853593259036767	CMakeFiles/NoteBook.dir/NoteBook_autogen/mocs_compilation.cpp.obj	b46c4edf013fe1db
