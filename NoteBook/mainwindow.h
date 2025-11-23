@@ -2,13 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "DocumentList.h"
-
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
+#include "documentlist.h"
 
 class MainWindow : public QMainWindow
 {
@@ -18,9 +12,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    DocumentList* dl;
-
 private:
-    Ui::MainWindow *ui;
+    MainWindow *ui;
 };
 #endif // MAINWINDOW_H
+

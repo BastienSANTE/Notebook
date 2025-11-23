@@ -7,21 +7,25 @@
 #include <QTextDocument>
 #include <QPlainTextEdit>
 #include <QTextBrowser>
+#include <QStackedWidget>
 
 class NoteEditor
 {
 public:
-    NoteEditor();
+    NoteEditor(QWidget* parent);
 
-    QTextDocument* currentDocument; //List of documents currently open
+    //Open editor from file 
+    NoteEditor(QWidget* parent, char* fn);
 
+  
+    QTextDocument* currentDocument; //document currently open
     QPlainTextEdit* editor;
     QTextBrowser* viewer;
-
     QPushButton* switchBtn;
-
-    void Setup(QMainWindow* mainWindow);
-
+    QStackedWidget* stack;
+  
+    void SwitchViews();
+  
 private:
     QPushButton* btn;
 
