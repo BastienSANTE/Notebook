@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "documentlist.h"
+#include <QVBoxLayout>
 
 class MainWindow : public QMainWindow
 {
@@ -11,9 +11,5 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-private:
-    MainWindow *ui;
 };
 #endif // MAINWINDOW_H
-

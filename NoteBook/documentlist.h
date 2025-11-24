@@ -1,26 +1,30 @@
 #ifndef DOCUMENTLIST_H
 #define DOCUMENTLIST_H
 
-#include <vector>
+#include <QList>
 #include <QTextDocument>
 
 /**
  *  A document list, cannot be created more than once
- *  So that there aren't several document lists
+ *  So that there aren't several document lists.
+ *  Disappears at application closure.
 */
 
 class DocumentList
 {
 public:
-    DocumentList();
+    DocumentList() {
+        qDebug() << "Document list intialized" ;
+    };
     ~DocumentList() {};
 
-    std::vector<QTextDocument> documents;
+    QList<QTextDocument*> documents;
 
-    // Give list of all documents to the function
-    std::vector<QTextDocument>& GetDocumentList() {
-        return documents;
-    };
+    void AddDocumentToList(QTextDocument* doc){
+        documents.append(doc);
+        qDebug() << "Document at " << &doc << " added to list.";
+    }
+
 };
 
 #endif // DOCUMENTLIST_H

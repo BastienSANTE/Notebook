@@ -1,11 +1,5 @@
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new MainWindow)
-{}
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {}
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
+MainWindow::~MainWindow() {}
