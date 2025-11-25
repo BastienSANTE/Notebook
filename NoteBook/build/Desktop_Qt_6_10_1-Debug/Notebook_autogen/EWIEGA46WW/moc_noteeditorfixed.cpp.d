@@ -1,14 +1,13 @@
-/home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/EWIEGA46WW/moc_noteeditor.cpp: /home/bastien/LocalRepo/Notebook/NoteBook/noteeditor.h \
+/home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/EWIEGA46WW/moc_noteeditorfixed.cpp: /home/bastien/LocalRepo/Notebook/NoteBook/noteeditorfixed.h \
   /home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/moc_predefs.h \
   /home/bastien/LocalRepo/Notebook/NoteBook/documentlist.h \
-  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QDebug \
+  /home/bastien/LocalRepo/Notebook/NoteBook/mainwindow.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFile \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QList \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QObject \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QRect \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QSize \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QSizeF \
-  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QTextStream \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/q17memory.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/q20functional.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/q20iterator.h \
@@ -197,13 +196,13 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qvector2d.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qvectornd.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QBoxLayout \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QMainWindow \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QPlainTextEdit \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QPushButton \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QStackedWidget \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTextBrowser \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QVBoxLayout \
-  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QWidget \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qboxlayout.h \

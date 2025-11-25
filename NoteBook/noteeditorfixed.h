@@ -8,16 +8,17 @@
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QTextBrowser>
-#include <Qfile>
+#include <QFile>
 #include "documentlist.h"
+#include "mainwindow.h"
 
 class NoteEditorFixed : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit NoteEditorFixed(QMainWindow* w, DocumentList* dl,  QString fn);
-    explicit NoteEditorFixed(QMainWindow* w, DocumentList* dl);
+    explicit NoteEditorFixed(MainWindow* w, DocumentList* dl,  QString fn);
+    explicit NoteEditorFixed(MainWindow* w, DocumentList* dl);
 
     QWidget* holder; // Holder for all child widgets, maybe an awful thing but eh
     QVBoxLayout* layout; // Application layout
@@ -28,7 +29,7 @@ public:
     QPushButton* saveBtn;   // Save file button
     QTextDocument* currentDocument; //document currently open
 
-    void BaseStup(QMainWindow* w);
+    void BaseSetup(MainWindow* w);
     QString GetCurrentDocumentTitle() const { return editor->documentTitle(); }
 
 signals:

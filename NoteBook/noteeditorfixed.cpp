@@ -1,6 +1,6 @@
 #include "noteeditorfixed.h"
 
-NoteEditorFixed::NoteEditorFixed(QMainWindow *w, DocumentList* dl, QString fn) {
+NoteEditorFixed::NoteEditorFixed(MainWindow *w, DocumentList* dl, QString fn) : QObject(w) {
     BaseSetup(w);
 
     QFile openedFile(fn);
@@ -19,7 +19,7 @@ NoteEditorFixed::NoteEditorFixed(QMainWindow *w, DocumentList* dl, QString fn) {
     openedFile.close();
 }
 
-NoteEditorFixed::NoteEditorFixed(QMainWindow* w, DocumentList* dl) {
+NoteEditorFixed::NoteEditorFixed(MainWindow* w, DocumentList* dl) : QObject(w) {
     BaseSetup(w);
 
     //QObject::connect(saveBtn, &QPushButton::clicked, this, &NoteEditorFixed::Save);
@@ -30,17 +30,13 @@ NoteEditorFixed::NoteEditorFixed(QMainWindow* w, DocumentList* dl) {
     dl->AddDocument(emptyFile);
 }
 
-void NoteEditorFixed::BaseSetup(QMainWindow* w) {
+void NoteEditorFixed::BaseSetup(MainWindow* w) {
     holder = new QWidget(w);
-    w->setCentralWidget(holder);
-    w->centralWidget()->setContentsMargins(0, 0, 0, 0);
     layout =  new QVBoxLayout(holder);
     stack = new QStackedWidget(holder);
     editor = new QPlainTextEdit(holder);
     viewer = new QTextBrowser(holder);
     switchBtn = new QPushButton("Switch", w);
-    bool connected = QObject::connect(switchBtn, &QPushButton::clicked, this, &NoteEditorFixed::SwitchViews);
-    qDebug() << connected;
     saveBtn = new QPushButton("Save", w);
     stack->addWidget(editor);
     stack->addWidget(viewer);
@@ -48,18 +44,20 @@ void NoteEditorFixed::BaseSetup(QMainWindow* w) {
     layout->addWidget(stack, 1, Qt::AlignCenter);
     layout->addWidget(switchBtn, 0, Qt::AlignCenter);
 
-    //bool connected = QObject::connect(switchBtn, SIGNAL(clicked()), this, SLOT(SwitchViews()));
+    connect(switchBtn, &QPushButton::clicked, this, &NoteEditorFixed::SwitchViews);
+
+    w->setCentralWidget(holder);
 }
 
 void NoteEditorFixed::SwitchViews() {
-    /*if(stack->currentIndex() == 0) {
+    if(stack->currentIndex() == 0) {
         stack->setCurrentIndex(1);
         viewer->setMarkdown(editor->toPlainText());
         switchBtn->setText("Plain View");
-    } else {*/
+    } else {
         stack->setCurrentIndex(0);
         switchBtn->setText("MD view");
-    /*}*/
+    }
 }
 
 void NoteEditorFixed::Save() {
