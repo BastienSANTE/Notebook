@@ -42,7 +42,7 @@ public:
         QObject::connect(saveBtn, &QPushButton::clicked, this, &NoteEditor::Save);
         QTextDocument* doc = new QTextDocument();
         doc->setPlainText(QString(openedFile.readAll()));
-        dl->AddDocumentToList(doc);
+        dl->AddDocument(doc);
         editor->setDocument(doc);
         editor->setPlainText(doc->toPlainText());
         doc->setMetaInformation(QTextDocument::DocumentTitle, fn);
@@ -57,19 +57,19 @@ public:
         editor->setPlainText(emptyFile->toPlainText());
         emptyFile->setMetaInformation(QTextDocument::DocumentTitle, "Unsaved");
 
-        dl->AddDocumentToList(emptyFile);
+        dl->AddDocument(emptyFile);
     }
 
     ~NoteEditor() {}
 
-    void BaseSetup(QMainWindow* w) {
+    bool BaseSetup(QMainWindow* w) {
         holder = new QWidget(w);
         w->setCentralWidget(holder);
         w->centralWidget()->setContentsMargins(0, 0, 0, 0);
         layout =  new QVBoxLayout(holder);
         stack = new QStackedWidget(holder);
-        editor = new QPlainTextEdit(stack);
-        viewer = new QTextBrowser(stack);
+        editor = new QPlainTextEdit(holder);
+        viewer = new QTextBrowser(holder);
         switchBtn = new QPushButton("Switch", w);
         saveBtn = new QPushButton("Save", w);
         stack->addWidget(editor);
@@ -78,7 +78,9 @@ public:
         layout->addWidget(stack, 1, Qt::AlignCenter);
         layout->addWidget(switchBtn, 0, Qt::AlignCenter);
 
-        QObject::connect(switchBtn, &QPushButton::clicked, this, &NoteEditor::Save);
+        bool connected = QObject::connect(switchBtn, SIGNAL(clicked()), this, SLOT(SwitchViews()));
+        qDebug() << connected;
+        return connected;
     }
 
     QString GetCurrentDocumentTitle() const { return editor->documentTitle(); }
@@ -86,14 +88,14 @@ public:
 public slots:
     void SwitchViews() {
         qDebug() << "Switching views";
-        if(stack->currentIndex() == 0) {
+        /*if(stack->currentIndex() == 0) {
             stack->setCurrentIndex(1);
             viewer->setMarkdown(editor->toPlainText());
             switchBtn->setText("Plain View");
         } else {
             stack->setCurrentIndex(0);
             switchBtn->setText("MD view");
-        }
+        }*/
     }
 
     void Save() {

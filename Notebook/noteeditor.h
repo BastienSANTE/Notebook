@@ -1,7 +1,6 @@
 #ifndef NOTEEDITOR_H
 #define NOTEEDITOR_H
 
-#include <iostream>
 #include <QDebug>
 #include <QObject>
 #include <QMainWindow>
@@ -19,7 +18,6 @@
 class NoteEditor : public QObject
 {
 public:
-    //Inherits from QObject, enabling signals & slots
     Q_OBJECT
 
 public:
@@ -33,13 +31,45 @@ public:
     QTextDocument* currentDocument; //document currently open
 
     NoteEditor(QMainWindow* w, DocumentList* dl,  QString fn) {
+        BaseSetup(w);
+
+        QFile openedFile(fn);
+
+        if (!(openedFile.open(QIODeviceBase::ReadWrite))) {
+            qDebug() << "Error : File could not be opened";
+        }
+
+        QObject::connect(saveBtn, &QPushButton::clicked, this, &NoteEditor::Save);
+        QTextDocument* doc = new QTextDocument();
+        doc->setPlainText(QString(openedFile.readAll()));
+        dl->AddDocument(doc);
+        editor->setDocument(doc);
+        editor->setPlainText(doc->toPlainText());
+        doc->setMetaInformation(QTextDocument::DocumentTitle, fn);
+        openedFile.close();
+    }
+
+    NoteEditor(QMainWindow* w, DocumentList* dl) {
+        BaseSetup(w);
+
+        QObject::connect(saveBtn, &QPushButton::clicked, this, &NoteEditor::Save);
+        QTextDocument* emptyFile = new QTextDocument();
+        editor->setPlainText(emptyFile->toPlainText());
+        emptyFile->setMetaInformation(QTextDocument::DocumentTitle, "Unsaved");
+
+        dl->AddDocument(emptyFile);
+    }
+
+    ~NoteEditor() {}
+
+    bool BaseSetup(QMainWindow* w) {
         holder = new QWidget(w);
         w->setCentralWidget(holder);
         w->centralWidget()->setContentsMargins(0, 0, 0, 0);
         layout =  new QVBoxLayout(holder);
         stack = new QStackedWidget(holder);
-        editor = new QPlainTextEdit(stack);
-        viewer = new QTextBrowser(stack);
+        editor = new QPlainTextEdit(holder);
+        viewer = new QTextBrowser(holder);
         switchBtn = new QPushButton("Switch", w);
         saveBtn = new QPushButton("Save", w);
         stack->addWidget(editor);
@@ -48,101 +78,52 @@ public:
         layout->addWidget(stack, 1, Qt::AlignCenter);
         layout->addWidget(switchBtn, 0, Qt::AlignCenter);
 
-        QFile argumentFile(fn);
-        QTextDocument* startUpFile;
-
-
-        if (argumentFile.open(QIODeviceBase::ReadWrite)) {
-            startUpFile = new QTextDocument();
-            startUpFile->setPlainText(QString(argumentFile.readAll()));
-            editor->setDocument(startUpFile);
-            editor->setPlainText(startUpFile->toPlainText());
-            startUpFile->setMetaInformation(QTextDocument::DocumentTitle, fn);
-        }
-
-        dl->AddDocumentToList(startUpFile);
-
-        argumentFile.close();
-
-        QObject::connect(switchBtn, SIGNAL(clicked()), this, SLOT(SwitchViews()));
-        QObject::connect(saveBtn, SIGNAL(clicked()), this, SLOT(Save()));
+        bool connected = QObject::connect(switchBtn, SIGNAL(clicked()), this, SLOT(SwitchViews()));
+        qDebug() << connected;
+        return connected;
     }
 
-
-    NoteEditor(QMainWindow* w, DocumentList* dl) {
-        qDebug() << "Started app without a file";
-        holder = new QWidget(w);
-        w->setCentralWidget(holder);
-        w->centralWidget()->setContentsMargins(0, 0, 0, 0);
-        layout =  new QVBoxLayout(holder);
-        stack = new QStackedWidget(holder);
-        editor = new QPlainTextEdit(stack);
-        viewer = new QTextBrowser(stack);
-
-        switchBtn = new QPushButton("A", w);
-        saveBtn = new QPushButton("Save", w);
-
-        stack->addWidget(editor);
-        stack->addWidget(viewer);
-
-        layout->addWidget(stack, 1, Qt::AlignCenter);
-        layout->addWidget(switchBtn, 0, Qt::AlignCenter);
-        layout->addWidget(saveBtn, 0, Qt::AlignCenter);
-
-        QTextDocument* startUpFile = new QTextDocument();
-        editor->setPlainText(startUpFile->toPlainText());
-        startUpFile->setMetaInformation(QTextDocument::DocumentTitle, "Unsaved");
-
-        dl->AddDocumentToList(startUpFile);
-
-        connect(switchBtn, SIGNAL(clicked()), this, SLOT(SwitchViews()));
-        connect(saveBtn, SIGNAL(clicked()), this, SLOT(Save()));
-    }
-
-
-    ~NoteEditor() {}
+    QString GetCurrentDocumentTitle() const { return editor->documentTitle(); }
 
 public slots:
-    void SwitchViews(void) {
-        if(stack->currentIndex() == 0) {
+    void SwitchViews() {
+        qDebug() << "Switching views";
+        /*if(stack->currentIndex() == 0) {
             stack->setCurrentIndex(1);
-            viewer->setMarkdown(editor->document()->toPlainText());
+            viewer->setMarkdown(editor->toPlainText());
             switchBtn->setText("Plain View");
         } else {
             stack->setCurrentIndex(0);
             switchBtn->setText("MD view");
-        }
-    };
+        }*/
+    }
 
-    void Save(){
-
+    void Save() {
+        qDebug() << "Save button clicked";
         QTextDocument* doc = editor->document();
+        QString fn = GetCurrentDocumentTitle();
 
-        if (QFile::exists(doc->metaInformation(QTextDocument::DocumentTitle))) {
-            QFile saveFile(editor->documentTitle());
+        if (QFile::exists(fn)) {
 
-            if (saveFile.open(QIODevice::Append | QIODevice::Text)){
-                QTextStream output(&saveFile);
-                output << editor->toPlainText() ;
-                saveFile.close();
-                qDebug() << "Wrote to " << doc->metaInformation(QTextDocument::DocumentTitle);
+            QFile savedFile(fn);
+
+            if (!savedFile.open(QIODevice::Append | QIODevice::Text)) {
+                qDebug() << "Could not save file";
             }
+
+            QTextStream stream(&savedFile);
+            stream << editor->toPlainText();
+            savedFile.close();
+            qDebug() << "Wrote to " << doc->metaInformation(QTextDocument::DocumentTitle);
 
         } else {
-            QFile saveFile("Untitled.md");
-            saveFile.setFileName("Untitled.md");
-
-            if (saveFile.open(QIODevice::Append | QIODevice::Text)) {
-                QTextStream output(&saveFile);
-                output << editor->toPlainText() ;
-                saveFile.close();
-                qDebug() << "Wrote to Untitled.md";
-            }
+            QFile newFile("Untitled.md");
+            QTextStream output(&newFile);
+            output << editor->toPlainText() ;
+            newFile.close();
+            qDebug() << "Wrote to Untitled.md";
         }
-    };
-
-private:
-
+    }
 };
 
 #endif // NOTEEDITOR_H

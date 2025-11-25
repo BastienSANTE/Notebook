@@ -1,4 +1,4 @@
-# Install script for directory: /home/bastien/LocalRepo/Notebook/Notebook
+# Install script for directory: /home/bastien/LocalRepo/Notebook/NoteBook
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,12 +49,12 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Notebook"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/bastien/LocalRepo/Notebook/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/Notebook")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Notebook" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Notebook")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Notebook"
-         OLD_RPATH "/home/bastien/Qt/6.10.1/gcc_64/lib:"
+         OLD_RPATH "/home/bastien/bin/Qt/6.10.1/gcc_64/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Notebook")
@@ -77,6 +77,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/home/bastien/LocalRepo/Notebook/Notebook/build/Desktop_Qt_6_10_1-Debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

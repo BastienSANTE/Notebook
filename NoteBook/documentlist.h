@@ -20,7 +20,7 @@ public:
 
     QList<QTextDocument*> documents;
 
-    void AddDocumentToList(QTextDocument* doc){
+    void AddDocument(QTextDocument* doc){
         documents.append(doc);
         qDebug() << "Document at " << &doc << " added to list.";
     }
