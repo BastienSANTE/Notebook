@@ -9,7 +9,6 @@ NoteEditorFixed::NoteEditorFixed(MainWindow *w, DocumentList* dl, QString fn) : 
         qDebug() << "Error : File could not be opened";
     }
 
-    //QObject::connect(saveBtn, &QPushButton::clicked, this, &NoteEditorFixed::Save);
     QTextDocument* doc = new QTextDocument();
     doc->setPlainText(QString(openedFile.readAll()));
     dl->AddDocument(doc);
@@ -22,7 +21,6 @@ NoteEditorFixed::NoteEditorFixed(MainWindow *w, DocumentList* dl, QString fn) : 
 NoteEditorFixed::NoteEditorFixed(MainWindow* w, DocumentList* dl) : QObject(w) {
     BaseSetup(w);
 
-    //QObject::connect(saveBtn, &QPushButton::clicked, this, &NoteEditorFixed::Save);
     QTextDocument* emptyFile = new QTextDocument();
     editor->setPlainText(emptyFile->toPlainText());
     emptyFile->setMetaInformation(QTextDocument::DocumentTitle, "Unsaved");
@@ -45,8 +43,10 @@ void NoteEditorFixed::BaseSetup(MainWindow* w) {
     layout->addWidget(switchBtn, 0, Qt::AlignCenter);
 
     connect(switchBtn, &QPushButton::clicked, this, &NoteEditorFixed::SwitchViews);
+    connect(saveBtn, &QPushButton::clicked, this, &NoteEditorFixed::Save);
 
     w->setCentralWidget(holder);
+    w->centralWidget()->setContentsMargins(0,0,0,0);
 }
 
 void NoteEditorFixed::SwitchViews() {
@@ -69,7 +69,7 @@ void NoteEditorFixed::Save() {
 
         QFile savedFile(fn);
 
-        if (!savedFile.open(QIODevice::Append | QIODevice::Text)) {
+        if (!savedFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
             qDebug() << "Could not save file";
         }
 
@@ -80,6 +80,11 @@ void NoteEditorFixed::Save() {
 
     } else {
         QFile newFile("Untitled.md");
+
+        if (!newFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
+            qDebug() << "Could not save file";
+        }
+
         QTextStream output(&newFile);
         output << editor->toPlainText() ;
         newFile.close();

@@ -384,12 +384,12 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h
  mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h
 C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/noteeditorfixed.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QFile
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QList
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QRect
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QSize
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QSizeF
- mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/QFile
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtCore/q20iterator.h
@@ -585,6 +585,7 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/noteeditorfixed.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton
  mdp:C:/Qt/6.10.0/mingw_64/include/QtWidgets/QStackedWidget
  mdp:C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTextBrowser
+ mdp:C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout
  mdp:C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractscrollarea.h
  mdp:C:/Qt/6.10.0/mingw_64/include/QtWidgets/qboxlayout.h
@@ -849,6 +850,7 @@ C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/noteeditorfixed.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
  mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/Notebook_autogen/moc_predefs.h
  mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/documentlist.h
+ mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.h
  mdp:C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/noteeditorfixed.h
 C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/main.cpp
 C:/Users/b.sante/Desktop/LocalRepo/Notebook/NoteBook/mainwindow.cpp
