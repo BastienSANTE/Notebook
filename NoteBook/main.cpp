@@ -26,5 +26,6 @@ int main(int argc, char *argv[])
         qDebug() << "Started application with" << QCoreApplication::arguments().at(1);
     }
     w.show();
+    qDebug() << "Use this line to add graphical breakpoints";
     return a.exec();
 }

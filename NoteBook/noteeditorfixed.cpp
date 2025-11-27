@@ -30,8 +30,11 @@ NoteEditorFixed::NoteEditorFixed(MainWindow* w, DocumentList* dl) : QObject(w) {
 
 void NoteEditorFixed::BaseSetup(MainWindow* w) {
     holder = new QWidget(w);
+    holder->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     layout =  new QVBoxLayout(holder);
     stack = new QStackedWidget(holder);
+
+    stack->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     editor = new QPlainTextEdit(holder);
     viewer = new QTextBrowser(holder);
     switchBtn = new QPushButton("Switch", w);
