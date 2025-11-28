@@ -15,8 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(PROJECT_SOURCES
         main.cpp
-        noteeditorfixed.h
-        noteeditorfixed.cpp
+        noteeditor.h
+        noteeditor.cpp
         mainwindow.cpp
         mainwindow.h
 )
@@ -25,7 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Notebook
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        noteeditorfixed.h noteeditorfixed.cpp
+        noteeditor.h noteeditor.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

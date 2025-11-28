@@ -1,6 +1,6 @@
-#include "noteeditorfixed.h"
+#include "noteeditor.h"
 
-NoteEditorFixed::NoteEditorFixed(MainWindow *w, DocumentList* dl, QString fn) : QObject(w) {
+Editor::Editor(MainWindow *w, DocumentList* dl, QString fn) : QObject(w) {
     BaseSetup(w);
 
     QFile openedFile(fn);
@@ -18,7 +18,7 @@ NoteEditorFixed::NoteEditorFixed(MainWindow *w, DocumentList* dl, QString fn) : 
     openedFile.close();
 }
 
-NoteEditorFixed::NoteEditorFixed(MainWindow* w, DocumentList* dl) : QObject(w) {
+Editor::Editor(MainWindow* w, DocumentList* dl) : QObject(w) {
     BaseSetup(w);
 
     QTextDocument* emptyFile = new QTextDocument();
@@ -28,7 +28,7 @@ NoteEditorFixed::NoteEditorFixed(MainWindow* w, DocumentList* dl) : QObject(w) {
     dl->AddDocument(emptyFile);
 }
 
-void NoteEditorFixed::BaseSetup(MainWindow* w) {
+void Editor::BaseSetup(MainWindow* w) {
     holder = new QWidget(w);
     holder->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     layout =  new QVBoxLayout(holder);
@@ -45,14 +45,14 @@ void NoteEditorFixed::BaseSetup(MainWindow* w) {
     layout->addWidget(stack, 1, Qt::AlignCenter);
     layout->addWidget(switchBtn, 0, Qt::AlignCenter);
 
-    connect(switchBtn, &QPushButton::clicked, this, &NoteEditorFixed::SwitchViews);
-    connect(saveBtn, &QPushButton::clicked, this, &NoteEditorFixed::Save);
+    connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
+    connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
 
     w->setCentralWidget(holder);
     w->centralWidget()->setContentsMargins(0,0,0,0);
 }
 
-void NoteEditorFixed::SwitchViews() {
+void Editor::SwitchViews() {
     if(stack->currentIndex() == 0) {
         stack->setCurrentIndex(1);
         viewer->setMarkdown(editor->toPlainText());
@@ -63,7 +63,7 @@ void NoteEditorFixed::SwitchViews() {
     }
 }
 
-void NoteEditorFixed::Save() {
+void Editor::Save() {
     qDebug() << "Save button clicked";
     QTextDocument* doc = editor->document();
     QString fn = GetCurrentDocumentTitle();
