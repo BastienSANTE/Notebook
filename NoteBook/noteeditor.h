@@ -4,39 +4,44 @@
 #include <QObject>
 #include <QBoxLayout>
 #include <QMainWindow>
-#include <QPlainTextEdit>
 #include <QPushButton>
-#include <QStackedWidget>
-#include <QTextBrowser>
+#include <QTabWidget>
 #include <QFile>
 #include "documentlist.h"
-#include "mainwindow.h"
+#include "noteeditortab.h"
 
 class Editor : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Editor(MainWindow* w, DocumentList* dl,  QString fn);
-    explicit Editor(MainWindow* w, DocumentList* dl);
+    explicit Editor(QString fn);
+    explicit Editor();
 
-    QWidget* holder; // Holder for all child widgets, maybe an awful thing but eh
+    QMainWindow* mainWindow; // Main Window of the editor, is the parent of the whole UI
     QVBoxLayout* layout; // Application layout
-    QStackedWidget* stack; // Container for the editor & viewer
-    QPlainTextEdit* editor; // Actual text editor
-    QTextBrowser* viewer;   // MD Viewer
+    QTabWidget* tabs; // Container for the editor & viewer
     QPushButton* switchBtn; // View switcher button
     QPushButton* saveBtn;   // Save file button
     QTextDocument* currentDocument; //document currently open
 
-    void BaseSetup(MainWindow* w);
-    QString GetCurrentDocumentTitle() const { return editor->documentTitle(); }
+    void CreateTab();
+    void CreateTabFromFile(QFile& fn);
+    int UpdateCurrentTabIndex() const { return tabs->currentIndex(); }
+
+    // Horrible nested methods, but let's see if this works
+    NoteEditorTab* GetCurrentTab() const { return (NoteEditorTab*)tabs->currentWidget(); }
+    QTextDocument* GetCurrentDocument() const {return GetCurrentTab()->document; }
+    QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
+
+    void BaseSetup();
+private:
+    int _currentTabIndex;
 
 signals:
 
 public slots:
     void SwitchViews();
-
     void Save();
 };
 

@@ -1,6 +1,7 @@
 #ifndef DOCUMENTLIST_H
 #define DOCUMENTLIST_H
 
+#include <QObject>
 #include <QList>
 #include <QTextDocument>
 
@@ -10,21 +11,16 @@
  *  Disappears at application closure.
 */
 
-class DocumentList
-{
+class DocumentList : public QObject {
 public:
-    DocumentList() {
-        qDebug() << "Document list intialized" ;
-    };
-    ~DocumentList() {};
+    Q_OBJECT
 
+public:
     QList<QTextDocument*> documents;
 
-    void AddDocument(QTextDocument* doc){
-        documents.append(doc);
-        qDebug() << "Document at " << &doc << " added to list.";
-    }
-
+    DocumentList();
+    ~DocumentList();
+    void AddDocument(QTextDocument*& doc);
 };
 
 #endif // DOCUMENTLIST_H

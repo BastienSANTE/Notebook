@@ -65,9 +65,9 @@ build CMakeFiles/Notebook.dir/main.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug
   OBJECT_DIR = CMakeFiles/Notebook.dir
   OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
 
-build CMakeFiles/Notebook.dir/noteeditorfixed.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /home/bastien/LocalRepo/Notebook/NoteBook/noteeditorfixed.cpp || cmake_object_order_depends_target_Notebook
+build CMakeFiles/Notebook.dir/noteeditor.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /home/bastien/LocalRepo/Notebook/NoteBook/noteeditor.cpp || cmake_object_order_depends_target_Notebook
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/Notebook.dir/noteeditorfixed.cpp.o.d
+  DEP_FILE = CMakeFiles/Notebook.dir/noteeditor.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
   INCLUDES = -I/home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/include -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/mkspecs/linux-g++ -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui
   OBJECT_DIR = CMakeFiles/Notebook.dir
@@ -81,6 +81,22 @@ build CMakeFiles/Notebook.dir/mainwindow.cpp.o: CXX_COMPILER__Notebook_unscanned
   OBJECT_DIR = CMakeFiles/Notebook.dir
   OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
 
+build CMakeFiles/Notebook.dir/documentlist.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /home/bastien/LocalRepo/Notebook/NoteBook/documentlist.cpp || cmake_object_order_depends_target_Notebook
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Notebook.dir/documentlist.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/include -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/mkspecs/linux-g++ -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/Notebook.dir
+  OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
+
+build CMakeFiles/Notebook.dir/noteeditortab.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /home/bastien/LocalRepo/Notebook/NoteBook/noteeditortab.cpp || cmake_object_order_depends_target_Notebook
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Notebook.dir/noteeditortab.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/bastien/LocalRepo/Notebook/NoteBook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/include -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/mkspecs/linux-g++ -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/Notebook.dir
+  OBJECT_FILE_DIR = CMakeFiles/Notebook.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Notebook
@@ -89,7 +105,7 @@ build CMakeFiles/Notebook.dir/mainwindow.cpp.o: CXX_COMPILER__Notebook_unscanned
 #############################################
 # Link the executable Notebook
 
-build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/Notebook_autogen/mocs_compilation.cpp.o CMakeFiles/Notebook.dir/main.cpp.o CMakeFiles/Notebook.dir/noteeditorfixed.cpp.o CMakeFiles/Notebook.dir/mainwindow.cpp.o | /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Widgets.so.6.10.1 /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Gui.so.6.10.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Core.so.6.10.1 || Notebook_autogen Notebook_autogen_timestamp_deps
+build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/Notebook_autogen/mocs_compilation.cpp.o CMakeFiles/Notebook.dir/main.cpp.o CMakeFiles/Notebook.dir/noteeditor.cpp.o CMakeFiles/Notebook.dir/mainwindow.cpp.o CMakeFiles/Notebook.dir/documentlist.cpp.o CMakeFiles/Notebook.dir/noteeditortab.cpp.o | /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Widgets.so.6.10.1 /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Gui.so.6.10.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Core.so.6.10.1 || Notebook_autogen Notebook_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/bastien/bin/Qt/6.10.1/gcc_64/lib:  /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Widgets.so.6.10.1  /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Gui.so.6.10.1  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Core.so.6.10.1  -Wl,-rpath-link,/home/bastien/bin/Qt/6.10.1/gcc_64/lib
   OBJECT_DIR = CMakeFiles/Notebook.dir

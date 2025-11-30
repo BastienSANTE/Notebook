@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -26,6 +27,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         noteeditor.h noteeditor.cpp
+        documentlist.cpp
+        noteeditortab.h noteeditortab.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
@@ -48,6 +51,7 @@ endif()
 
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

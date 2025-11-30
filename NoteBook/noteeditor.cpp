@@ -1,7 +1,7 @@
 #include "noteeditor.h"
 
-Editor::Editor(MainWindow *w, DocumentList* dl, QString fn) : QObject(w) {
-    BaseSetup(w);
+Editor::Editor(QString fn) {
+    BaseSetup();
 
     QFile openedFile(fn);
 
@@ -9,64 +9,62 @@ Editor::Editor(MainWindow *w, DocumentList* dl, QString fn) : QObject(w) {
         qDebug() << "Error : File could not be opened";
     }
 
-    QTextDocument* doc = new QTextDocument();
-    doc->setPlainText(QString(openedFile.readAll()));
-    dl->AddDocument(doc);
-    editor->setDocument(doc);
-    editor->setPlainText(doc->toPlainText());
-    doc->setMetaInformation(QTextDocument::DocumentTitle, fn);
+    CreateTabFromFile(openedFile);
     openedFile.close();
 }
 
-Editor::Editor(MainWindow* w, DocumentList* dl) : QObject(w) {
-    BaseSetup(w);
-
-    QTextDocument* emptyFile = new QTextDocument();
-    editor->setPlainText(emptyFile->toPlainText());
-    emptyFile->setMetaInformation(QTextDocument::DocumentTitle, "Unsaved");
-
-    dl->AddDocument(emptyFile);
+Editor::Editor() {
+    BaseSetup();
+    CreateTab();
 }
 
-void Editor::BaseSetup(MainWindow* w) {
-    holder = new QWidget(w);
-    holder->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
-    layout =  new QVBoxLayout(holder);
-    stack = new QStackedWidget(holder);
+void Editor::BaseSetup() {
+    mainWindow = new QMainWindow(nullptr);
+    tabs = new QTabWidget(mainWindow);
+    layout = new QVBoxLayout(tabs);
+    mainWindow->setCentralWidget(tabs);
 
-    stack->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
-    editor = new QPlainTextEdit(holder);
-    viewer = new QTextBrowser(holder);
-    switchBtn = new QPushButton("Switch", w);
-    saveBtn = new QPushButton("Save", w);
-    stack->addWidget(editor);
-    stack->addWidget(viewer);
+    switchBtn = new QPushButton("Switch", tabs);
+    saveBtn = new QPushButton("Save", tabs);
 
-    layout->addWidget(stack, 1, Qt::AlignCenter);
+    layout->addWidget(saveBtn, 1, Qt::AlignCenter);
     layout->addWidget(switchBtn, 0, Qt::AlignCenter);
 
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
-    connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
+    connect(saveBtn, &QPushButton::clicked, this, &Editor::CreateTab);
+}
 
-    w->setCentralWidget(holder);
-    w->centralWidget()->setContentsMargins(0,0,0,0);
+//Create an empty QTextBrowser
+void Editor::CreateTab() {
+    NoteEditorTab* newTab = new NoteEditorTab(nullptr);
+    tabs->addTab(newTab, "Untitled");
+}
+
+// Create new QTextBrowser with contents of openedFile
+void Editor::CreateTabFromFile(QFile& openedFile) {
+    NoteEditorTab* newFileTab = new NoteEditorTab(nullptr, openedFile.readAll());
+    tabs->addTab(newFileTab, openedFile.fileName());
 }
 
 void Editor::SwitchViews() {
-    if(stack->currentIndex() == 0) {
-        stack->setCurrentIndex(1);
-        viewer->setMarkdown(editor->toPlainText());
+    QStackedWidget* switcher = GetCurrentTab()->stackSwitcher;
+
+    if(switcher->currentIndex() == 0) {
+        switcher->setCurrentIndex(1);
+        qDebug() << "Showing MD view";
         switchBtn->setText("Plain View");
     } else {
-        stack->setCurrentIndex(0);
+        switcher->setCurrentIndex(0);
+        qDebug() << "Showing plain view";
         switchBtn->setText("MD view");
     }
 }
 
+
 void Editor::Save() {
     qDebug() << "Save button clicked";
-    QTextDocument* doc = editor->document();
-    QString fn = GetCurrentDocumentTitle();
+    QTextDocument* doc = GetCurrentDocument();
+    QString fn = GetCurrentTabTitle();
 
     if (QFile::exists(fn)) {
 
@@ -77,7 +75,7 @@ void Editor::Save() {
         }
 
         QTextStream stream(&savedFile);
-        stream << editor->toPlainText();
+        stream << GetCurrentTab()->editor->toPlainText();
         savedFile.close();
         qDebug() << "Wrote to " << doc->metaInformation(QTextDocument::DocumentTitle);
 
@@ -88,8 +86,8 @@ void Editor::Save() {
             qDebug() << "Could not save file";
         }
 
-        QTextStream output(&newFile);
-        output << editor->toPlainText() ;
+        QTextStream stream(&newFile);
+        stream << GetCurrentTab()->editor->toPlainText();
         newFile.close();
         qDebug() << "Wrote to Untitled.md";
     }

@@ -1,4 +1,3 @@
-#include "mainwindow.h"
 #include "noteeditor.h"
 #include "documentlist.h"
 
@@ -8,24 +7,24 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
 
-    Editor* ed = nullptr;
+    std::unique_ptr<Editor> editor;
 
     //Create the list of documents
-    DocumentList* documentList = new DocumentList;
+    DocumentList documentList;
 
     // If no file is given, start app with blank file.
     // Create the list of documents nevertheless.
     if (argc <= 1){
-        ed =  new Editor(&w, documentList);
+        editor = std::make_unique<Editor>();
         qDebug() << "Started application without file" ;
 
     } else {
-        ed = new Editor(&w, documentList, QCoreApplication::arguments().at(1));
+        editor = std::make_unique<Editor>(QCoreApplication::arguments().at(1));
         qDebug() << "Started application with" << QCoreApplication::arguments().at(1);
     }
-    w.show();
+
+    editor->mainWindow->show();
     qDebug() << "Use this line to add graphical breakpoints";
     return a.exec();
 }
