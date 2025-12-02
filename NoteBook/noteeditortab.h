@@ -5,6 +5,7 @@
 #include <QStackedWidget>
 #include <QPlainTextEdit>
 #include <QTextBrowser>
+#include <QBoxLayout>
 
 /* Class for the note editor tabs. Each tab contains an editor widget &
  * viewer widget, and manages its document. If the tab is closed, it is
@@ -25,6 +26,7 @@ public:
     QPlainTextEdit* editor;
     QTextBrowser* browser;
     QTextDocument* document;
+    QBoxLayout* tabLayout;
 
 signals:
 };

@@ -19,6 +19,7 @@ public:
     explicit Editor();
 
     QMainWindow* mainWindow; // Main Window of the editor, is the parent of the whole UI
+    QWidget* uiHolder;
     QVBoxLayout* layout; // Application layout
     QTabWidget* tabs; // Container for the editor & viewer
     QPushButton* switchBtn; // View switcher button

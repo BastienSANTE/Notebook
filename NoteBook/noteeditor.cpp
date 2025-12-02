@@ -20,15 +20,17 @@ Editor::Editor() {
 
 void Editor::BaseSetup() {
     mainWindow = new QMainWindow(nullptr);
+    uiHolder = new QWidget(mainWindow);
     tabs = new QTabWidget(mainWindow);
-    layout = new QVBoxLayout(tabs);
-    mainWindow->setCentralWidget(tabs);
+    layout = new QVBoxLayout(uiHolder);
+    mainWindow->setCentralWidget(uiHolder);
 
     switchBtn = new QPushButton("Switch", tabs);
     saveBtn = new QPushButton("Save", tabs);
 
+    layout->addWidget(tabs, 1, Qt::AlignCenter);
     layout->addWidget(saveBtn, 1, Qt::AlignCenter);
-    layout->addWidget(switchBtn, 0, Qt::AlignCenter);
+    layout->addWidget(switchBtn, 1, Qt::AlignCenter);
 
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::CreateTab);
@@ -53,6 +55,7 @@ void Editor::SwitchViews() {
         switcher->setCurrentIndex(1);
         qDebug() << "Showing MD view";
         switchBtn->setText("Plain View");
+        GetCurrentTab()->browser->setMarkdown(GetCurrentTab()->editor->toPlainText());
     } else {
         switcher->setCurrentIndex(0);
         qDebug() << "Showing plain view";

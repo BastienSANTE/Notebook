@@ -9,9 +9,12 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) : QWidget{parent} {
     editor = new QPlainTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument("Untitled", this);
+    tabLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
 
+    stackSwitcher->setLayout(tabLayout);
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
+
     editor->setDocument(document);
     browser->setDocument(document);
 }
@@ -21,7 +24,9 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString contents) {
     editor = new QPlainTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument(contents, this);
+    tabLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
 
+    stackSwitcher->setLayout(tabLayout);
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
 
