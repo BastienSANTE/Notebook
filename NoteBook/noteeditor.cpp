@@ -21,16 +21,25 @@ Editor::Editor() {
 void Editor::BaseSetup() {
     mainWindow = new QMainWindow(nullptr);
     uiHolder = new QWidget(mainWindow);
-    tabs = new QTabWidget(mainWindow);
-    layout = new QVBoxLayout(uiHolder);
+
+    layout = new QVBoxLayout(nullptr);
+    tabBox = new QHBoxLayout(nullptr);
+    buttonBox = new QHBoxLayout(nullptr);
+    tabs = new QTabWidget(uiHolder);
     mainWindow->setCentralWidget(uiHolder);
 
     switchBtn = new QPushButton("Switch", tabs);
     saveBtn = new QPushButton("Save", tabs);
 
-    layout->addWidget(tabs, 1, Qt::AlignCenter);
-    layout->addWidget(saveBtn, 1, Qt::AlignCenter);
-    layout->addWidget(switchBtn, 1, Qt::AlignCenter);
+    layout->addLayout(tabBox, 80);
+    layout->addLayout(buttonBox, 20);
+
+    tabBox->addWidget(tabs, 1, Qt::AlignCenter);
+    tabs->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
+    buttonBox->addWidget(switchBtn, 1, Qt::AlignCenter);
+
+    uiHolder->setLayout(layout);
 
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::CreateTab);
@@ -38,13 +47,13 @@ void Editor::BaseSetup() {
 
 //Create an empty QTextBrowser
 void Editor::CreateTab() {
-    NoteEditorTab* newTab = new NoteEditorTab(nullptr);
+    NoteEditorTab* newTab = new NoteEditorTab(tabs);
     tabs->addTab(newTab, "Untitled");
 }
 
 // Create new QTextBrowser with contents of openedFile
 void Editor::CreateTabFromFile(QFile& openedFile) {
-    NoteEditorTab* newFileTab = new NoteEditorTab(nullptr, openedFile.readAll());
+    NoteEditorTab* newFileTab = new NoteEditorTab(tabs, openedFile.readAll());
     tabs->addTab(newFileTab, openedFile.fileName());
 }
 

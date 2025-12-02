@@ -171,7 +171,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/bin/gcc-ar-12"
+			"value" : "/bin/gcc-ar-14"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -187,7 +187,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/bin/gcc-ranlib-12"
+			"value" : "/bin/gcc-ranlib-14"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -847,7 +847,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ninja"
+			"value" : "/home/bastien/bin/Qt/Tools/Ninja/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1551,7 +1551,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "OPENGL_GLU_INCLUDE_DIR-NOTFOUND"
 		},
 		{
 			"name" : "OPENGL_GLX_INCLUDE_DIR",
@@ -1647,7 +1647,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libGLU.so"
+			"value" : "OPENGL_glu_LIBRARY-NOTFOUND"
 		},
 		{
 			"name" : "OPENGL_glx_LIBRARY",
@@ -6991,7 +6991,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/tmp"
+			"value" : "/usr/local"
 		}
 	],
 	"kind" : "cache",

@@ -4,14 +4,12 @@
  *
  */
 
-NoteEditorTab::NoteEditorTab(QWidget *parent) : QWidget{parent} {
-    stackSwitcher = new QStackedWidget(this);
+NoteEditorTab::NoteEditorTab(QWidget *parent) {
+    stackSwitcher = new QStackedWidget(nullptr);
     editor = new QPlainTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument("Untitled", this);
-    tabLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
 
-    stackSwitcher->setLayout(tabLayout);
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
 
@@ -20,13 +18,13 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) : QWidget{parent} {
 }
 
 NoteEditorTab::NoteEditorTab(QWidget* parent, QString contents) {
-    stackSwitcher = new QStackedWidget(this);
+    stackSwitcher = new QStackedWidget(nullptr);
     editor = new QPlainTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument(contents, this);
-    tabLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
+    //tabLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
 
-    stackSwitcher->setLayout(tabLayout);
+    //stackSwitcher->setLayout(tabLayout);
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
 

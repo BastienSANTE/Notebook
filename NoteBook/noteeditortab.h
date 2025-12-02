@@ -26,7 +26,6 @@ public:
     QPlainTextEdit* editor;
     QTextBrowser* browser;
     QTextDocument* document;
-    QBoxLayout* tabLayout;
 
 signals:
 };

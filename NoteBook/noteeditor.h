@@ -7,7 +7,6 @@
 #include <QPushButton>
 #include <QTabWidget>
 #include <QFile>
-#include "documentlist.h"
 #include "noteeditortab.h"
 
 class Editor : public QObject
@@ -18,10 +17,12 @@ public:
     explicit Editor(QString fn);
     explicit Editor();
 
-    QMainWindow* mainWindow; // Main Window of the editor, is the parent of the whole UI
-    QWidget* uiHolder;
-    QVBoxLayout* layout; // Application layout
-    QTabWidget* tabs; // Container for the editor & viewer
+    QMainWindow* mainWindow;// Main Window of the editor,
+    QWidget* uiHolder;      // is the parent of the whole UI
+    QVBoxLayout* layout;    // Application layout
+    QHBoxLayout* tabBox;    // Layout
+    QHBoxLayout* buttonBox; // Buttons holder
+    QTabWidget* tabs;       // Container for the editor & viewer
     QPushButton* switchBtn; // View switcher button
     QPushButton* saveBtn;   // Save file button
     QTextDocument* currentDocument; //document currently open
