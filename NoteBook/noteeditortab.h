@@ -21,8 +21,8 @@ public:
     explicit NoteEditorTab(QWidget *parent = nullptr);
     explicit NoteEditorTab(QWidget* parent, QString contents);
     ~NoteEditorTab();
-
     QStackedWidget* stackSwitcher;
+    QHBoxLayout* tabContentsLayout;
     QPlainTextEdit* editor;
     QTextBrowser* browser;
     QTextDocument* document;

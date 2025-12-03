@@ -18,7 +18,7 @@ public:
     explicit Editor();
 
     QMainWindow* mainWindow;// Main Window of the editor,
-    QWidget* uiHolder;      // is the parent of the whole UI
+    QFrame* uiHolder;       // is the parent of the whole UI
     QVBoxLayout* layout;    // Application layout
     QHBoxLayout* tabBox;    // Layout
     QHBoxLayout* buttonBox; // Buttons holder

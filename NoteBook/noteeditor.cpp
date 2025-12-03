@@ -20,13 +20,16 @@ Editor::Editor() {
 
 void Editor::BaseSetup() {
     mainWindow = new QMainWindow(nullptr);
-    uiHolder = new QWidget(mainWindow);
+    uiHolder = new QFrame(mainWindow);
+    mainWindow->setCentralWidget(uiHolder);
 
     layout = new QVBoxLayout(nullptr);
+    uiHolder->setLayout(layout);
+
     tabBox = new QHBoxLayout(nullptr);
     buttonBox = new QHBoxLayout(nullptr);
     tabs = new QTabWidget(uiHolder);
-    mainWindow->setCentralWidget(uiHolder);
+
 
     switchBtn = new QPushButton("Switch", tabs);
     saveBtn = new QPushButton("Save", tabs);
@@ -34,12 +37,9 @@ void Editor::BaseSetup() {
     layout->addLayout(tabBox, 80);
     layout->addLayout(buttonBox, 20);
 
-    tabBox->addWidget(tabs, 1, Qt::AlignCenter);
-    tabs->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    tabBox->addWidget(tabs, 100, Qt::AlignCenter);
     buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(switchBtn, 1, Qt::AlignCenter);
-
-    uiHolder->setLayout(layout);
 
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::CreateTab);
