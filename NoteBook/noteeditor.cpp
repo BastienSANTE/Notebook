@@ -15,38 +15,44 @@ Editor::Editor(QString fn) {
 
 Editor::Editor() {
     BaseSetup();
-    CreateTab();
+    AddTab();
 }
 
 void Editor::BaseSetup() {
     mainWindow = new QMainWindow(nullptr);
-    uiHolder = new QFrame(mainWindow);
-    mainWindow->setCentralWidget(uiHolder);
+    uiFrame = new QFrame(mainWindow);
+    layout = new QVBoxLayout(uiFrame);
+    uiFrame->setLayout(layout);
 
-    layout = new QVBoxLayout(nullptr);
-    uiHolder->setLayout(layout);
+    mainWindow->setCentralWidget(uiFrame);
+    mainWindow->centralWidget()->setContentsMargins(0,0,0,0);
 
-    tabBox = new QHBoxLayout(nullptr);
-    buttonBox = new QHBoxLayout(nullptr);
-    tabs = new QTabWidget(uiHolder);
-
+    tabBox = new QHBoxLayout(uiFrame);
+    buttonBox = new QHBoxLayout(uiFrame);
+    tabs = new QTabWidget(uiFrame);
 
     switchBtn = new QPushButton("Switch", tabs);
     saveBtn = new QPushButton("Save", tabs);
+    addTabBtn = new QPushButton("New Tab", tabs);
+    deleteTabBtn = new QPushButton("Delete Tab", tabs);
 
-    layout->addLayout(tabBox, 80);
-    layout->addLayout(buttonBox, 20);
+    layout->addLayout(tabBox, 90);
+    layout->addLayout(buttonBox, 10);
 
-    tabBox->addWidget(tabs, 100, Qt::AlignCenter);
-    buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
+    tabBox->addWidget(tabs, 1, Qt::Alignment());
+
     buttonBox->addWidget(switchBtn, 1, Qt::AlignCenter);
+    buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
+    buttonBox->addWidget(addTabBtn, 1, Qt::AlignCenter);
+    buttonBox->addWidget(deleteTabBtn, 1, Qt::AlignCenter);
 
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
-    connect(saveBtn, &QPushButton::clicked, this, &Editor::CreateTab);
+    connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
+    connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab)
 }
 
 //Create an empty QTextBrowser
-void Editor::CreateTab() {
+void Editor::AddTab() {
     NoteEditorTab* newTab = new NoteEditorTab(tabs);
     tabs->addTab(newTab, "Untitled");
 }

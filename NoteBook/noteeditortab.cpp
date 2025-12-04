@@ -37,4 +37,7 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString contents) {
     //editor->setPlainText(contents);
 }
 
+
+// Add method to prompt for save before deleting tab.
+// Remember : Constructors & destructors are LIFO
 NoteEditorTab::~NoteEditorTab() {};
