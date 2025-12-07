@@ -48,7 +48,7 @@ void Editor::BaseSetup() {
 
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
-    connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab)
+    connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab);
 }
 
 //Create an empty QTextBrowser
@@ -58,8 +58,9 @@ void Editor::AddTab() {
 }
 
 // Create new QTextBrowser with contents of openedFile
+// Function modified to be able to keep a reference to file path
 void Editor::CreateTabFromFile(QFile& openedFile) {
-    NoteEditorTab* newFileTab = new NoteEditorTab(tabs, openedFile.readAll());
+    NoteEditorTab* newFileTab = new NoteEditorTab(tabs, openedFile.fileName(), openedFile.readAll());
     tabs->addTab(newFileTab, openedFile.fileName());
 }
 
@@ -70,6 +71,7 @@ void Editor::SwitchViews() {
         switcher->setCurrentIndex(1);
         qDebug() << "Showing MD view";
         switchBtn->setText("Plain View");
+        GetCurrentTab()->document->setMarkdown(GetCurrentTab()->editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
         GetCurrentTab()->browser->setMarkdown(GetCurrentTab()->editor->toPlainText());
     } else {
         switcher->setCurrentIndex(0);
@@ -95,7 +97,7 @@ void Editor::Save() {
         QTextStream stream(&savedFile);
         stream << GetCurrentTab()->editor->toPlainText();
         savedFile.close();
-        qDebug() << "Wrote to " << doc->metaInformation(QTextDocument::DocumentTitle);
+        qDebug() << "Wrote to " << fn;
 
     } else {
         QFile newFile("Untitled.md");

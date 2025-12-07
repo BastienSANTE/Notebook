@@ -2,6 +2,7 @@
 #define NOTEEDITORTAB_H
 
 #include <QWidget>
+#include <QUrl>
 #include <QStackedWidget>
 #include <QPlainTextEdit>
 #include <QTextBrowser>
@@ -19,13 +20,15 @@ public:
 
 public:
     explicit NoteEditorTab(QWidget *parent = nullptr);
-    explicit NoteEditorTab(QWidget* parent, QString contents);
+    explicit NoteEditorTab(QWidget* parent, QUrl fileName, QString contents);
+
     ~NoteEditorTab();
     QStackedWidget* stackSwitcher;
     QHBoxLayout* tabContentsLayout;
     QPlainTextEdit* editor;
     QTextBrowser* browser;
     QTextDocument* document;
+    QUrl* documentPath;
 
 signals:
 };

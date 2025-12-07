@@ -21,20 +21,28 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
     browser->setDocument(document);
 }
 
-NoteEditorTab::NoteEditorTab(QWidget* parent, QString contents) {
-    stackSwitcher = new QStackedWidget(parent);
+NoteEditorTab::NoteEditorTab(QWidget* parent, QUrl fileName, QString contents) {
+    stackSwitcher = new QStackedWidget(this);
+    tabContentsLayout = new QHBoxLayout(this);
+    this->setLayout(tabContentsLayout);
+    tabContentsLayout->addWidget(stackSwitcher);
+
     editor = new QPlainTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument(contents, this);
-    //tabLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
+    document->setBaseUrl(fileName);
+    //document->addResource(QTextDocument::StyleSheetResource, QUrl("/home/bastien/LocalRepo/Notebook/NoteBook/TestFolder/TestStyleSheet.css"), css);
+
+    qDebug() << document->baseUrl();
 
     //stackSwitcher->setLayout(tabLayout);
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
 
+    browser->setSource(fileName, QTextDocument::MarkdownResource);
+    editor->setPlainText(document->toPlainText());
+
     editor->setDocument(document);
-    browser->setDocument(document);
-    //editor->setPlainText(contents);
 }
 
 
