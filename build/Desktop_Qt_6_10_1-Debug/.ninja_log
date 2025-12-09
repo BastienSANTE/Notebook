@@ -1,0 +1,17 @@
+# ninja log v6
+159	1263	1765317612640796538	CMakeFiles/Notebook.dir/Notebook_autogen/mocs_compilation.cpp.o	79e912fd4db1946b
+2	8	1765317657788114223	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/mocs_compilation.cpp	81cbcabb53945690
+1294	1456	1765316867510512863	Notebook	f87ff2580d442e59
+2	8	1765317657788114223	Notebook_autogen/mocs_compilation.cpp	81cbcabb53945690
+2	8	1765317657788114223	Notebook_autogen/timestamp	81cbcabb53945690
+2	8	1765317657788114223	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/timestamp	81cbcabb53945690
+8	1550	1765317657796114810	CMakeFiles/Notebook.dir/src/main.cpp.o	a13b1ff6096f08a1
+159	1240	1765317612640796538	CMakeFiles/Notebook.dir/src/mainwindow.cpp.o	f75e12508c2b329f
+2	174	1765317719983672732	Notebook_autogen/timestamp	81cbcabb53945690
+2	174	1765317719983672732	Notebook_autogen/mocs_compilation.cpp	81cbcabb53945690
+2	174	1765317719983672732	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/timestamp	81cbcabb53945690
+2	174	1765317719983672732	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/mocs_compilation.cpp	81cbcabb53945690
+175	1637	1765317719987663717	CMakeFiles/Notebook.dir/src/noteeditortab.cpp.o	8df68f251f68cd47
+175	1801	1765317719987663717	CMakeFiles/Notebook.dir/src/noteeditor.cpp.o	10fb7cef5efd6993
+174	1838	1765317719987663717	CMakeFiles/Notebook.dir/Notebook_autogen/mocs_compilation.cpp.o	79e912fd4db1946b
+1838	2046	1765317721652194412	Notebook	970b0a9646993620
