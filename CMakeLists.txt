@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.23)
 
 project(Notebook VERSION 0.1 LANGUAGES CXX)
 
@@ -8,6 +8,15 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(FetchContent) # once in the project to include the module
+# ... now declare JKQTPlotter5/6
+FetchContent_Declare(JKQTPlotter${QT_VERSION_MAJOR}
+                     GIT_REPOSITORY https://github.com/jkriege2/JKQtPlotter.git
+                     GIT_TAG        origin/master)
+# ... finally make JKQTPlotter5/6 available
+FetchContent_MakeAvailable(JKQTPlotter${QT_VERSION_MAJOR})
+
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
@@ -46,6 +55,7 @@ else()
 endif()
 
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(${PROJECT_NAME} PUBLIC JKQTPlotter6::JKQTPlotter6)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
