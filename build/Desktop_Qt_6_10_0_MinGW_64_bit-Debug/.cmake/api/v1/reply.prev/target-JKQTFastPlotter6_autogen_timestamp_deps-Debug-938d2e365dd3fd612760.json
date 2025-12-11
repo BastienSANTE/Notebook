@@ -1,0 +1,34 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-src/lib/jkqtfastplotter/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "JKQTCommon6::@845e649f5a277a6e4a82"
+		}
+	],
+	"id" : "JKQTFastPlotter6_autogen_timestamp_deps::@402e1d50ba18888d0c3a",
+	"isGeneratorProvided" : true,
+	"name" : "JKQTFastPlotter6_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "_deps/jkqtplotter-build/lib/jkqtfastplotter",
+		"source" : "build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-src/lib/jkqtfastplotter"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

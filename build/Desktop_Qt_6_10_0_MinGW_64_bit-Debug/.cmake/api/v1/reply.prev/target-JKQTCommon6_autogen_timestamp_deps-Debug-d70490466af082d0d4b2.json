@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-src/lib/jkqtcommon/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "JKQTCommon6_autogen_timestamp_deps::@845e649f5a277a6e4a82",
+	"isGeneratorProvided" : true,
+	"name" : "JKQTCommon6_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "_deps/jkqtplotter-build/lib/jkqtcommon",
+		"source" : "build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-src/lib/jkqtcommon"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
