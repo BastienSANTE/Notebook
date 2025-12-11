@@ -72,7 +72,8 @@ void Editor::SwitchViews() {
         qDebug() << "Showing MD view";
         switchBtn->setText("Plain View");
         GetCurrentTab()->document->setMarkdown(GetCurrentTab()->editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
-        GetCurrentTab()->browser->setMarkdown(GetCurrentTab()->editor->toPlainText());
+        GetCurrentTab()->browser->setHtml(GetCurrentTab()->document->toHtml());
+        qDebug() << GetCurrentTab()->document->toHtml();
     } else {
         switcher->setCurrentIndex(0);
         qDebug() << "Showing plain view";

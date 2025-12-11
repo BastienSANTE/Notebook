@@ -25,6 +25,6 @@ int main(int argc, char *argv[])
     }
 
     editor->mainWindow->show();
-    qDebug() << "Use this line to add graphical breakpoints";
+    qDebug() << "Use this line to add graphical breakpoints !";
     return a.exec();
 }

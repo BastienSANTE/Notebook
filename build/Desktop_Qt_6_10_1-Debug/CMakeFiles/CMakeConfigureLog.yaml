@@ -356,3 +356,263 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:17 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for j0"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS_j0"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_58db9
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=j0 -std=gnu++17 -o CMakeFiles/cmTC_58db9.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU/CheckFunctionExists.cxx
+        <command-line>: warning: declaration of ‘char j0()’ conflicts with built-in declaration ‘double j0(double)’ [-Wbuiltin-declaration-mismatch]
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=j0  CMakeFiles/cmTC_58db9.dir/CheckFunctionExists.cxx.o -o cmTC_58db9   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:18 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for _j0"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS__j0"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_20f9b
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0 -std=gnu++17 -o CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0  CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o -o cmTC_20f9b   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_20f9b 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0  CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o -o cmTC_20f9b   && :
+        /usr/bin/ld : CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _j0 »
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:19 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for y0"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS_y0"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_e56cb
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=y0 -std=gnu++17 -o CMakeFiles/cmTC_e56cb.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf/CheckFunctionExists.cxx
+        <command-line>: warning: declaration of ‘char y0()’ conflicts with built-in declaration ‘double y0(double)’ [-Wbuiltin-declaration-mismatch]
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=y0  CMakeFiles/cmTC_e56cb.dir/CheckFunctionExists.cxx.o -o cmTC_e56cb   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:20 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for _y0"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS__y0"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_01b28
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0 -std=gnu++17 -o CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0  CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o -o cmTC_01b28   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_01b28 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0  CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o -o cmTC_01b28   && :
+        /usr/bin/ld : CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _y0 »
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:21 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for jn"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS_jn"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_8e4d2
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=jn -std=gnu++17 -o CMakeFiles/cmTC_8e4d2.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC/CheckFunctionExists.cxx
+        <command-line>: warning: declaration of ‘char jn()’ conflicts with built-in declaration ‘double jn(int, double)’ [-Wbuiltin-declaration-mismatch]
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=jn  CMakeFiles/cmTC_8e4d2.dir/CheckFunctionExists.cxx.o -o cmTC_8e4d2   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:22 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for _jn"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS__jn"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_a560c
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn -std=gnu++17 -o CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn  CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o -o cmTC_a560c   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_a560c 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn  CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o -o cmTC_a560c   && :
+        /usr/bin/ld : CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _jn »
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:23 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for yn"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS_yn"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_4ccd2
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=yn -std=gnu++17 -o CMakeFiles/cmTC_4ccd2.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr/CheckFunctionExists.cxx
+        <command-line>: warning: declaration of ‘char yn()’ conflicts with built-in declaration ‘double yn(int, double)’ [-Wbuiltin-declaration-mismatch]
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=yn  CMakeFiles/cmTC_4ccd2.dir/CheckFunctionExists.cxx.o -o cmTC_4ccd2   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:24 (CHECK_FUNCTION_EXISTS)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    checks:
+      - "Looking for _yn"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake"
+    buildResult:
+      variable: "JKQtPlotter_HAS__yn"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU'
+        
+        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_d60b9
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn -std=gnu++17 -o CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn  CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o -o cmTC_d60b9   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_d60b9 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn  CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o -o cmTC_d60b9   && :
+        /usr/bin/ld : CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _yn »
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
