@@ -292,10 +292,10 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a file.
-CUPS_INCLUDE_DIR:PATH=CUPS_INCLUDE_DIR-NOTFOUND
+CUPS_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-CUPS_LIBRARIES:FILEPATH=CUPS_LIBRARIES-NOTFOUND
+CUPS_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libcups.so
 
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps
@@ -395,7 +395,7 @@ OPENGL_GLES2_INCLUDE_DIR:PATH=/usr/include
 OPENGL_GLES3_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a file.
-OPENGL_GLU_INCLUDE_DIR:PATH=OPENGL_GLU_INCLUDE_DIR-NOTFOUND
+OPENGL_GLU_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a file.
 OPENGL_GLX_INCLUDE_DIR:PATH=/usr/include
@@ -413,7 +413,7 @@ OPENGL_gles2_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLESv2.so
 OPENGL_gles3_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLESv2.so
 
 //Path to a library.
-OPENGL_glu_LIBRARY:FILEPATH=OPENGL_glu_LIBRARY-NOTFOUND
+OPENGL_glu_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLU.so
 
 //Path to a library.
 OPENGL_glx_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLX.so

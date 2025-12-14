@@ -8,6 +8,7 @@
 #include <QTabWidget>
 #include <QFile>
 #include "noteeditortab.h"
+#include "documentobjects/mathdocumentobject.h"
 
 class Editor : public QObject
 {
@@ -28,6 +29,9 @@ public:
     QPushButton* saveBtn;       // Save file button
     QPushButton* addTabBtn;     // Add new tab (and create new file)
     QPushButton* deleteTabBtn;  // Delete tab and document IF EMPTY, else prompt save
+    QPushButton* addMathBtn;    // Test button to add a math render
+    QPlainTextEdit* mathBar;    // Self-explanatory
+
     QTextDocument* currentDocument; //document currently open
 
     void AddTab();
@@ -40,6 +44,9 @@ public:
     QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
 
     void BaseSetup();
+
+    void SetupMathDocumentObject();
+    void InsertMathDocumentObject();
 private:
     int _currentTabIndex;
 

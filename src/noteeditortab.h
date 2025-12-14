@@ -28,6 +28,7 @@ public:
     QPlainTextEdit* editor;
     QTextBrowser* browser;
     QTextDocument* document;
+    QAbstractTextDocumentLayout* documentLayout;
     QUrl* documentPath;
 
 signals:

@@ -13,6 +13,7 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
     editor = new QPlainTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument("Untitled", this);
+    documentLayout = new QPlainTextDocumentLayout(document);
 
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
@@ -31,6 +32,7 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QUrl fileName, QString contents) {
     browser = new QTextBrowser(this);
     document = new QTextDocument(contents, this);
     document->setBaseUrl(fileName);
+    documentLayout = new QPlainTextDocumentLayout(document);
     //document->addResource(QTextDocument::StyleSheetResource, QUrl("/home/bastien/LocalRepo/Notebook/NoteBook/TestFolder/TestStyleSheet.css"), css);
 
     qDebug() << document->baseUrl();

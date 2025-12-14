@@ -20,6 +20,8 @@ FetchContent_MakeAvailable(JKQTPlotter${QT_VERSION_MAJOR})
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(PROJECT_SOURCES
         src/main.cpp
@@ -35,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Notebook
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        src/documentobjects/mathdocumentobject.h src/documentobjects/mathdocumentobject.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Notebook APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -55,6 +59,8 @@ else()
 endif()
 
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(${PROJECT_NAME} PUBLIC JKQTPlotter6::JKQTPlotter6)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

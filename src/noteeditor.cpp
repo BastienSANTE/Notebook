@@ -35,6 +35,7 @@ void Editor::BaseSetup() {
     saveBtn = new QPushButton("Save", tabs);
     addTabBtn = new QPushButton("New Tab", tabs);
     deleteTabBtn = new QPushButton("Delete Tab", tabs);
+    addMathBtn = new QPushButton("Add Math Element", tabs);
 
     layout->addLayout(tabBox, 90);
     layout->addLayout(buttonBox, 10);
@@ -45,10 +46,14 @@ void Editor::BaseSetup() {
     buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(addTabBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(deleteTabBtn, 1, Qt::AlignCenter);
+    buttonBox->addWidget(addMathBtn, 1, Qt::AlignCenter);
 
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
     connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab);
+    connect(addMathBtn, &QPushButton::clicked, this, &Editor::InsertMathDocumentObject);
+
+    mathBar = new QPlainTextEdit(nullptr);
 }
 
 //Create an empty QTextBrowser
@@ -112,4 +117,21 @@ void Editor::Save() {
         newFile.close();
         qDebug() << "Wrote to Untitled.md";
     }
+}
+
+
+void Editor::SetupMathDocumentObject(){
+    QObject* mathDocumentInterface = new MathDocumentObject(this);
+    this->GetCurrentDocument()->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentInterface);
+}
+
+void Editor::InsertMathDocumentObject(){
+    QTextCharFormat mathCharFormat;
+    mathCharFormat.setObjectType(MathDocumentObject::MathTextFormat);
+    JKQTMathText text;
+    text.parse(mathBar->toPlainText());
+    QImage renderImage = text.drawIntoImage(0, Qt::white, 0, 1.0, 96);
+    QTextCursor cursor = GetCurrentTab()->browser->textCursor();
+    cursor.insertText(QString(QChar::ObjectReplacementCharacter), mathCharFormat);
+    GetCurrentTab()->browser->setTextCursor(cursor);
 }
