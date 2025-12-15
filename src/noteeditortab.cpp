@@ -1,4 +1,5 @@
 #include "noteeditortab.h"
+#include "documentobjects/mathdocumentobject.h"
 
 /* Class for the tabs in the editor.
  *
@@ -10,7 +11,7 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
     this->setLayout(tabContentsLayout);
     tabContentsLayout->addWidget(stackSwitcher);
 
-    editor = new QPlainTextEdit(this);
+    editor = new QTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument("Untitled", this);
     documentLayout = new QPlainTextDocumentLayout(document);
@@ -20,6 +21,10 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
 
     editor->setDocument(document);
     browser->setDocument(document);
+
+    //Register math elements
+    MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
+    document->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
 }
 
 NoteEditorTab::NoteEditorTab(QWidget* parent, QUrl fileName, QString contents) {
@@ -28,7 +33,7 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QUrl fileName, QString contents) {
     this->setLayout(tabContentsLayout);
     tabContentsLayout->addWidget(stackSwitcher);
 
-    editor = new QPlainTextEdit(this);
+    editor = new QTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument(contents, this);
     document->setBaseUrl(fileName);
@@ -45,6 +50,10 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QUrl fileName, QString contents) {
     editor->setPlainText(document->toPlainText());
 
     editor->setDocument(document);
+
+    //Register math elements
+    MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
+    document->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
 }
 
 

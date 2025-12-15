@@ -128,12 +128,10 @@ void Editor::SetupMathDocumentObject(){
 }
 
 void Editor::InsertMathDocumentObject(){
-    QTextCharFormat mathCharFormat;
-    mathCharFormat.setObjectType(MathDocumentObject::MathTextFormat);
-    JKQTMathText text;
-    text.parse(mathBar->toPlainText());
-    QImage renderImage = text.drawIntoImage(0, Qt::white, 0, 1.0, 96);
+    JKQTMathText* mathText = new JKQTMathText(this);
+    mathText->parse(mathBar->toPlainText());
     QTextCursor cursor = GetCurrentTab()->browser->textCursor();
-    cursor.insertText(QString(QChar::ObjectReplacementCharacter), mathCharFormat);
+    cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathText, 50, 50));
     GetCurrentTab()->browser->setTextCursor(cursor);
+    delete(mathText);
 }

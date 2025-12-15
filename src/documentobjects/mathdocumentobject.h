@@ -19,10 +19,13 @@ public:
     enum {PicturePropertyId = 1};
 
     explicit MathDocumentObject(QObject* parent);
-    QSizeF intrinsicSize(QTextDocument* doc, int posInDocument, const QTextFormat& format);
+    QSizeF intrinsicSize(QTextDocument* doc, int posInDocument, const QTextFormat& format) override;
+
     void drawObject(QPainter *painter, const QRectF &rect, QTextDocument *doc, int posInDocument, const QTextFormat &format) override;
 
-    QTextCharFormat GenerateFormat();
+    static QTextCharFormat GenerateFormat(JKQTMathText* text, int width = 0, int height = 0);
 };
+
+Q_DECLARE_METATYPE(QImage);
 
 #endif // MATHDOCUMENTOBJECT_H

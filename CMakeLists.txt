@@ -38,8 +38,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Notebook
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/documentobjects/mathdocumentobject.h src/documentobjects/mathdocumentobject.cpp
-
+        src/documentobjects/mathdocumentobject.h
+        src/documentobjects/mathdocumentobject.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Notebook APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

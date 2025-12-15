@@ -635,7 +635,7 @@
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 16,
+	"PARALLEL" : 10,
 	"PARSE_CACHE_FILE" : "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/Notebook_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/home/bastien/bin/Qt/6.10.1/gcc_64/libexec/moc",
 	"QT_UIC_EXECUTABLE" : "/home/bastien/bin/Qt/6.10.1/gcc_64/libexec/uic",

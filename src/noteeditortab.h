@@ -25,7 +25,7 @@ public:
     ~NoteEditorTab();
     QStackedWidget* stackSwitcher;
     QHBoxLayout* tabContentsLayout;
-    QPlainTextEdit* editor;
+    QTextEdit* editor;
     QTextBrowser* browser;
     QTextDocument* document;
     QAbstractTextDocumentLayout* documentLayout;
