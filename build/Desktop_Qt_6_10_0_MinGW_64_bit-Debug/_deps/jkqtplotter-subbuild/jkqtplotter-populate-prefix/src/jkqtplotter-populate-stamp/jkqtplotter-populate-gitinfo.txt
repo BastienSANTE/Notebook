@@ -6,7 +6,7 @@ method=git
 command=C:/Qt/Tools/CMake_64/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/b.sante/Desktop/LocalRepo/Notebook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-subbuild/jkqtplotter-populate-prefix/tmp/jkqtplotter-populate-gitclone.cmake
 source_dir=C:/Users/b.sante/Desktop/LocalRepo/Notebook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-src
 work_dir=C:/Users/b.sante/Desktop/LocalRepo/Notebook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps
-repository=https://github.com/jkriege2/JKQtPlotter.git
+repository=https://github.com/jkriege2/JKQtPlotter
 remote=origin
 init_submodules=TRUE
 recurse_submodules=--recursive

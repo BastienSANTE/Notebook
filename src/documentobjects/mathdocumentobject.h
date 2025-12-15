@@ -21,6 +21,8 @@ public:
     explicit MathDocumentObject(QObject* parent);
     QSizeF intrinsicSize(QTextDocument* doc, int posInDocument, const QTextFormat& format);
     void drawObject(QPainter *painter, const QRectF &rect, QTextDocument *doc, int posInDocument, const QTextFormat &format) override;
+
+    QTextCharFormat GenerateFormat();
 };
 
 #endif // MATHDOCUMENTOBJECT_H

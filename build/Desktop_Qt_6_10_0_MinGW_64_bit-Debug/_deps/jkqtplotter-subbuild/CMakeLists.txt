@@ -27,7 +27,7 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(jkqtplotter-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/jkriege2/JKQtPlotter.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "origin/master"
+                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/jkriege2/JKQtPlotter" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "origin/master"
                     SOURCE_DIR          "C:/Users/b.sante/Desktop/LocalRepo/Notebook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-src"
                     BINARY_DIR          "C:/Users/b.sante/Desktop/LocalRepo/Notebook/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/_deps/jkqtplotter-build"
                     CONFIGURE_COMMAND   ""

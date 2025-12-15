@@ -12,8 +12,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(FetchContent) # once in the project to include the module
 # ... now declare JKQTPlotter5/6
 FetchContent_Declare(JKQTPlotter${QT_VERSION_MAJOR}
-                     GIT_REPOSITORY https://github.com/jkriege2/JKQtPlotter.git
-                     GIT_TAG        origin/master)
+                     GIT_REPOSITORY https://github.com/jkriege2/JKQtPlotter
+                     GIT_TAG origin/master)
+
 # ... finally make JKQTPlotter5/6 available
 FetchContent_MakeAvailable(JKQTPlotter${QT_VERSION_MAJOR})
 

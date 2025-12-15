@@ -35,7 +35,7 @@ void Editor::BaseSetup() {
     saveBtn = new QPushButton("Save", tabs);
     addTabBtn = new QPushButton("New Tab", tabs);
     deleteTabBtn = new QPushButton("Delete Tab", tabs);
-    addMathBtn = new QPushButton("Add Math Element", tabs);
+    addMathBtn = new QPushButton("Add Math Element", nullptr);
 
     layout->addLayout(tabBox, 90);
     layout->addLayout(buttonBox, 10);
@@ -48,12 +48,14 @@ void Editor::BaseSetup() {
     buttonBox->addWidget(deleteTabBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(addMathBtn, 1, Qt::AlignCenter);
 
+
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
     connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab);
     connect(addMathBtn, &QPushButton::clicked, this, &Editor::InsertMathDocumentObject);
 
     mathBar = new QPlainTextEdit(nullptr);
+    buttonBox->addWidget(mathBar, 1, Qt::AlignCenter);
 }
 
 //Create an empty QTextBrowser
