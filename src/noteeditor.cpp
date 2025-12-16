@@ -56,6 +56,9 @@ void Editor::BaseSetup() {
 
     mathBar = new QPlainTextEdit(nullptr);
     buttonBox->addWidget(mathBar, 1, Qt::AlignCenter);
+
+    // Create regular expression to match
+    latexRE = new QRegularExpression("\\$.*?(?<!\\\\)\\$");
 }
 
 //Create an empty QTextBrowser
@@ -134,4 +137,12 @@ void Editor::InsertMathDocumentObject(){
     cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathText, 50, 50));
     GetCurrentTab()->browser->setTextCursor(cursor);
     delete(mathText);
+}
+
+
+/* TODO : Implement a function to count the number of
+LaTeX elements in the document as a test */
+QTextDocument Editor::PrepareDocumentForRender(QTextDocument* doc){
+    QTextCursor cursor(doc);
+    bool latexMatchResult{true};
 }

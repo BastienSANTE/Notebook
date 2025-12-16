@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QTabWidget>
 #include <QFile>
+#include <QRegularExpression>
 #include "noteeditortab.h"
 #include "documentobjects/mathdocumentobject.h"
 
@@ -34,6 +35,9 @@ public:
 
     QTextDocument* currentDocument; //document currently open
 
+
+    QRegularExpression* latexRE;
+
     void AddTab();
     void CreateTabFromFile(QFile& fn);
     int UpdateCurrentTabIndex() const { return tabs->currentIndex(); }
@@ -42,6 +46,7 @@ public:
     NoteEditorTab* GetCurrentTab() const { return (NoteEditorTab*)tabs->currentWidget(); }
     QTextDocument* GetCurrentDocument() const {return GetCurrentTab()->document; }
     QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
+    QTextDocument PrepareDocumentForRender(QTextDocument* doc);
 
     void BaseSetup();
 
