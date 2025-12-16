@@ -25,7 +25,7 @@ void MathDocumentObject::drawObject(QPainter *painter, const QRectF &rect, QText
     painter->restore();
 }
 
-static QTextCharFormat GenerateFormat(JKQTMathText* text, int width = 0, int height = 0) {
+QTextCharFormat MathDocumentObject::GenerateFormat(JKQTMathText* text, int width, int height) {
 
     QImage textImage;
     QPainter textPainter;
