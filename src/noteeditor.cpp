@@ -58,7 +58,9 @@ void Editor::BaseSetup() {
     buttonBox->addWidget(mathBar, 1, Qt::AlignCenter);
 
     // Create regular expression to match
-    latexRE = new QRegularExpression("\\$.*?(?<!\\\\)\\$");
+    // WHAT THE FUCK HAVE I DONE
+    //latexRE = new QRegularExpression("/(?<=(\${2}\\\\)|(\${2})).*(?<=\${2})|(?<=\${2}\\\\)");
+    latexRE = new QRegularExpression("(?=\\${2}).*(?<=\\${2})");
 }
 
 //Create an empty QTextBrowser
@@ -78,12 +80,12 @@ void Editor::SwitchViews() {
     QStackedWidget* switcher = GetCurrentTab()->stackSwitcher;
 
     if(switcher->currentIndex() == 0) {
-        switcher->setCurrentIndex(1);
         qDebug() << "Showing MD view";
         switchBtn->setText("Plain View");
-        GetCurrentTab()->document->setMarkdown(GetCurrentTab()->editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
-        GetCurrentTab()->browser->setHtml(GetCurrentTab()->document->toHtml());
-        qDebug() << GetCurrentTab()->document->toHtml();
+        RenderDocument(GetCurrentDocument());
+        GetCurrentTab()->browser->setDocument(GetCurrentTab()->renderDocument);
+        switcher->setCurrentIndex(1);
+        //qDebug() << GetCurrentTab()->document->toHtml();
     } else {
         switcher->setCurrentIndex(0);
         qDebug() << "Showing plain view";
@@ -142,7 +144,22 @@ void Editor::InsertMathDocumentObject(){
 
 /* TODO : Implement a function to count the number of
 LaTeX elements in the document as a test */
-QTextDocument Editor::PrepareDocumentForRender(QTextDocument* doc){
-    QTextCursor cursor(doc);
-    bool latexMatchResult{true};
+void Editor::RenderDocument(QTextDocument* doc){
+    // Clear text doc before new render
+    GetCurrentTab()->renderDocument->clear();
+
+    GetCurrentTab()->renderDocument->setMarkdown(GetCurrentTab()->editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
+    qDebug() << GetCurrentTab()->editor->toMarkdown();
+    // Get all of the text
+    QString documentText = GetCurrentTab()->renderDocument->toPlainText();
+    QTextCursor cursor(GetCurrentTab()->renderDocument);
+    JKQTMathText* mathRender = new JKQTMathText(this);
+    cursor = GetCurrentTab()->renderDocument->find(*latexRE, cursor);
+    QString matchText = cursor.selectedText();
+    cursor.removeSelectedText();
+    qDebug() << matchText;
+
+    if (mathRender->parse(matchText)) {
+        cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
+    }
 }

@@ -14,13 +14,14 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
     editor = new QTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument("Untitled", this);
+    renderDocument = new QTextDocument(this);
     documentLayout = new QPlainTextDocumentLayout(document);
 
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
 
     editor->setDocument(document);
-    browser->setDocument(document);
+    browser->setDocument(renderDocument);
 
     //Register math elements
     MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
@@ -36,6 +37,7 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QUrl fileName, QString contents) {
     editor = new QTextEdit(this);
     browser = new QTextBrowser(this);
     document = new QTextDocument(contents, this);
+    renderDocument = new QTextDocument(this);
     document->setBaseUrl(fileName);
     documentLayout = new QPlainTextDocumentLayout(document);
     //document->addResource(QTextDocument::StyleSheetResource, QUrl("/home/bastien/LocalRepo/Notebook/NoteBook/TestFolder/TestStyleSheet.css"), css);

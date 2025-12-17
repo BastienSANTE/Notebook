@@ -28,6 +28,7 @@ public:
     QTextEdit* editor;
     QTextBrowser* browser;
     QTextDocument* document;
+    QTextDocument* renderDocument;
     QAbstractTextDocumentLayout* documentLayout;
     QUrl* documentPath;
 

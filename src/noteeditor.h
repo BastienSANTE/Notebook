@@ -46,7 +46,7 @@ public:
     NoteEditorTab* GetCurrentTab() const { return (NoteEditorTab*)tabs->currentWidget(); }
     QTextDocument* GetCurrentDocument() const {return GetCurrentTab()->document; }
     QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
-    QTextDocument PrepareDocumentForRender(QTextDocument* doc);
+    void RenderDocument(QTextDocument* doc);
 
     void BaseSetup();
 

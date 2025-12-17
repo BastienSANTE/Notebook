@@ -11,6 +11,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QList \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QObject \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QRect \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QRegularExpression \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QSet \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QSettings \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QSize \
@@ -107,6 +108,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qprocessordetection.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qrect.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qrefcount.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qregularexpression.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qscopedpointer.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qscopeguard.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qset.h \
