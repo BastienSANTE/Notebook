@@ -148,18 +148,32 @@ void Editor::RenderDocument(QTextDocument* doc){
     // Clear text doc before new render
     GetCurrentTab()->renderDocument->clear();
 
+    // Render the basic elements as Markdown
     GetCurrentTab()->renderDocument->setMarkdown(GetCurrentTab()->editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
-    qDebug() << GetCurrentTab()->editor->toMarkdown();
-    // Get all of the text
+
+    // Get all of the text as one large QString
     QString documentText = GetCurrentTab()->renderDocument->toPlainText();
+
     QTextCursor cursor(GetCurrentTab()->renderDocument);
     JKQTMathText* mathRender = new JKQTMathText(this);
+
+    bool _lastParseResult = true;
+
+    while(_lastParseResult) {
     cursor = GetCurrentTab()->renderDocument->find(*latexRE, cursor);
     QString matchText = cursor.selectedText();
-    cursor.removeSelectedText();
-    qDebug() << matchText;
 
-    if (mathRender->parse(matchText)) {
-        cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
+        if (matchText == "") {
+            _lastParseResult = false;
+        }
+
+        cursor.removeSelectedText();
+        qDebug() << matchText;
+
+        if (mathRender->parse(matchText)) {
+            cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
+        }
     }
+
+    delete (mathRender);
 }
