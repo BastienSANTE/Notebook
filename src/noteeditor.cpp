@@ -10,7 +10,6 @@ Editor::Editor(QString fn) {
     }
 
     CreateTabFromFile(openedFile);
-    openedFile.close();
 }
 
 Editor::Editor() {
@@ -18,16 +17,19 @@ Editor::Editor() {
     AddTab();
 }
 
+// This setup function is identical, whether it launches with or without a file
 void Editor::BaseSetup() {
     mainWindow = new QMainWindow(nullptr);
     uiFrame = new QFrame(mainWindow);
     layout = new QVBoxLayout(uiFrame);
+    layout->setContentsMargins(0, 0, 0, 0);
     uiFrame->setLayout(layout);
 
     mainWindow->setCentralWidget(uiFrame);
     mainWindow->centralWidget()->setContentsMargins(0,0,0,0);
 
     tabBox = new QHBoxLayout(uiFrame);
+    tabBox->setContentsMargins(0, 0, 0, 0);
     buttonBox = new QHBoxLayout(uiFrame);
     tabs = new QTabWidget(uiFrame);
 
@@ -35,7 +37,11 @@ void Editor::BaseSetup() {
     saveBtn = new QPushButton("Save", tabs);
     addTabBtn = new QPushButton("New Tab", tabs);
     deleteTabBtn = new QPushButton("Delete Tab", tabs);
-    addMathBtn = new QPushButton("Add Math Element", nullptr);
+
+    fileMenu = new QMenu("File", mainWindow);
+    openFileAction = new QAction("Open File", this);
+    fileMenu->addAction(openFileAction);
+    mainWindow->menuBar()->addMenu(fileMenu);
 
     layout->addLayout(tabBox, 90);
     layout->addLayout(buttonBox, 10);
@@ -46,21 +52,16 @@ void Editor::BaseSetup() {
     buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(addTabBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(deleteTabBtn, 1, Qt::AlignCenter);
-    buttonBox->addWidget(addMathBtn, 1, Qt::AlignCenter);
 
+    latexRE = new QRegularExpression("(?=\\${2}).*(?<=\\${2})");
+    switchShortcut = new QShortcut(QKeySequence("Ctrl+R"), this->mainWindow);
 
+    connect(switchShortcut, &QShortcut::activated, this, &Editor::SwitchViews);
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
     connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab);
-    connect(addMathBtn, &QPushButton::clicked, this, &Editor::InsertMathDocumentObject);
-
-    mathBar = new QPlainTextEdit(nullptr);
-    buttonBox->addWidget(mathBar, 1, Qt::AlignCenter);
-
-    // Create regular expression to match
-    // WHAT THE FUCK HAVE I DONE
-    //latexRE = new QRegularExpression("/(?<=(\${2}\\\\)|(\${2})).*(?<=\${2})|(?<=\${2}\\\\)");
-    latexRE = new QRegularExpression("(?=\\${2}).*(?<=\\${2})");
+    connect(deleteTabBtn, &QPushButton::clicked, this, &Editor::RemoveCurrentTab);
+    connect(openFileAction, &QAction::triggered, this, &Editor::OpenFile);
 }
 
 //Create an empty QTextBrowser
@@ -74,6 +75,40 @@ void Editor::AddTab() {
 void Editor::CreateTabFromFile(QFile& openedFile) {
     NoteEditorTab* newFileTab = new NoteEditorTab(tabs, openedFile.fileName(), openedFile.readAll());
     tabs->addTab(newFileTab, openedFile.fileName());
+    openedFile.close();
+}
+
+void Editor::RemoveCurrentTab(){
+    // Unique pointer to make sure the box is killed at the end
+    std::unique_ptr<QMessageBox> msgBox = std::make_unique<QMessageBox>(mainWindow);
+
+    if(!GetCurrentTab()->GetIsAFile()){
+        msgBox->setText("This document is not saved on disk.");
+        msgBox->setDetailedText("Do you wish to create a file ?");
+    } else {
+        msgBox->setText("This file was modified.");
+        msgBox->setDetailedText("Do you wish to save ?");
+    }
+
+    msgBox->setStandardButtons(QMessageBox::Save |
+                               QMessageBox::Discard |
+                               QMessageBox::Cancel);
+
+    int selection = msgBox->exec();
+
+    switch(selection){
+        case QMessageBox::Save:
+            Save();
+            tabs->removeTab(tabs->currentIndex());
+            break;
+        case QMessageBox::Discard:
+            tabs->removeTab(tabs->currentIndex());
+            break;
+        case QMessageBox::Cancel:
+            break;
+        default:
+            break;
+    }
 }
 
 void Editor::SwitchViews() {
@@ -82,10 +117,9 @@ void Editor::SwitchViews() {
     if(switcher->currentIndex() == 0) {
         qDebug() << "Showing MD view";
         switchBtn->setText("Plain View");
-        RenderDocument(GetCurrentDocument());
-        GetCurrentTab()->browser->setDocument(GetCurrentTab()->renderDocument);
+        GetCurrentTab()->RenderDocument();
         switcher->setCurrentIndex(1);
-        //qDebug() << GetCurrentTab()->document->toHtml();
+
     } else {
         switcher->setCurrentIndex(0);
         qDebug() << "Showing plain view";
@@ -93,87 +127,65 @@ void Editor::SwitchViews() {
     }
 }
 
+void Editor::SetTabTitle(QString title){
+    tabs->setTabText(tabs->currentIndex(), title);
+}
+
 
 void Editor::Save() {
-    qDebug() << "Save button clicked";
+    NoteEditorTab* tab = GetCurrentTab();
     QTextDocument* doc = GetCurrentDocument();
     QString fn = GetCurrentTabTitle();
 
-    if (QFile::exists(fn)) {
+    if (tab->GetDocumentModified() == true){
+        qDebug() << "Document was modified";
+    }
 
-        QFile savedFile(fn);
-
-        if (!savedFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
-            qDebug() << "Could not save file";
-        }
-
-        QTextStream stream(&savedFile);
-        stream << GetCurrentTab()->editor->toPlainText();
-        savedFile.close();
-        qDebug() << "Wrote to " << fn;
-
-    } else {
-        QFile newFile("Untitled.md");
+    if (!tab->GetIsAFile()) {
+        QString newFileName = QFileDialog::getSaveFileName(mainWindow, "Save As");
+        QFile newFile(newFileName);
 
         if (!newFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
             qDebug() << "Could not save file";
         }
 
         QTextStream stream(&newFile);
-        stream << GetCurrentTab()->editor->toPlainText();
+        stream << tab->editor->toPlainText();
+        SetTabTitle(newFileName);
+        tab->SetIsAFile(true);
         newFile.close();
-        qDebug() << "Wrote to Untitled.md";
+
+    } else {
+
+        QFile savedFile(fn);
+
+            if (!savedFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
+                qDebug() << "Could not save file";
+            }
+
+        QTextStream stream(&savedFile);
+        stream << tab->editor->toPlainText();
+        savedFile.close();
+        qDebug() << "Wrote to " << fn;
+        tab->SetIsAFile(true);
     }
 }
 
-
-void Editor::SetupMathDocumentObject(){
-    QObject* mathDocumentInterface = new MathDocumentObject(this);
-    this->GetCurrentDocument()->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentInterface);
+void Editor::SaveAs(){
+    return;
 }
 
-void Editor::InsertMathDocumentObject(){
-    JKQTMathText* mathText = new JKQTMathText(this);
-    mathText->parse(mathBar->toPlainText());
-    QTextCursor cursor = GetCurrentTab()->browser->textCursor();
-    cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathText, 50, 50));
-    GetCurrentTab()->browser->setTextCursor(cursor);
-    delete(mathText);
-}
+void Editor::OpenFile(){
+    QString fn = QFileDialog::getOpenFileName(mainWindow, "Open File", "/", "Files (*.md)");
 
+    if (fn.isEmpty()) return;
 
-/* TODO : Implement a function to count the number of
-LaTeX elements in the document as a test */
-void Editor::RenderDocument(QTextDocument* doc){
-    // Clear text doc before new render
-    GetCurrentTab()->renderDocument->clear();
+    QFile openedFile(fn);
 
-    // Render the basic elements as Markdown
-    GetCurrentTab()->renderDocument->setMarkdown(GetCurrentTab()->editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
-
-    // Get all of the text as one large QString
-    QString documentText = GetCurrentTab()->renderDocument->toPlainText();
-
-    QTextCursor cursor(GetCurrentTab()->renderDocument);
-    JKQTMathText* mathRender = new JKQTMathText(this);
-
-    bool _lastParseResult = true;
-
-    while(_lastParseResult) {
-    cursor = GetCurrentTab()->renderDocument->find(*latexRE, cursor);
-    QString matchText = cursor.selectedText();
-
-        if (matchText == "") {
-            _lastParseResult = false;
-        }
-
-        cursor.removeSelectedText();
-        qDebug() << matchText;
-
-        if (mathRender->parse(matchText)) {
-            cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
-        }
+    if (!(openedFile.open(QIODeviceBase::ReadWrite))) {
+        qDebug() << "Error : File could not be opened";
+        return;
     }
 
-    delete (mathRender);
+    CreateTabFromFile(openedFile);
 }

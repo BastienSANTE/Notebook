@@ -52,11 +52,11 @@ CMAKE_CXX_COMPILER:STRING=/bin/g++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=/bin/gcc-ar-14
+CMAKE_CXX_COMPILER_AR:FILEPATH=/bin/gcc-ar-12
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/bin/gcc-ranlib-14
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/bin/gcc-ranlib-12
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=-DQT_QML_DEBUG
@@ -165,7 +165,7 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 CMAKE_LINKER:FILEPATH=/bin/ld
 
 //Program used to build from build.ninja files.
-CMAKE_MAKE_PROGRAM:FILEPATH=/home/bastien/bin/Qt/Tools/Ninja/ninja
+CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/ninja
 
 //Flags used by the linker during the creation of modules during
 // all build types.

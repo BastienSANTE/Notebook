@@ -3,9 +3,10 @@
 
 #include <QWidget>
 #include <QUrl>
+#include <QFileInfo>
 #include <QStackedWidget>
 #include <QPlainTextEdit>
-#include <QTextBrowser>
+#include "notebrowser.h"
 #include <QBoxLayout>
 
 /* Class for the note editor tabs. Each tab contains an editor widget &
@@ -20,19 +21,44 @@ public:
 
 public:
     explicit NoteEditorTab(QWidget *parent = nullptr);
-    explicit NoteEditorTab(QWidget* parent, QUrl fileName, QString contents);
+    explicit NoteEditorTab(QWidget* parent, QString fileName, QString contents);
 
     ~NoteEditorTab();
     QStackedWidget* stackSwitcher;
     QHBoxLayout* tabContentsLayout;
     QTextEdit* editor;
-    QTextBrowser* browser;
+    NoteBrowser* browser;
     QTextDocument* document;
     QTextDocument* renderDocument;
     QAbstractTextDocumentLayout* documentLayout;
     QUrl* documentPath;
+    QFileInfo* tabFileInfo;
+
+    int defaultMathSize{10};
+
+    void BaseSetup();
+    void ZoomRender();
+    void UnzoomRender();
+    void RenderDocument();
+
+    bool GetDocumentModified() const { return _isModified; }
+    void SetDocumentModified() { _isModified = true; }
+    void SetDocumentModified(bool state) { _isModified = state; }
+
+    bool GetIsAFile() const { return _isAFile; }
+    void SetIsAFile(bool state) { _isAFile = state; }
+    void SetFileLink(QString link) { _fileLink = link; }
+    QUrl GetFileLink() const { return _fileLink; }
 
 signals:
+    void documentTextChanged(bool state);
+
+protected:
+
+private:
+    QUrl _fileLink;// Keep track of the file to find the resoruces.
+    bool _isAFile;    // Is the document already on disk as a file ?
+    bool _isModified; // Was the file modified since the last save ?
 };
 
 #endif // NOTEEDITORTAB_H

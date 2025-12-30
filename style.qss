@@ -1,0 +1,82 @@
+@white #ffffff;
+@black #000000;
+@default-fg #f0f0f0;
+@default-bg #1f1f1f;
+
+@blue1 = #006dfa;
+@blue2 = #003ee4;
+@blue3 = #0025d1;
+@blue4 = #0009b6;
+@blue5 = #0200a3;
+@blue6 = #070091;
+@blue7 = #0c0078;
+@blue8 = #0c0060;
+
+@cyan1 = #00f6ff;
+@cyan2 = #00bae6;
+@cyan3 = #0095d3;
+@cyan4 = #006bb8;
+@cyan5 = #0056a5;
+@cyan6 = #004690;
+@cyan7 = #003479;
+@cyan8 = #002750;
+
+@green1 = #44ff44;
+@green2 = #3edd3e;
+@green3 = #38c038;
+@green4 = #3aaa3a;
+@green5 = #337f33;
+@green6 = #306030;
+@green7 = #244424;
+@green8 = #193219;
+
+@yellow1 = #f7f74e;
+@yellow2 = #e1e14b;
+@yellow3 = #c6c649;
+@yellow4 = #aaaa45;
+@yellow5 = #8c8c3a;
+@yellow6 = #70702b;
+@yellow7 = #565624;
+@yellow8 = #35351f;
+
+@orange1 = #f7ae34;
+@orange2 = #db9b35;
+@orange3 = #c4882e;
+@orange4 = #aa762a;
+@orange5 = #906324;
+@orange6 = #76501c;
+@orange7 = #573b12;
+@orange8 = #422a09;
+
+@red1 = #f04d4d;
+@red2 = #dd4240;
+@red3 = #c73030;
+@red4 = #ab2b2b;
+@red5 = #902222;
+@red6 = #811c1c;
+@red7 = #651010;
+@red8 = #500d0d;
+
+@magenta1 = #f800b7;
+@magenta2 = #e100aa;
+@magenta3 = #ce0099;
+@magenta4 = #b7008c;
+@magenta5 = #9f0079;
+@magenta6 = #860065;
+@magenta7 = #650049;
+@magenta8 = #4e0037;
+
+@gray1 = #c7c7c7;
+@gray2 = #acacac;
+@gray3 = #949494;
+@gray4 = #797979;
+@gray5 = #606060;
+@gray6 = #494949;
+@gray7 = #313131;
+@gray8 = #242424;
+
+
+QPushButton {
+    border: 1px solid;
+    background-color: @default-bg;
+}

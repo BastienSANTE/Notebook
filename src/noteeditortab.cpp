@@ -1,63 +1,113 @@
 #include "noteeditortab.h"
 #include "documentobjects/mathdocumentobject.h"
+#include <qregularexpression.h>
 
 /* Class for the tabs in the editor.
  *
  */
 
 NoteEditorTab::NoteEditorTab(QWidget *parent) {
-    stackSwitcher = new QStackedWidget(this);
-    tabContentsLayout = new QHBoxLayout(this);
-    this->setLayout(tabContentsLayout);
-    tabContentsLayout->addWidget(stackSwitcher);
-
-    editor = new QTextEdit(this);
-    browser = new QTextBrowser(this);
+    BaseSetup();
     document = new QTextDocument("Untitled", this);
-    renderDocument = new QTextDocument(this);
+    document->setDefaultFont(QFont("Courier", 12));
     documentLayout = new QPlainTextDocumentLayout(document);
-
-    stackSwitcher->addWidget(editor);
-    stackSwitcher->addWidget(browser);
-
+    _isAFile = false;
+    _isModified = false;
     editor->setDocument(document);
     browser->setDocument(renderDocument);
-
-    //Register math elements
-    MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
-    document->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
 }
 
-NoteEditorTab::NoteEditorTab(QWidget* parent, QUrl fileName, QString contents) {
+NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents) {
+    BaseSetup();
+
+    document = new QTextDocument(QString(contents), this);
+    document->setDefaultFont(QFont("Courier", 10));     // TODO : Make a font menu
+
+    SetFileLink(fileName);
+    renderDocument->setBaseUrl(GetFileLink());
+
+    _isAFile = true;
+    _isModified = false;
+    tabFileInfo = new QFileInfo(fileName);
+    documentLayout = new QPlainTextDocumentLayout(document);
+    editor->setDocument(document);
+    browser->setDocument(renderDocument);
+}
+
+void NoteEditorTab::BaseSetup(){
     stackSwitcher = new QStackedWidget(this);
     tabContentsLayout = new QHBoxLayout(this);
+    tabContentsLayout->setContentsMargins(0, 0, 0, 0);
     this->setLayout(tabContentsLayout);
     tabContentsLayout->addWidget(stackSwitcher);
-
     editor = new QTextEdit(this);
-    browser = new QTextBrowser(this);
-    document = new QTextDocument(contents, this);
+    browser = new NoteBrowser(this);
+    browser->setOpenExternalLinks(false);
+
     renderDocument = new QTextDocument(this);
-    document->setBaseUrl(fileName);
-    documentLayout = new QPlainTextDocumentLayout(document);
-    //document->addResource(QTextDocument::StyleSheetResource, QUrl("/home/bastien/LocalRepo/Notebook/NoteBook/TestFolder/TestStyleSheet.css"), css);
-
-    qDebug() << document->baseUrl();
-
-    //stackSwitcher->setLayout(tabLayout);
+    renderDocument->setDocumentMargin(20);
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
 
-    browser->setSource(fileName, QTextDocument::MarkdownResource);
-    editor->setPlainText(document->toPlainText());
-
-    editor->setDocument(document);
-
     //Register math elements
     MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
-    document->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
+    renderDocument->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
+
+    connect(browser, &NoteBrowser::zoomFactorIncreased, this, &NoteEditorTab::ZoomRender);
+    connect(browser, &NoteBrowser::zoomFactorDecreased, this, &NoteEditorTab::UnzoomRender);
+    connect(editor, &QTextEdit::textChanged, [this](){ SetDocumentModified(true); });
+    //connect(browser, &QTextBrowser::sourceChanged, [this](){ renderDocument->setBaseUrl(GetFileLink()); });
 }
 
+void NoteEditorTab::RenderDocument(){
+    // Clear text doc before new render
+    renderDocument->clear();
+
+    // Render the basic elements as Markdown
+    renderDocument->setBaseUrl(GetFileLink());
+
+    qDebug() << "Document link is " << GetFileLink();
+    renderDocument->setMarkdown(editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
+
+    // Get all of the text as one large QString
+    QString documentText = renderDocument->toPlainText();
+
+    QTextCursor cursor(renderDocument);
+    JKQTMathText* mathRender = new JKQTMathText(this);
+    mathRender->setFontSize(defaultMathSize);
+
+    bool _lastParseResult = true;
+
+    while(_lastParseResult) {
+        cursor = renderDocument->find(QRegularExpression("(?=\\${2}).*(?<=\\${2})"), cursor);
+        QString matchText = cursor.selectedText();
+
+        if (matchText == "") {
+            _lastParseResult = false;
+        }
+
+        cursor.removeSelectedText();
+        qDebug() << matchText;
+
+        if (mathRender->parse(matchText)) {
+            cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
+        }
+    }
+
+    delete (mathRender);
+}
+
+void NoteEditorTab::ZoomRender(){
+    defaultMathSize++;
+    qDebug() << defaultMathSize;
+    RenderDocument();
+}
+
+void NoteEditorTab::UnzoomRender(){
+    defaultMathSize--;
+    qDebug() << defaultMathSize;
+    RenderDocument();
+}
 
 // Add method to prompt for save before deleting tab.
 // Remember : Constructors & destructors are LIFO

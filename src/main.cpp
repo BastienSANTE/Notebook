@@ -3,10 +3,20 @@
 
 #include <QDebug>
 #include <QApplication>
+#include <QFile>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QFile file("style.qss");
+    if (file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Style file opened!";
+        QString stylesheet = QString(file.readAll());
+        a.setStyleSheet(stylesheet);
+        file.close();
+    }
+
 
     std::unique_ptr<Editor> editor;
 

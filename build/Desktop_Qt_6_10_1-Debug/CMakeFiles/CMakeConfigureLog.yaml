@@ -7,7 +7,7 @@ events:
       - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:3 (project)"
     message: |
-      The system is: Linux - 6.12.48+deb13-amd64 - x86_64
+      The system is: Linux - 6.1.0-40-amd64 - x86_64
   -
     kind: "message-v1"
     backtrace:
@@ -39,8 +39,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZMJxuT"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZMJxuT"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SUARQb"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SUARQb"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -50,67 +50,69 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZMJxuT'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SUARQb'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_53f97
-        [1/2] /bin/g++   -DQT_QML_DEBUG    -v -o CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -c /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/ninja -v cmTC_9567b
+        [1/2] /bin/g++   -DQT_QML_DEBUG    -v -o CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -c /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/bin/g++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 14.2.0 (Debian 14.2.0-19) 
-        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53f97.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D QT_QML_DEBUG /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_53f97.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cco6QUF0.s
-        GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
-        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) 
+        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9567b.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D QT_QML_DEBUG /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9567b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc6mBu1d.s
+        GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
         
-        warning: MPFR header version 4.2.1 differs from library version 4.2.2.
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"
         ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"
-        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /usr/include/c++/14
-         /usr/include/x86_64-linux-gnu/c++/14
-         /usr/include/c++/14/backward
-         /usr/lib/gcc/x86_64-linux-gnu/14/include
+         /usr/include/c++/12
+         /usr/include/x86_64-linux-gnu/c++/12
+         /usr/include/c++/12/backward
+         /usr/lib/gcc/x86_64-linux-gnu/12/include
          /usr/local/include
          /usr/include/x86_64-linux-gnu
          /usr/include
         End of search list.
-        Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4
-        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53f97.dir/'
-         as -v --64 -o CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o /tmp/cco6QUF0.s
-        GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
-        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
-        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -v -Wl,-v CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_53f97   && :
+        GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 18a4c0b3348b838f5ec9d956298050ac
+        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9567b.dir/'
+         as -v --64 -o CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc6mBu1d.s
+        GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -v -Wl,-v CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9567b   && :
         Using built-in specs.
         COLLECT_GCC=/bin/g++
-        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 14.2.0 (Debian 14.2.0-19) 
-        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
-        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'cmTC_53f97' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53f97.'
-         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUEnT14.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53f97 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
-        collect2 version 14.2.0
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUEnT14.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53f97 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
-        GNU ld (GNU Binutils for Debian) 2.44
-        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'cmTC_53f97' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53f97.'
+        gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'cmTC_9567b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9567b.'
+         /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAJQcxQ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_9567b /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 12.2.0
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAJQcxQ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_9567b /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.40
+        COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'cmTC_9567b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9567b.'
         
       exitCode: 0
   -
@@ -123,22 +125,22 @@ events:
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/usr/include/c++/14]
-          add: [/usr/include/x86_64-linux-gnu/c++/14]
-          add: [/usr/include/c++/14/backward]
-          add: [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+          add: [/usr/include/c++/12]
+          add: [/usr/include/x86_64-linux-gnu/c++/12]
+          add: [/usr/include/c++/12/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/12/include]
           add: [/usr/local/include]
           add: [/usr/include/x86_64-linux-gnu]
           add: [/usr/include]
         end of search list found
-        collapse include dir [/usr/include/c++/14] ==> [/usr/include/c++/14]
-        collapse include dir [/usr/include/x86_64-linux-gnu/c++/14] ==> [/usr/include/x86_64-linux-gnu/c++/14]
-        collapse include dir [/usr/include/c++/14/backward] ==> [/usr/include/c++/14/backward]
-        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/14/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+        collapse include dir [/usr/include/c++/12] ==> [/usr/include/c++/12]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/12] ==> [/usr/include/x86_64-linux-gnu/c++/12]
+        collapse include dir [/usr/include/c++/12/backward] ==> [/usr/include/c++/12/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/12/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/12/include]
         collapse include dir [/usr/local/include] ==> [/usr/local/include]
         collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
         collapse include dir [/usr/include] ==> [/usr/include]
-        implicit include dirs: [/usr/include/c++/14;/usr/include/x86_64-linux-gnu/c++/14;/usr/include/c++/14/backward;/usr/lib/gcc/x86_64-linux-gnu/14/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+        implicit include dirs: [/usr/include/c++/12;/usr/include/x86_64-linux-gnu/c++/12;/usr/include/c++/12/backward;/usr/lib/gcc/x86_64-linux-gnu/12/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
       
       
   -
@@ -151,68 +153,70 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZMJxuT']
+        ignore line: [Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SUARQb']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_53f97]
-        ignore line: [[1/2] /bin/g++   -DQT_QML_DEBUG    -v -o CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -c /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_9567b]
+        ignore line: [[1/2] /bin/g++   -DQT_QML_DEBUG    -v -o CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -c /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/bin/g++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53f97.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D QT_QML_DEBUG /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_53f97.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cco6QUF0.s]
-        ignore line: [GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
-        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: [gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9567b.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D QT_QML_DEBUG /home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9567b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc6mBu1d.s]
+        ignore line: [GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
         ignore line: []
-        ignore line: [warning: MPFR header version 4.2.1 differs from library version 4.2.2.]
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"]
         ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"]
-        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/include/c++/14]
-        ignore line: [ /usr/include/x86_64-linux-gnu/c++/14]
-        ignore line: [ /usr/include/c++/14/backward]
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/14/include]
+        ignore line: [ /usr/include/c++/12]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/12]
+        ignore line: [ /usr/include/c++/12/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/include]
         ignore line: [ /usr/local/include]
         ignore line: [ /usr/include/x86_64-linux-gnu]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53f97.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o /tmp/cco6QUF0.s]
-        ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
-        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
-        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /bin/g++ -DQT_QML_DEBUG -v -Wl -v CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_53f97   && :]
+        ignore line: [GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 18a4c0b3348b838f5ec9d956298050ac]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9567b.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc6mBu1d.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /bin/g++ -DQT_QML_DEBUG -v -Wl -v CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9567b   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/bin/g++]
-        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
-        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
-        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'cmTC_53f97' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53f97.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUEnT14.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53f97 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
-          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
+        ignore line: [gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' 'QT_QML_DEBUG' '-v' '-o' 'cmTC_9567b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9567b.']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAJQcxQ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_9567b /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/collect2] ==> ignore
           arg [-plugin] ==> ignore
-          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
-          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccUEnT14.res] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccAJQcxQ.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -228,20 +232,20 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_53f97] ==> ignore
-          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
-          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
-          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib]
+          arg [cmTC_9567b] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib]
           arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
           arg [-L/lib/../lib] ==> dir [/lib/../lib]
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -249,25 +253,25 @@ events:
           arg [-lc] ==> lib [c]
           arg [-lgcc_s] ==> lib [gcc_s]
           arg [-lgcc] ==> lib [gcc]
-          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
-          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
-        ignore line: [collect2 version 14.2.0]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUEnT14.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53f97 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_53f97.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 12.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAJQcxQ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_9567b /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_9567b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
-        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
-        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
-        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12] ==> [/usr/lib/gcc/x86_64-linux-gnu/12]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib] ==> [/usr/lib]
         collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
         collapse library dir [/lib/../lib] ==> [/lib]
         collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
         collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> [/usr/lib]
         implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
-        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
-        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/12;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
         implicit fwks: []
       
       
@@ -280,85 +284,7 @@ events:
       - "CMakeLists.txt:3 (project)"
     message: |
       Running the CXX compiler's linker: "/usr/bin/ld" "-v"
-      GNU ld (GNU Binutils for Debian) 2.44
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
-      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:340 (find_package)"
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/Qt6Config.cmake:176 (include)"
-      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:340 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
-    checks:
-      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
-    directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-VEHLBw"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-VEHLBw"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/kwin"
-    buildResult:
-      variable: "CMAKE_HAVE_LIBC_PTHREAD"
-      cached: true
-      stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-VEHLBw'
-        
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_d3527
-        [1/2] /bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -DQT_QML_DEBUG  -std=gnu++17 -o CMakeFiles/cmTC_d3527.dir/src.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-VEHLBw/src.cxx
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG  CMakeFiles/cmTC_d3527.dir/src.cxx.o -o cmTC_d3527   && :
-        
-      exitCode: 0
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
-      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:340 (find_package)"
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
-      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:333 (find_package)"
-      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
-      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
-      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:315 (find_package)"
-      - "CMakeLists.txt:13 (find_package)"
-    checks:
-      - "Performing Test HAVE_STDATOMIC"
-    directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-BhT7Ce"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-BhT7Ce"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/kwin"
-    buildResult:
-      variable: "HAVE_STDATOMIC"
-      cached: true
-      stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-BhT7Ce'
-        
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_32484
-        [1/2] /bin/g++ -DHAVE_STDATOMIC  -DQT_QML_DEBUG  -std=gnu++17 -o CMakeFiles/cmTC_32484.dir/src.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-BhT7Ce/src.cxx
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG  CMakeFiles/cmTC_32484.dir/src.cxx.o -o cmTC_32484   && :
-        
-      exitCode: 0
-...
-
----
-events:
+      GNU ld (GNU Binutils for Debian) 2.40
   -
     kind: "try_compile-v1"
     backtrace:
@@ -368,8 +294,8 @@ events:
     checks:
       - "Looking for j0"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-yPeUkx"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-yPeUkx"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -379,15 +305,15 @@ events:
       variable: "JKQtPlotter_HAS_j0"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-yPeUkx'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_58db9
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=j0 -std=gnu++17 -o CMakeFiles/cmTC_58db9.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU/CheckFunctionExists.cxx
+        Run Build Command(s): /usr/bin/ninja -v cmTC_f95c9
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-yPeUkx/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=j0 -std=gnu++17 -o CMakeFiles/cmTC_f95c9.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-yPeUkx/CheckFunctionExists.cxx
         <command-line>: warning: declaration of ‘char j0()’ conflicts with built-in declaration ‘double j0(double)’ [-Wbuiltin-declaration-mismatch]
-        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-r51NfU/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-yPeUkx/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
             7 |   CHECK_FUNCTION_EXISTS(void);
               |   ^~~~~~~~~~~~~~~~~~~~~
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=j0  CMakeFiles/cmTC_58db9.dir/CheckFunctionExists.cxx.o -o cmTC_58db9   && :
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=j0  CMakeFiles/cmTC_f95c9.dir/CheckFunctionExists.cxx.o -o cmTC_f95c9   && :
         
       exitCode: 0
   -
@@ -399,8 +325,8 @@ events:
     checks:
       - "Looking for _j0"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-5zXXuT"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-5zXXuT"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -410,14 +336,14 @@ events:
       variable: "JKQtPlotter_HAS__j0"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-5zXXuT'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_20f9b
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0 -std=gnu++17 -o CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-EAldII/CheckFunctionExists.cxx
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0  CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o -o cmTC_20f9b   && :
-        \x1b[31mFAILED: \x1b[0mcmTC_20f9b 
-        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0  CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o -o cmTC_20f9b   && :
-        /usr/bin/ld : CMakeFiles/cmTC_20f9b.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_fb322
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-5zXXuT/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0 -std=gnu++17 -o CMakeFiles/cmTC_fb322.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-5zXXuT/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0  CMakeFiles/cmTC_fb322.dir/CheckFunctionExists.cxx.o -o cmTC_fb322   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_fb322 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_j0  CMakeFiles/cmTC_fb322.dir/CheckFunctionExists.cxx.o -o cmTC_fb322   && :
+        /usr/bin/ld : CMakeFiles/cmTC_fb322.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
         CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _j0 »
         collect2: error: ld returned 1 exit status
         ninja: build stopped: subcommand failed.
@@ -432,8 +358,8 @@ events:
     checks:
       - "Looking for y0"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YEW5Gl"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YEW5Gl"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -443,15 +369,15 @@ events:
       variable: "JKQtPlotter_HAS_y0"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YEW5Gl'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_e56cb
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=y0 -std=gnu++17 -o CMakeFiles/cmTC_e56cb.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf/CheckFunctionExists.cxx
+        Run Build Command(s): /usr/bin/ninja -v cmTC_71dc5
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YEW5Gl/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=y0 -std=gnu++17 -o CMakeFiles/cmTC_71dc5.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YEW5Gl/CheckFunctionExists.cxx
         <command-line>: warning: declaration of ‘char y0()’ conflicts with built-in declaration ‘double y0(double)’ [-Wbuiltin-declaration-mismatch]
-        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-SfcLzf/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YEW5Gl/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
             7 |   CHECK_FUNCTION_EXISTS(void);
               |   ^~~~~~~~~~~~~~~~~~~~~
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=y0  CMakeFiles/cmTC_e56cb.dir/CheckFunctionExists.cxx.o -o cmTC_e56cb   && :
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=y0  CMakeFiles/cmTC_71dc5.dir/CheckFunctionExists.cxx.o -o cmTC_71dc5   && :
         
       exitCode: 0
   -
@@ -463,8 +389,8 @@ events:
     checks:
       - "Looking for _y0"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YPq4IU"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YPq4IU"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -474,14 +400,14 @@ events:
       variable: "JKQtPlotter_HAS__y0"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YPq4IU'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_01b28
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0 -std=gnu++17 -o CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-OQZuJ1/CheckFunctionExists.cxx
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0  CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o -o cmTC_01b28   && :
-        \x1b[31mFAILED: \x1b[0mcmTC_01b28 
-        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0  CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o -o cmTC_01b28   && :
-        /usr/bin/ld : CMakeFiles/cmTC_01b28.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b0186
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YPq4IU/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0 -std=gnu++17 -o CMakeFiles/cmTC_b0186.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-YPq4IU/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0  CMakeFiles/cmTC_b0186.dir/CheckFunctionExists.cxx.o -o cmTC_b0186   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_b0186 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_y0  CMakeFiles/cmTC_b0186.dir/CheckFunctionExists.cxx.o -o cmTC_b0186   && :
+        /usr/bin/ld : CMakeFiles/cmTC_b0186.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
         CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _y0 »
         collect2: error: ld returned 1 exit status
         ninja: build stopped: subcommand failed.
@@ -496,8 +422,8 @@ events:
     checks:
       - "Looking for jn"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-8jVVfT"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-8jVVfT"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -507,15 +433,15 @@ events:
       variable: "JKQtPlotter_HAS_jn"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-8jVVfT'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_8e4d2
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=jn -std=gnu++17 -o CMakeFiles/cmTC_8e4d2.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC/CheckFunctionExists.cxx
+        Run Build Command(s): /usr/bin/ninja -v cmTC_151c0
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-8jVVfT/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=jn -std=gnu++17 -o CMakeFiles/cmTC_151c0.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-8jVVfT/CheckFunctionExists.cxx
         <command-line>: warning: declaration of ‘char jn()’ conflicts with built-in declaration ‘double jn(int, double)’ [-Wbuiltin-declaration-mismatch]
-        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IQUWUC/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-8jVVfT/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
             7 |   CHECK_FUNCTION_EXISTS(void);
               |   ^~~~~~~~~~~~~~~~~~~~~
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=jn  CMakeFiles/cmTC_8e4d2.dir/CheckFunctionExists.cxx.o -o cmTC_8e4d2   && :
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=jn  CMakeFiles/cmTC_151c0.dir/CheckFunctionExists.cxx.o -o cmTC_151c0   && :
         
       exitCode: 0
   -
@@ -527,8 +453,8 @@ events:
     checks:
       - "Looking for _jn"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-tbGsln"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-tbGsln"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -538,14 +464,14 @@ events:
       variable: "JKQtPlotter_HAS__jn"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-tbGsln'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_a560c
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn -std=gnu++17 -o CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-bnRseY/CheckFunctionExists.cxx
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn  CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o -o cmTC_a560c   && :
-        \x1b[31mFAILED: \x1b[0mcmTC_a560c 
-        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn  CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o -o cmTC_a560c   && :
-        /usr/bin/ld : CMakeFiles/cmTC_a560c.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1509f
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-tbGsln/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn -std=gnu++17 -o CMakeFiles/cmTC_1509f.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-tbGsln/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn  CMakeFiles/cmTC_1509f.dir/CheckFunctionExists.cxx.o -o cmTC_1509f   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_1509f 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_jn  CMakeFiles/cmTC_1509f.dir/CheckFunctionExists.cxx.o -o cmTC_1509f   && :
+        /usr/bin/ld : CMakeFiles/cmTC_1509f.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
         CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _jn »
         collect2: error: ld returned 1 exit status
         ninja: build stopped: subcommand failed.
@@ -560,8 +486,8 @@ events:
     checks:
       - "Looking for yn"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ItMoL2"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ItMoL2"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -571,15 +497,15 @@ events:
       variable: "JKQtPlotter_HAS_yn"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ItMoL2'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_4ccd2
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=yn -std=gnu++17 -o CMakeFiles/cmTC_4ccd2.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr/CheckFunctionExists.cxx
+        Run Build Command(s): /usr/bin/ninja -v cmTC_69b3e
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ItMoL2/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=yn -std=gnu++17 -o CMakeFiles/cmTC_69b3e.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ItMoL2/CheckFunctionExists.cxx
         <command-line>: warning: declaration of ‘char yn()’ conflicts with built-in declaration ‘double yn(int, double)’ [-Wbuiltin-declaration-mismatch]
-        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ADjHvr/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+        /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ItMoL2/CheckFunctionExists.cxx:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
             7 |   CHECK_FUNCTION_EXISTS(void);
               |   ^~~~~~~~~~~~~~~~~~~~~
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=yn  CMakeFiles/cmTC_4ccd2.dir/CheckFunctionExists.cxx.o -o cmTC_4ccd2   && :
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=yn  CMakeFiles/cmTC_69b3e.dir/CheckFunctionExists.cxx.o -o cmTC_69b3e   && :
         
       exitCode: 0
   -
@@ -591,8 +517,8 @@ events:
     checks:
       - "Looking for _yn"
     directories:
-      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU"
-      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU"
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZhuNPz"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZhuNPz"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -602,17 +528,88 @@ events:
       variable: "JKQtPlotter_HAS__yn"
       cached: true
       stdout: |
-        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU'
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZhuNPz'
         
-        Run Build Command(s): /home/bastien/bin/Qt/Tools/Ninja/ninja -v cmTC_d60b9
-        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn -std=gnu++17 -o CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ralMgU/CheckFunctionExists.cxx
-        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn  CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o -o cmTC_d60b9   && :
-        \x1b[31mFAILED: \x1b[0mcmTC_d60b9 
-        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn  CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o -o cmTC_d60b9   && :
-        /usr/bin/ld : CMakeFiles/cmTC_d60b9.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_ab76b
+        [1/2] /bin/g++  -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZhuNPz/cmath -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn -std=gnu++17 -o CMakeFiles/cmTC_ab76b.dir/CheckFunctionExists.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-ZhuNPz/CheckFunctionExists.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn  CMakeFiles/cmTC_ab76b.dir/CheckFunctionExists.cxx.o -o cmTC_ab76b   && :
+        \x1b[31mFAILED: \x1b[0mcmTC_ab76b 
+        : && /bin/g++ -DQT_QML_DEBUG -DCHECK_FUNCTION_EXISTS=_yn  CMakeFiles/cmTC_ab76b.dir/CheckFunctionExists.cxx.o -o cmTC_ab76b   && :
+        /usr/bin/ld : CMakeFiles/cmTC_ab76b.dir/CheckFunctionExists.cxx.o : dans la fonction « main » :
         CheckFunctionExists.cxx:(.text+0x10) : référence indéfinie vers « _yn »
         collect2: error: ld returned 1 exit status
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:340 (find_package)"
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/Qt6Config.cmake:176 (include)"
+      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:340 (find_package)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_qtsettings.cmake:7 (find_package)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:43 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IYZCyQ"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IYZCyQ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IYZCyQ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_dcb73
+        [1/2] /bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IYZCyQ/cmath -DQT_QML_DEBUG  -std=gnu++17 -o CMakeFiles/cmTC_dcb73.dir/src.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-IYZCyQ/src.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG  CMakeFiles/cmTC_dcb73.dir/src.cxx.o -o cmTC_dcb73   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:340 (find_package)"
+      - "/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
+      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake:315 (find_package)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_qtsettings.cmake:13 (find_package)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:43 (include)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-PiuUkI"
+      binary: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-PiuUkI"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake;/home/bastien/LocalRepo/Notebook/cmake;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-PiuUkI'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b46b4
+        [1/2] /bin/g++ -DHAVE_STDATOMIC -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-PiuUkI/cmath -DQT_QML_DEBUG  -std=gnu++17 -o CMakeFiles/cmTC_b46b4.dir/src.cxx.o -c /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/CMakeScratch/TryCompile-PiuUkI/src.cxx
+        [2/2] : && /bin/g++ -DQT_QML_DEBUG  CMakeFiles/cmTC_b46b4.dir/src.cxx.o -o cmTC_b46b4   && :
+        
+      exitCode: 0
 ...

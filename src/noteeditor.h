@@ -7,7 +7,12 @@
 #include <QPushButton>
 #include <QTabWidget>
 #include <QFile>
+#include <QFileDialog>
+#include <QMenu>
+#include <QMenuBar>
 #include <QRegularExpression>
+#include <QShortcut>
+#include <QMessageBox>
 #include "noteeditortab.h"
 #include "documentobjects/mathdocumentobject.h"
 
@@ -30,17 +35,20 @@ public:
     QPushButton* saveBtn;       // Save file button
     QPushButton* addTabBtn;     // Add new tab (and create new file)
     QPushButton* deleteTabBtn;  // Delete tab and document IF EMPTY, else prompt save
-    QPushButton* addMathBtn;    // Test button to add a math render
-    QPlainTextEdit* mathBar;    // Self-explanatory
 
     QTextDocument* currentDocument; //document currently open
-
-
     QRegularExpression* latexRE;
+
+    // Menus & Actions
+    QMenu* fileMenu;
+    QAction * openFileAction;
 
     void AddTab();
     void CreateTabFromFile(QFile& fn);
+    void RemoveCurrentTab();
+    void OpenFile();
     int UpdateCurrentTabIndex() const { return tabs->currentIndex(); }
+    void SetTabTitle(QString title);
 
     // Horrible nested methods IG, but let's see if this works
     NoteEditorTab* GetCurrentTab() const { return (NoteEditorTab*)tabs->currentWidget(); }
@@ -50,16 +58,16 @@ public:
 
     void BaseSetup();
 
-    void SetupMathDocumentObject();
-    void InsertMathDocumentObject();
 private:
     int _currentTabIndex;
+    QShortcut* switchShortcut;
 
 signals:
 
 public slots:
     void SwitchViews();
     void Save();
+    void SaveAs();
 };
 
 #endif // NOTEEDITORFIXED_H
