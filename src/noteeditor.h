@@ -4,11 +4,18 @@
 #include <QObject>
 #include <QBoxLayout>
 #include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
 #include <QPushButton>
-#include <QTabWidget>
+#include <QStackedWidget>
+#include <QTextEdit>
+#include <QTextBrowser>
 #include <QFile>
+#include <QFileDialog>
 #include <QRegularExpression>
-#include "noteeditortab.h"
+#include <QShortcut>
+#include "noteeditorpage.h"
+#include "notebrowser.h"
 #include "documentobjects/mathdocumentobject.h"
 
 class Editor : public QObject
@@ -22,38 +29,39 @@ public:
     QMainWindow* mainWindow;    // Main Window of the editor,
     QFrame* uiFrame;            // is the parent of the whole UI
     QVBoxLayout* layout;        // Application layout
-    QHBoxLayout* tabBox;        // Layout
     QHBoxLayout* buttonBox;     // Buttons holder
-    QTabWidget* tabs;           // Container for the editor & viewer
+    QHBoxLayout* stackLayout;
+
+    // Menus & Actions
+    QMenu* fileMenu;
+    QAction * openFileAction;
+
+    QTextEdit* editor;
+    NoteBrowser* browser;
+    QStackedWidget* stackSwitcher;
 
     QPushButton* switchBtn;     // View switcher button
     QPushButton* saveBtn;       // Save file button
-    QPushButton* addTabBtn;     // Add new tab (and create new file)
-    QPushButton* deleteTabBtn;  // Delete tab and document IF EMPTY, else prompt save
-    QPushButton* addMathBtn;    // Test button to add a math render
-    QPlainTextEdit* mathBar;    // Self-explanatory
-
-    QTextDocument* currentDocument; //document currently open
-
+    QPushButton* addPageBtn;     // Add new tab (and create new file)
+    QPushButton* closePageBtn;  // Delete tab and document IF EMPTY, else prompt save
 
     QRegularExpression* latexRE;
 
-    void AddTab();
-    void CreateTabFromFile(QFile& fn);
-    int UpdateCurrentTabIndex() const { return tabs->currentIndex(); }
+    void OpenFile();
+    void CreateEmptyPage();
+    void CreatePageFromFile(QFile& fn);
 
-    // Horrible nested methods IG, but let's see if this works
-    NoteEditorTab* GetCurrentTab() const { return (NoteEditorTab*)tabs->currentWidget(); }
-    QTextDocument* GetCurrentDocument() const {return GetCurrentTab()->document; }
-    QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
     void RenderDocument(QTextDocument* doc);
 
     void BaseSetup();
-
     void SetupMathDocumentObject();
-    void InsertMathDocumentObject();
+    NoteEditorPage* GetCurrentPage() const { return _currentPage; }
+    void SetCurrentPage(NoteEditorPage* page) { _currentPage = page; }
+
 private:
     int _currentTabIndex;
+    NoteEditorPage* _currentPage;
+    QShortcut* switchShortcut;
 
 signals:
 

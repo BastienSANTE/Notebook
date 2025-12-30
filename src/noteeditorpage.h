@@ -1,5 +1,5 @@
-#ifndef NOTEEDITORTAB_H
-#define NOTEEDITORTAB_H
+#ifndef NOTEEDITORPAGE_H
+#define NOTEEDITORPAGE_H
 
 #include <QWidget>
 #include <QUrl>
@@ -13,24 +13,21 @@
  * destroyed and the user is asked to save if the document is not empty.
  */
 
-class NoteEditorTab : public QWidget
+class NoteEditorPage : public QWidget
 {
 public:
     Q_OBJECT
 
 public:
-    explicit NoteEditorTab(QWidget *parent = nullptr);
-    explicit NoteEditorTab(QWidget* parent, QUrl fileName, QString contents);
+    explicit NoteEditorPage(QWidget *parent = nullptr);
+    explicit NoteEditorPage(QWidget* parent, QUrl fileName, QString contents);
 
-    ~NoteEditorTab();
-    QStackedWidget* stackSwitcher;
-    QHBoxLayout* tabContentsLayout;
-    QTextEdit* editor;
-    QTextBrowser* browser;
+    ~NoteEditorPage();
+    QHBoxLayout* contentsLayout;
     QTextDocument* document;
     QTextDocument* renderDocument;
     QAbstractTextDocumentLayout* documentLayout;
-    QUrl* documentPath;
+    QUrl documentPath;
 
 signals:
 };

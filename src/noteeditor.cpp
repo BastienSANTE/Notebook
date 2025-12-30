@@ -8,14 +8,11 @@ Editor::Editor(QString fn) {
     if (!(openedFile.open(QIODeviceBase::ReadWrite))) {
         qDebug() << "Error : File could not be opened";
     }
-
-    CreateTabFromFile(openedFile);
-    openedFile.close();
 }
 
 Editor::Editor() {
     BaseSetup();
-    AddTab();
+    CreateEmptyPage();
 }
 
 void Editor::BaseSetup() {
@@ -27,35 +24,42 @@ void Editor::BaseSetup() {
     mainWindow->setCentralWidget(uiFrame);
     mainWindow->centralWidget()->setContentsMargins(0,0,0,0);
 
-    tabBox = new QHBoxLayout(uiFrame);
+    fileMenu = new QMenu("File", mainWindow);
+    openFileAction = new QAction("Open File", this);
+    fileMenu->addAction(openFileAction);
+    mainWindow->menuBar()->addMenu(fileMenu);
+
+    editor = new QTextEdit(nullptr);
+    browser = new NoteBrowser(nullptr);
+    stackSwitcher = new QStackedWidget(uiFrame);
+
+    stackSwitcher->addWidget(editor);
+    stackSwitcher->addWidget(browser);
+
     buttonBox = new QHBoxLayout(uiFrame);
-    tabs = new QTabWidget(uiFrame);
+    stackLayout = new QHBoxLayout(uiFrame);
 
-    switchBtn = new QPushButton("Switch", tabs);
-    saveBtn = new QPushButton("Save", tabs);
-    addTabBtn = new QPushButton("New Tab", tabs);
-    deleteTabBtn = new QPushButton("Delete Tab", tabs);
-    addMathBtn = new QPushButton("Add Math Element", nullptr);
+    switchBtn = new QPushButton("Switch", uiFrame);
+    saveBtn = new QPushButton("Save", uiFrame);
+    addPageBtn = new QPushButton("New Document", uiFrame);
+    closePageBtn = new QPushButton("Delete Document", uiFrame);
 
-    layout->addLayout(tabBox, 90);
+    layout->addLayout(stackLayout, 90);
     layout->addLayout(buttonBox, 10);
-
-    tabBox->addWidget(tabs, 1, Qt::Alignment());
 
     buttonBox->addWidget(switchBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
-    buttonBox->addWidget(addTabBtn, 1, Qt::AlignCenter);
-    buttonBox->addWidget(deleteTabBtn, 1, Qt::AlignCenter);
-    buttonBox->addWidget(addMathBtn, 1, Qt::AlignCenter);
+    buttonBox->addWidget(addPageBtn, 1, Qt::AlignCenter);
+    buttonBox->addWidget(closePageBtn, 1, Qt::AlignCenter);
 
+    stackLayout->addWidget(stackSwitcher);
 
+    switchShortcut = new QShortcut(QKeySequence("Ctrl+R"), this->mainWindow);
+
+    connect(switchShortcut, &QShortcut::activated, this, &Editor::SwitchViews);
     connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
     connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
-    connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab);
-    connect(addMathBtn, &QPushButton::clicked, this, &Editor::InsertMathDocumentObject);
-
-    mathBar = new QPlainTextEdit(nullptr);
-    buttonBox->addWidget(mathBar, 1, Qt::AlignCenter);
+    connect(addPageBtn, &QPushButton::clicked, this, &Editor::CreateEmptyPage);
 
     // Create regular expression to match
     // WHAT THE FUCK HAVE I DONE
@@ -63,31 +67,43 @@ void Editor::BaseSetup() {
     latexRE = new QRegularExpression("(?=\\${2}).*(?<=\\${2})");
 }
 
+void Editor::OpenFile(){
+    QString fn = QFileDialog::getOpenFileName(mainWindow, "Open File", "/", "Files (*.md)");
+
+    if (fn.isEmpty()) return;
+
+    QFile openedFile(fn);
+
+    if (!(openedFile.open(QIODeviceBase::ReadWrite))) {
+        qDebug() << "Error : File could not be opened";
+        return;
+    }
+
+    CreatePageFromFile(openedFile);
+}
+
 //Create an empty QTextBrowser
-void Editor::AddTab() {
-    NoteEditorTab* newTab = new NoteEditorTab(tabs);
-    tabs->addTab(newTab, "Untitled");
+void Editor::CreateEmptyPage() {
+    NoteEditorPage* newPage = new NoteEditorPage(mainWindow);
+    SetCurrentPage(newPage);
 }
 
 // Create new QTextBrowser with contents of openedFile
 // Function modified to be able to keep a reference to file path
-void Editor::CreateTabFromFile(QFile& openedFile) {
-    NoteEditorTab* newFileTab = new NoteEditorTab(tabs, openedFile.fileName(), openedFile.readAll());
-    tabs->addTab(newFileTab, openedFile.fileName());
+void Editor::CreatePageFromFile(QFile& openedFile) {
+    NoteEditorPage* newPage = new NoteEditorPage(mainWindow, openedFile.fileName(), openedFile.readAll());
+    SetCurrentPage(newPage);
 }
 
 void Editor::SwitchViews() {
-    QStackedWidget* switcher = GetCurrentTab()->stackSwitcher;
 
-    if(switcher->currentIndex() == 0) {
+    if(stackSwitcher->currentIndex() == 0) {
         qDebug() << "Showing MD view";
         switchBtn->setText("Plain View");
-        RenderDocument(GetCurrentDocument());
-        GetCurrentTab()->browser->setDocument(GetCurrentTab()->renderDocument);
-        switcher->setCurrentIndex(1);
-        //qDebug() << GetCurrentTab()->document->toHtml();
+        RenderDocument(GetCurrentPage()->document);
+        stackSwitcher->setCurrentIndex(1);
     } else {
-        switcher->setCurrentIndex(0);
+        stackSwitcher->setCurrentIndex(0);
         qDebug() << "Showing plain view";
         switchBtn->setText("MD view");
     }
@@ -96,8 +112,8 @@ void Editor::SwitchViews() {
 
 void Editor::Save() {
     qDebug() << "Save button clicked";
-    QTextDocument* doc = GetCurrentDocument();
-    QString fn = GetCurrentTabTitle();
+    QTextDocument* doc = GetCurrentPage()->document;
+    QString fn = GetCurrentPage()->documentPath.toString();
 
     if (QFile::exists(fn)) {
 
@@ -108,7 +124,7 @@ void Editor::Save() {
         }
 
         QTextStream stream(&savedFile);
-        stream << GetCurrentTab()->editor->toPlainText();
+        stream << GetCurrentPage()->document->toPlainText();
         savedFile.close();
         qDebug() << "Wrote to " << fn;
 
@@ -120,7 +136,7 @@ void Editor::Save() {
         }
 
         QTextStream stream(&newFile);
-        stream << GetCurrentTab()->editor->toPlainText();
+        stream << GetCurrentPage()->document->toPlainText();
         newFile.close();
         qDebug() << "Wrote to Untitled.md";
     }
@@ -129,38 +145,31 @@ void Editor::Save() {
 
 void Editor::SetupMathDocumentObject(){
     QObject* mathDocumentInterface = new MathDocumentObject(this);
-    this->GetCurrentDocument()->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentInterface);
+    GetCurrentPage()->renderDocument->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentInterface);
 }
-
-void Editor::InsertMathDocumentObject(){
-    JKQTMathText* mathText = new JKQTMathText(this);
-    mathText->parse(mathBar->toPlainText());
-    QTextCursor cursor = GetCurrentTab()->browser->textCursor();
-    cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathText, 50, 50));
-    GetCurrentTab()->browser->setTextCursor(cursor);
-    delete(mathText);
-}
-
 
 /* TODO : Implement a function to count the number of
 LaTeX elements in the document as a test */
 void Editor::RenderDocument(QTextDocument* doc){
     // Clear text doc before new render
-    GetCurrentTab()->renderDocument->clear();
+    doc = GetCurrentPage()->document;
+    QTextDocument* rdoc = GetCurrentPage()->renderDocument;
+
+    rdoc->clear();
 
     // Render the basic elements as Markdown
-    GetCurrentTab()->renderDocument->setMarkdown(GetCurrentTab()->editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
+    rdoc->setMarkdown(doc->toPlainText(), QTextDocument::MarkdownDialectGitHub);
 
     // Get all of the text as one large QString
-    QString documentText = GetCurrentTab()->renderDocument->toPlainText();
+    QString documentText = rdoc->toPlainText();
 
-    QTextCursor cursor(GetCurrentTab()->renderDocument);
+    QTextCursor cursor(rdoc);
     JKQTMathText* mathRender = new JKQTMathText(this);
 
     bool _lastParseResult = true;
 
     while(_lastParseResult) {
-    cursor = GetCurrentTab()->renderDocument->find(*latexRE, cursor);
+    cursor = rdoc->find(*latexRE, cursor);
     QString matchText = cursor.selectedText();
 
         if (matchText == "") {
