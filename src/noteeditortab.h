@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QUrl>
 #include <QFileInfo>
+#include <QDir>
 #include <QStackedWidget>
 #include <QPlainTextEdit>
 #include "notebrowser.h"
@@ -50,6 +51,10 @@ public:
     void SetFileLink(QString link) { _fileLink = link; }
     QUrl GetFileLink() const { return _fileLink; }
 
+    void SetDocumentDir(QString dir){ _documentDir = dir; }
+    QString GetDocumentDir() const { return _documentDir; }
+
+
 signals:
     void documentTextChanged(bool state);
 
@@ -57,6 +62,7 @@ protected:
 
 private:
     QUrl _fileLink;// Keep track of the file to find the resoruces.
+    QString _documentDir;
     bool _isAFile;    // Is the document already on disk as a file ?
     bool _isModified; // Was the file modified since the last save ?
 };

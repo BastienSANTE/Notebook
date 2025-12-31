@@ -19,6 +19,7 @@ Notebook_autogen/timestamp: \
 	/home/bastien/LocalRepo/Notebook/src/noteeditor.h \
 	/home/bastien/LocalRepo/Notebook/src/noteeditortab.cpp \
 	/home/bastien/LocalRepo/Notebook/src/noteeditortab.h \
+	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QDir \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFile \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFileInfo \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFlags \

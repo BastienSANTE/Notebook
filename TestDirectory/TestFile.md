@@ -40,5 +40,6 @@ $${\displaystyle {\frac {S}{2\pi}}=\int_{x_{0}}^{x_{1}}y{\sqrt{1+\left({\frac{{\
  
 Lambda-calculus = $$\textit{\lambda x.f(x)}}$$
 
+[Anchor in another file](Test2.md#anchor)
 
 [Some other test file](Test2.md)

@@ -195,6 +195,8 @@ void Editor::OpenFile(){
 
 void Editor::FollowLink(const QUrl& followedFile){
 
+    QDir::setCurrent(GetCurrentTab()->GetDocumentDir());
+
     QString filePath(followedFile.toString());
     QFileInfo fileInfo(filePath);
     qDebug() << filePath;
@@ -228,7 +230,7 @@ void Editor::FollowLink(const QUrl& followedFile){
         GetCurrentTab()->editor->setPlainText(openedFile->readAll());
     }
 
+    GetCurrentTab()->SetDocumentDir(fileInfo.absoluteDir().path());
     SetTabTitle(filePath);
-    QDir::setCurrent(fileInfo.absoluteDir().path());
     openedFile->close();
 }

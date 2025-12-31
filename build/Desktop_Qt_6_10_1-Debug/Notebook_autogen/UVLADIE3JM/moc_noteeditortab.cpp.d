@@ -1,6 +1,7 @@
 /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/UVLADIE3JM/moc_noteeditortab.cpp: /home/bastien/LocalRepo/Notebook/src/noteeditortab.h \
   /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/moc_predefs.h \
   /home/bastien/LocalRepo/Notebook/src/notebrowser.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QDir \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFileInfo \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QList \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QObject \
@@ -54,6 +55,8 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qdatetime.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qdeadlinetimer.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qdebug.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qdir.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qdirlisting.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qendian.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qeventloop.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qexceptionhandling.h \

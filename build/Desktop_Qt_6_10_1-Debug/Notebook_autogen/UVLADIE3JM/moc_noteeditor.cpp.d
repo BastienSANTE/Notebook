@@ -6,6 +6,7 @@
   /home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentobject.h \
   /home/bastien/LocalRepo/Notebook/src/notebrowser.h \
   /home/bastien/LocalRepo/Notebook/src/noteeditortab.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QDir \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFile \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFileInfo \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFlags \

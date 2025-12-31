@@ -20,6 +20,10 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
 NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents) {
     BaseSetup();
 
+    //Set the current directory
+    QFileInfo info(fileName);
+    SetDocumentDir(info.absoluteDir().path());
+
     document = new QTextDocument(QString(contents), this);
     document->setDefaultFont(QFont("Courier", 10));     // TODO : Make a font menu
 
@@ -59,9 +63,7 @@ void NoteEditorTab::BaseSetup(){
     connect(editor, &QTextEdit::textChanged, [this](){ SetDocumentModified(true); });
 }
 
-void NoteEditorTab::SetFile(QFile& file){
 
-}
 
 void NoteEditorTab::RenderDocument(){
     // Clear text doc before new render
