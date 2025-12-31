@@ -195,42 +195,36 @@ void Editor::OpenFile(){
 
 void Editor::FollowLink(const QUrl& followedFile){
 
-    QDir::setCurrent(GetCurrentTab()->GetDocumentDir());
+    QUrl resolvedURL = GetCurrentTab()->document->baseUrl().resolved(followedFile);
+    qDebug() << "The resolved URL is" << resolvedURL.toString();
 
-    QString filePath(followedFile.toString());
-    QFileInfo fileInfo(filePath);
+    QString filePath(resolvedURL.toString());
     qDebug() << filePath;
 
-    QFile* openedFile;
 
     if(!filePath.isEmpty()) {
 
-        if(fileInfo.isRelative()){
+        QFile openedFile(filePath);
 
-            openedFile = new QFile(fileInfo.absoluteFilePath());
-            qDebug() << fileInfo.absoluteFilePath();
-
-        } else {
-
-            openedFile = new QFile(fileInfo.canonicalFilePath());
-            qDebug() << fileInfo.canonicalFilePath();
-
-        }
-
-        if(!openedFile->exists()) {
+        if(!openedFile.exists()) {
             qDebug() << filePath << " does not exist.";
                 return;
         }
 
-        if (!(openedFile->open(QIODeviceBase::ReadWrite))) {
+        if (!(openedFile.open(QIODeviceBase::ReadWrite))) {
             qDebug() << "Error : File could not be opened";
             return;
         }
 
-        GetCurrentTab()->editor->setPlainText(openedFile->readAll());
+        GetCurrentTab()->renderDocument->setBaseUrl(resolvedURL);
+        GetCurrentTab()->document->setBaseUrl(resolvedURL);
+        GetCurrentTab()->editor->setPlainText(openedFile.readAll());
+        GetCurrentTab()->browser->setSource(resolvedURL);
+        GetCurrentTab()->RenderDocument();
+
+        openedFile.close();
     }
 
-    GetCurrentTab()->SetDocumentDir(fileInfo.absoluteDir().path());
+
     SetTabTitle(filePath);
-    openedFile->close();
 }

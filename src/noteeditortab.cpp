@@ -28,7 +28,9 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     document->setDefaultFont(QFont("Courier", 10));     // TODO : Make a font menu
 
     SetFileLink(fileName);
-    renderDocument->setBaseUrl(GetFileLink());
+    renderDocument->setBaseUrl(fileName);
+    document->setBaseUrl(fileName);
+    qDebug() << renderDocument->baseUrl();
 
     _isAFile = true;
     _isModified = false;
@@ -70,8 +72,6 @@ void NoteEditorTab::RenderDocument(){
     renderDocument->clear();
 
     // Render the basic elements as Markdown
-    renderDocument->setBaseUrl(GetFileLink());
-
     renderDocument->setMarkdown(editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
 
     // Get all of the text as one large QString
