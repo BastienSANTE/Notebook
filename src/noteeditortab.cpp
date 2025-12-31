@@ -32,6 +32,7 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     documentLayout = new QPlainTextDocumentLayout(document);
     editor->setDocument(document);
     browser->setDocument(renderDocument);
+    browser->setSource(QUrl(fileName));
 }
 
 void NoteEditorTab::BaseSetup(){
@@ -42,7 +43,7 @@ void NoteEditorTab::BaseSetup(){
     tabContentsLayout->addWidget(stackSwitcher);
     editor = new QTextEdit(this);
     browser = new NoteBrowser(this);
-    browser->setOpenExternalLinks(false);
+    browser->setOpenExternalLinks(true);
 
     renderDocument = new QTextDocument(this);
     renderDocument->setDocumentMargin(20);
@@ -56,7 +57,10 @@ void NoteEditorTab::BaseSetup(){
     connect(browser, &NoteBrowser::zoomFactorIncreased, this, &NoteEditorTab::ZoomRender);
     connect(browser, &NoteBrowser::zoomFactorDecreased, this, &NoteEditorTab::UnzoomRender);
     connect(editor, &QTextEdit::textChanged, [this](){ SetDocumentModified(true); });
-    //connect(browser, &QTextBrowser::sourceChanged, [this](){ renderDocument->setBaseUrl(GetFileLink()); });
+}
+
+void NoteEditorTab::SetFile(QFile& file){
+
 }
 
 void NoteEditorTab::RenderDocument(){
@@ -66,7 +70,6 @@ void NoteEditorTab::RenderDocument(){
     // Render the basic elements as Markdown
     renderDocument->setBaseUrl(GetFileLink());
 
-    qDebug() << "Document link is " << GetFileLink();
     renderDocument->setMarkdown(editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
 
     // Get all of the text as one large QString
@@ -87,7 +90,6 @@ void NoteEditorTab::RenderDocument(){
         }
 
         cursor.removeSelectedText();
-        qDebug() << matchText;
 
         if (mathRender->parse(matchText)) {
             cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));

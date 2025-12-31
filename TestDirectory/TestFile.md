@@ -1,8 +1,13 @@
-# First Level Heading
+# Table of contents
+
+[Test Link](#math-environments)
+
+
+## Second Level Heading
 
 Paragraph.
 
-## Second Level Heading
+## Another Heading
 
 Paragraph.
 

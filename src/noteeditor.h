@@ -8,6 +8,7 @@
 #include <QTabWidget>
 #include <QFile>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMenu>
 #include <QMenuBar>
 #include <QRegularExpression>
@@ -39,6 +40,8 @@ public:
     QTextDocument* currentDocument; //document currently open
     QRegularExpression* latexRE;
 
+    QString baseDirectory;
+
     // Menus & Actions
     QMenu* fileMenu;
     QAction * openFileAction;
@@ -52,11 +55,12 @@ public:
 
     // Horrible nested methods IG, but let's see if this works
     NoteEditorTab* GetCurrentTab() const { return (NoteEditorTab*)tabs->currentWidget(); }
-    QTextDocument* GetCurrentDocument() const {return GetCurrentTab()->document; }
     QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
     void RenderDocument(QTextDocument* doc);
 
     void BaseSetup();
+
+    void FollowLink(const QUrl& followedFile);
 
 private:
     int _currentTabIndex;
@@ -67,7 +71,6 @@ signals:
 public slots:
     void SwitchViews();
     void Save();
-    void SaveAs();
 };
 
 #endif // NOTEEDITORFIXED_H

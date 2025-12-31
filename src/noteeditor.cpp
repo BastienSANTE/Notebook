@@ -14,6 +14,7 @@ Editor::Editor(QString fn) {
 
 Editor::Editor() {
     BaseSetup();
+
     AddTab();
 }
 
@@ -61,20 +62,26 @@ void Editor::BaseSetup() {
     connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
     connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab);
     connect(deleteTabBtn, &QPushButton::clicked, this, &Editor::RemoveCurrentTab);
-    connect(openFileAction, &QAction::triggered, this, &Editor::OpenFile);
+    connect(openFileAction, &QAction::triggered, this, qOverload<>(&Editor::OpenFile));
 }
 
 //Create an empty QTextBrowser
 void Editor::AddTab() {
     NoteEditorTab* newTab = new NoteEditorTab(tabs);
+    connect(newTab->browser, &QTextBrowser::anchorClicked, this, qOverload<const QUrl&>(&Editor::FollowLink));
     tabs->addTab(newTab, "Untitled");
+    tabs->setCurrentWidget(newTab);
 }
 
 // Create new QTextBrowser with contents of openedFile
 // Function modified to be able to keep a reference to file path
 void Editor::CreateTabFromFile(QFile& openedFile) {
+
+    QFileInfo fileInfo(openedFile);
     NoteEditorTab* newFileTab = new NoteEditorTab(tabs, openedFile.fileName(), openedFile.readAll());
+    connect(newFileTab->browser, &QTextBrowser::anchorClicked, this, qOverload<const QUrl&>(&Editor::FollowLink));
     tabs->addTab(newFileTab, openedFile.fileName());
+    tabs->setCurrentWidget(newFileTab);
     openedFile.close();
 }
 
@@ -131,10 +138,9 @@ void Editor::SetTabTitle(QString title){
     tabs->setTabText(tabs->currentIndex(), title);
 }
 
-
 void Editor::Save() {
     NoteEditorTab* tab = GetCurrentTab();
-    QTextDocument* doc = GetCurrentDocument();
+    QTextDocument* doc = tab->document;
     QString fn = GetCurrentTabTitle();
 
     if (tab->GetDocumentModified() == true){
@@ -171,9 +177,6 @@ void Editor::Save() {
     }
 }
 
-void Editor::SaveAs(){
-    return;
-}
 
 void Editor::OpenFile(){
     QString fn = QFileDialog::getOpenFileName(mainWindow, "Open File", "/", "Files (*.md)");
@@ -188,4 +191,44 @@ void Editor::OpenFile(){
     }
 
     CreateTabFromFile(openedFile);
+}
+
+void Editor::FollowLink(const QUrl& followedFile){
+
+    QString filePath(followedFile.toString());
+    QFileInfo fileInfo(filePath);
+    qDebug() << filePath;
+
+    QFile* openedFile;
+
+    if(!filePath.isEmpty()) {
+
+        if(fileInfo.isRelative()){
+
+            openedFile = new QFile(fileInfo.absoluteFilePath());
+            qDebug() << fileInfo.absoluteFilePath();
+
+        } else {
+
+            openedFile = new QFile(fileInfo.canonicalFilePath());
+            qDebug() << fileInfo.canonicalFilePath();
+
+        }
+
+        if(!openedFile->exists()) {
+            qDebug() << filePath << " does not exist.";
+                return;
+        }
+
+        if (!(openedFile->open(QIODeviceBase::ReadWrite))) {
+            qDebug() << "Error : File could not be opened";
+            return;
+        }
+
+        GetCurrentTab()->editor->setPlainText(openedFile->readAll());
+    }
+
+    SetTabTitle(filePath);
+    QDir::setCurrent(fileInfo.absoluteDir().path());
+    openedFile->close();
 }

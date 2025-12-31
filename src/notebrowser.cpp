@@ -15,3 +15,5 @@ void NoteBrowser::wheelEvent(QWheelEvent* event){
         emit zoomFactorDecreased();
     }
 }
+
+
