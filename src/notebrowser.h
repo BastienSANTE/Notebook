@@ -1,6 +1,6 @@
 #ifndef NOTEBROWSER_H
 #define NOTEBROWSER_H
-
+#include <QGuiApplication>
 #include <QTextBrowser>
 #include <QWheelEvent>
 

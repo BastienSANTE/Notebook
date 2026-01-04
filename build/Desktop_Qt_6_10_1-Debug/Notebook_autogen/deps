@@ -2,8 +2,8 @@ Notebook_autogen/timestamp: \
 	/home/bastien/LocalRepo/Notebook/CMakeLists.txt \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake \
-	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
-	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
+	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/4.2.0-rc1/CMakeCXXCompiler.cmake \
+	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/4.2.0-rc1/CMakeSystem.cmake \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/moc_predefs.h \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtext.h \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/lib/jkqtmathtext/jkqtmathtext_imexport.h \
@@ -187,6 +187,7 @@ Notebook_autogen/timestamp: \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QAbstractTextDocumentLayout \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QFontMetrics \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QFontMetricsF \
+	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QGuiApplication \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QImage \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QPainter \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QPainterPath \
@@ -509,37 +510,6 @@ Notebook_autogen/timestamp: \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckLibraryExists.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Compiler/GNU.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/ExternalProject/shared_internal_commands.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FetchContent.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FetchContent/CMakeLists.cmake.in \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindGit.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindOpenGL.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindVulkan.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/MacroAddFileDependencies.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux.cmake \
-	/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/UnixPaths.cmake \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/errno-base.h \
 	/usr/include/asm-generic/errno.h \
@@ -840,4 +810,42 @@ Notebook_autogen/timestamp: \
 	/usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
 	/usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h \
 	/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
-	/home/bastien/bin/Qt/Tools/CMake/bin/cmake
+	/usr/local/share/cmake-4.2/Modules/CMakeCXXInformation.cmake \
+	/usr/local/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake \
+	/usr/local/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake \
+	/usr/local/share/cmake-4.2/Modules/CMakeGenericSystem.cmake \
+	/usr/local/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake \
+	/usr/local/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake \
+	/usr/local/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake \
+	/usr/local/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake \
+	/usr/local/share/cmake-4.2/Modules/CheckCXXCompilerFlag.cmake \
+	/usr/local/share/cmake-4.2/Modules/CheckCXXSourceCompiles.cmake \
+	/usr/local/share/cmake-4.2/Modules/CheckIncludeFileCXX.cmake \
+	/usr/local/share/cmake-4.2/Modules/CheckLibraryExists.cmake \
+	/usr/local/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	/usr/local/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake \
+	/usr/local/share/cmake-4.2/Modules/Compiler/GNU.cmake \
+	/usr/local/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake \
+	/usr/local/share/cmake-4.2/Modules/FetchContent.cmake \
+	/usr/local/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in \
+	/usr/local/share/cmake-4.2/Modules/FindGit.cmake \
+	/usr/local/share/cmake-4.2/Modules/FindOpenGL.cmake \
+	/usr/local/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake \
+	/usr/local/share/cmake-4.2/Modules/FindPackageMessage.cmake \
+	/usr/local/share/cmake-4.2/Modules/FindThreads.cmake \
+	/usr/local/share/cmake-4.2/Modules/FindVulkan.cmake \
+	/usr/local/share/cmake-4.2/Modules/GNUInstallDirs.cmake \
+	/usr/local/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake \
+	/usr/local/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+	/usr/local/share/cmake-4.2/Modules/Linker/GNU-CXX.cmake \
+	/usr/local/share/cmake-4.2/Modules/Linker/GNU.cmake \
+	/usr/local/share/cmake-4.2/Modules/MacroAddFileDependencies.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/Linker/GNU.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/Linker/Linux-GNU.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/Linux-GNU-CXX.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/Linux-GNU.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/Linux-Initialize.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/Linux.cmake \
+	/usr/local/share/cmake-4.2/Modules/Platform/UnixPaths.cmake \
+	/usr/local/bin/cmake

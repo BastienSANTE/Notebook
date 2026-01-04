@@ -155,6 +155,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qversiontagging.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qxptype_traits.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/qyieldcpu.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QGuiApplication \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTransform \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QWheelEvent \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \

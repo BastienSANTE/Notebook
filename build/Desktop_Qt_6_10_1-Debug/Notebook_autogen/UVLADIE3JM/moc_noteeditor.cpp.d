@@ -174,6 +174,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QAbstractTextDocumentLayout \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QFontMetrics \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QFontMetricsF \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QGuiApplication \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QImage \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QPainter \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QPainterPath \
