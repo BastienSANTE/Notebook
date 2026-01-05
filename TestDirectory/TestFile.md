@@ -1,8 +1,5 @@
 # Table of contents
 
-[Test Link](#math-environments)
-
-
 ## Second Level Heading
 
 Paragraph.
@@ -43,3 +40,10 @@ Lambda-calculus = $$\textit{\lambda x.f(x)}}$$
 [Anchor in another file](Test2.md#anchor)
 
 [Some other test file](Test2.md)
+
+```cpp
+#include <stdio.h>
+
+int main(){
+	return 0;
+}

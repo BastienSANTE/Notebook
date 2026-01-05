@@ -8,3 +8,5 @@ $$ab - cd$$
 # Anchor
 
 [Link to first test file](TestFile.md)
+
+[Link to Lorem Ipsum](LoremIpsum.md)

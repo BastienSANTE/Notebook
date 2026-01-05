@@ -38,7 +38,6 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     documentLayout = new QPlainTextDocumentLayout(document);
     editor->setDocument(document);
     browser->setDocument(renderDocument);
-    browser->setSource(QUrl(fileName));
 }
 
 void NoteEditorTab::BaseSetup(){
@@ -49,7 +48,6 @@ void NoteEditorTab::BaseSetup(){
     tabContentsLayout->addWidget(stackSwitcher);
     editor = new QTextEdit(this);
     browser = new NoteBrowser(this);
-    browser->setOpenExternalLinks(true);
 
     renderDocument = new QTextDocument(this);
     renderDocument->setDocumentMargin(20);
@@ -108,6 +106,7 @@ void NoteEditorTab::ZoomRender(){
 }
 
 void NoteEditorTab::UnzoomRender(){
+    if(defaultMathSize < 2) return;
     defaultMathSize--;
     qDebug() << defaultMathSize;
     RenderDocument();

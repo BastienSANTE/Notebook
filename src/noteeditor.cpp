@@ -194,6 +194,7 @@ void Editor::OpenFile(){
 }
 
 void Editor::FollowLink(const QUrl& followedFile){
+    Save();
 
     QUrl resolvedURL = GetCurrentTab()->document->baseUrl().resolved(followedFile);
     qDebug() << "The resolved URL is" << resolvedURL.toString();
