@@ -35,9 +35,14 @@ void Editor::BaseSetup() {
     tabs = new QTabWidget(uiFrame);
 
     fsModel = new QFileSystemModel;
-    fsModel->setRootPath(QDir::homePath());
-    tree = new QTreeView(mainWindow);
+    fsModel->setRootPath(QDir::home().path());
+    tree = new QTreeView(uiFrame);
     tree->setModel(fsModel);
+
+    splitter = new QSplitter(uiFrame);
+    splitter->setHandleWidth(0);
+    splitter->addWidget(tree);
+    splitter->addWidget(tabs);
 
     switchBtn = new QPushButton("Switch", tabs);
     saveBtn = new QPushButton("Save", tabs);
@@ -49,11 +54,8 @@ void Editor::BaseSetup() {
     fileMenu->addAction(openFileAction);
     mainWindow->menuBar()->addMenu(fileMenu);
 
-    layout->addLayout(tabBox, 90);
-    layout->addLayout(buttonBox, 10);
-
-    tabBox->addWidget(tree);
-    tabBox->addWidget(tabs, 1, Qt::Alignment());
+    layout->addWidget(splitter);
+    //tabBox->addWidget(tabs, 1, Qt::Alignment());
 
     buttonBox->addWidget(switchBtn, 1, Qt::AlignCenter);
     buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);

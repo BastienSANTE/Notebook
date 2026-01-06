@@ -11,6 +11,7 @@
 #include <QFileInfo>
 #include <QFileSystemModel>
 #include <QTreeView>
+#include <QSplitter>
 #include <QMenu>
 #include <QMenuBar>
 #include <QRegularExpression>
@@ -37,6 +38,7 @@ public:
 
     QFileSystemModel* fsModel;
     QTreeView* tree;
+    QSplitter* splitter;
 
     QPushButton* switchBtn;     // View switcher button
     QPushButton* saveBtn;       // Save file button
