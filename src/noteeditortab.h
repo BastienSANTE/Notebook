@@ -34,7 +34,6 @@ public:
     QAbstractTextDocumentLayout* documentLayout;
     QUrl* documentPath;
     QFileInfo* tabFileInfo;
-
     int defaultMathSize{10};
 
     void BaseSetup();

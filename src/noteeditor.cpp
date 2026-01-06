@@ -34,6 +34,11 @@ void Editor::BaseSetup() {
     buttonBox = new QHBoxLayout(uiFrame);
     tabs = new QTabWidget(uiFrame);
 
+    fsModel = new QFileSystemModel;
+    fsModel->setRootPath(QDir::homePath());
+    tree = new QTreeView(mainWindow);
+    tree->setModel(fsModel);
+
     switchBtn = new QPushButton("Switch", tabs);
     saveBtn = new QPushButton("Save", tabs);
     addTabBtn = new QPushButton("New Tab", tabs);
@@ -47,6 +52,7 @@ void Editor::BaseSetup() {
     layout->addLayout(tabBox, 90);
     layout->addLayout(buttonBox, 10);
 
+    tabBox->addWidget(tree);
     tabBox->addWidget(tabs, 1, Qt::Alignment());
 
     buttonBox->addWidget(switchBtn, 1, Qt::AlignCenter);

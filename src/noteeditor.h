@@ -9,6 +9,8 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QFileSystemModel>
+#include <QTreeView>
 #include <QMenu>
 #include <QMenuBar>
 #include <QRegularExpression>
@@ -31,6 +33,10 @@ public:
     QHBoxLayout* tabBox;        // Layout
     QHBoxLayout* buttonBox;     // Buttons holder
     QTabWidget* tabs;           // Container for the editor & viewer
+
+
+    QFileSystemModel* fsModel;
+    QTreeView* tree;
 
     QPushButton* switchBtn;     // View switcher button
     QPushButton* saveBtn;       // Save file button
