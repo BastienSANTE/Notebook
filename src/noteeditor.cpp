@@ -31,12 +31,15 @@ void Editor::BaseSetup() {
 
     tabBox = new QHBoxLayout(uiFrame);
     tabBox->setContentsMargins(0, 0, 0, 0);
-    buttonBox = new QHBoxLayout(uiFrame);
     tabs = new QTabWidget(uiFrame);
 
     fsModel = new QFileSystemModel;
     fsModel->setRootPath(QDir::home().path());
+    fsModel->setNameFilters({"*.md"});
     tree = new QTreeView(uiFrame);
+    tree->setHeaderHidden(true);
+
+    //tree->setColumnHidden(1, true);
     tree->setModel(fsModel);
 
     splitter = new QSplitter(uiFrame);
@@ -44,10 +47,10 @@ void Editor::BaseSetup() {
     splitter->addWidget(tree);
     splitter->addWidget(tabs);
 
-    switchBtn = new QPushButton("Switch", tabs);
-    saveBtn = new QPushButton("Save", tabs);
-    addTabBtn = new QPushButton("New Tab", tabs);
-    deleteTabBtn = new QPushButton("Delete Tab", tabs);
+    switchShortcut = new QShortcut(QKeySequence("Ctrl+R"), mainWindow);
+    saveShortcut = new QShortcut(QKeySequence("Ctrl+S"), mainWindow);
+    addTabShortcut = new QShortcut(QKeySequence("Ctrl+N"), mainWindow);
+    removeTabShortcut = new QShortcut(QKeySequence("Ctrl+K"), mainWindow);
 
     fileMenu = new QMenu("File", mainWindow);
     openFileAction = new QAction("Open File", this);
@@ -57,19 +60,13 @@ void Editor::BaseSetup() {
     layout->addWidget(splitter);
     //tabBox->addWidget(tabs, 1, Qt::Alignment());
 
-    buttonBox->addWidget(switchBtn, 1, Qt::AlignCenter);
-    buttonBox->addWidget(saveBtn, 1, Qt::AlignCenter);
-    buttonBox->addWidget(addTabBtn, 1, Qt::AlignCenter);
-    buttonBox->addWidget(deleteTabBtn, 1, Qt::AlignCenter);
-
     latexRE = new QRegularExpression("(?=\\${2}).*(?<=\\${2})");
-    switchShortcut = new QShortcut(QKeySequence("Ctrl+R"), this->mainWindow);
 
+    connect(tree, &QTreeView::doubleClicked, this, qOverload<QModelIndex>(&Editor::OpenFile));
     connect(switchShortcut, &QShortcut::activated, this, &Editor::SwitchViews);
-    connect(switchBtn, &QPushButton::clicked, this, &Editor::SwitchViews);
-    connect(saveBtn, &QPushButton::clicked, this, &Editor::Save);
-    connect(addTabBtn, &QPushButton::clicked, this, &Editor::AddTab);
-    connect(deleteTabBtn, &QPushButton::clicked, this, &Editor::RemoveCurrentTab);
+    connect(saveShortcut, &QShortcut::activated, this, &Editor::Save);
+    connect(addTabShortcut, &QShortcut::activated, this, &Editor::AddTab);
+    connect(removeTabShortcut, &QShortcut::activated, this, &Editor::RemoveCurrentTab);
     connect(openFileAction, &QAction::triggered, this, qOverload<>(&Editor::OpenFile));
 }
 
@@ -79,6 +76,11 @@ void Editor::AddTab() {
     connect(newTab->browser, &QTextBrowser::anchorClicked, this, qOverload<const QUrl&>(&Editor::FollowLink));
     tabs->addTab(newTab, "Untitled");
     tabs->setCurrentWidget(newTab);
+}
+
+
+void CreateTabFromModelIndex(){
+
 }
 
 // Create new QTextBrowser with contents of openedFile
@@ -131,14 +133,12 @@ void Editor::SwitchViews() {
 
     if(switcher->currentIndex() == 0) {
         qDebug() << "Showing MD view";
-        switchBtn->setText("Plain View");
         GetCurrentTab()->RenderDocument();
         switcher->setCurrentIndex(1);
 
     } else {
         switcher->setCurrentIndex(0);
         qDebug() << "Showing plain view";
-        switchBtn->setText("MD view");
     }
 }
 
@@ -190,6 +190,19 @@ void Editor::OpenFile(){
     QString fn = QFileDialog::getOpenFileName(mainWindow, "Open File", "/", "Files (*.md)");
 
     if (fn.isEmpty()) return;
+
+    QFile openedFile(fn);
+
+    if (!(openedFile.open(QIODeviceBase::ReadWrite))) {
+        qDebug() << "Error : File could not be opened";
+        return;
+    }
+
+    CreateTabFromFile(openedFile);
+}
+
+void Editor::OpenFile(QModelIndex idx){
+    QString fn = fsModel->fileInfo(idx).absoluteFilePath();
 
     QFile openedFile(fn);
 

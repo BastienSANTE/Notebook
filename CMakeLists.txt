@@ -23,6 +23,7 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(QT_DEBUG_PLUGINS 1)
 
@@ -44,6 +45,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         src/notebrowser.h src/notebrowser.cpp
+        src/markdownhighlighter.h src/markdownhighlighter.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Notebook APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -64,6 +66,7 @@ else()
 endif()
 
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(${PROJECT_NAME} PUBLIC JKQTPlotter6::JKQTPlotter6)

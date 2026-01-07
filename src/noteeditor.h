@@ -32,18 +32,12 @@ public:
     QFrame* uiFrame;            // is the parent of the whole UI
     QVBoxLayout* layout;        // Application layout
     QHBoxLayout* tabBox;        // Layout
-    QHBoxLayout* buttonBox;     // Buttons holder
     QTabWidget* tabs;           // Container for the editor & viewer
 
 
     QFileSystemModel* fsModel;
     QTreeView* tree;
     QSplitter* splitter;
-
-    QPushButton* switchBtn;     // View switcher button
-    QPushButton* saveBtn;       // Save file button
-    QPushButton* addTabBtn;     // Add new tab (and create new file)
-    QPushButton* deleteTabBtn;  // Delete tab and document IF EMPTY, else prompt save
 
     QTextDocument* currentDocument; //document currently open
     QRegularExpression* latexRE;
@@ -58,6 +52,7 @@ public:
     void CreateTabFromFile(QFile& fn);
     void RemoveCurrentTab();
     void OpenFile();
+    void OpenFile(QModelIndex idx);
     int UpdateCurrentTabIndex() const { return tabs->currentIndex(); }
     void SetTabTitle(QString title);
 
@@ -73,6 +68,9 @@ public:
 private:
     int _currentTabIndex;
     QShortcut* switchShortcut;
+    QShortcut* saveShortcut;
+    QShortcut* addTabShortcut;
+    QShortcut* removeTabShortcut;
 
 signals:
 
