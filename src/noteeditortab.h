@@ -9,6 +9,7 @@
 #include <QPlainTextEdit>
 #include "notebrowser.h"
 #include <QBoxLayout>
+#include "markdownhighlighter.h"
 
 /* Class for the note editor tabs. Each tab contains an editor widget &
  * viewer widget, and manages its document. If the tab is closed, it is
@@ -34,6 +35,7 @@ public:
     QAbstractTextDocumentLayout* documentLayout;
     QUrl* documentPath;
     QFileInfo* tabFileInfo;
+    MarkdownHighlighter* highlighter;
     int defaultMathSize{10};
 
     void BaseSetup();

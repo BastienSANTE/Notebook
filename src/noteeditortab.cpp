@@ -11,9 +11,14 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
     document = new QTextDocument("Untitled", this);
     document->setDefaultFont(QFont("Courier", 12));
     documentLayout = new QPlainTextDocumentLayout(document);
+
+    MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
+    document->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
+
     _isAFile = false;
     _isModified = false;
     editor->setDocument(document);
+    highlighter = new MarkdownHighlighter(document);
     browser->setDocument(renderDocument);
 }
 
@@ -27,6 +32,9 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     document = new QTextDocument(QString(contents), this);
     document->setDefaultFont(QFont("Courier", 10));     // TODO : Make a font menu
 
+    MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
+    document->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
+
     SetFileLink(fileName);
     renderDocument->setBaseUrl(fileName);
     document->setBaseUrl(fileName);
@@ -37,6 +45,7 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     tabFileInfo = new QFileInfo(fileName);
     documentLayout = new QPlainTextDocumentLayout(document);
     editor->setDocument(document);
+    highlighter = new MarkdownHighlighter(document);
     browser->setDocument(renderDocument);
 }
 
@@ -53,10 +62,6 @@ void NoteEditorTab::BaseSetup(){
     renderDocument->setDocumentMargin(20);
     stackSwitcher->addWidget(editor);
     stackSwitcher->addWidget(browser);
-
-    //Register math elements
-    MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
-    renderDocument->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);
 
     connect(browser, &NoteBrowser::zoomFactorIncreased, this, &NoteEditorTab::ZoomRender);
     connect(browser, &NoteBrowser::zoomFactorDecreased, this, &NoteEditorTab::UnzoomRender);
