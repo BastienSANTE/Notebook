@@ -24,10 +24,12 @@ private:
     JKQTMathText mathRenderText;
 
     QList<HighlightingRule> highlightingRules;
+    HighlightingRule mathRule;
 
     QTextCharFormat titleFormat;
     QTextCharFormat subtitleFormat;
     QTextCharFormat mathFormat;
+    QTextCharFormat mathSourceFormat; // math source becomes "invisible" when matched
 
 signals:
 };

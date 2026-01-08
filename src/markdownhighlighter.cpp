@@ -10,10 +10,11 @@ MarkdownHighlighter::MarkdownHighlighter(QTextDocument* parent)
     titleRule.format = titleFormat;
     highlightingRules.append(titleRule);
 
-    HighlightingRule mathRule;
-    mathFormat = MathDocumentObject::GenerateFormat(&mathRenderText);
-    mathRule.pattern = QRegularExpression("(?=\\${2}).*(?<=\\${2})");
-    mathRule.format = mathFormat;
+
+    mathSourceFormat.setForeground(Qt::blue);
+    //mathFormat = MathDocumentObject::GenerateFormat(&mathRenderText);
+    mathRule.pattern = QRegularExpression(QStringLiteral("(?=\\${2}).+(?>\\${2})"));
+    mathRule.format = mathSourceFormat;
     highlightingRules.append(mathRule);
 
 }
@@ -26,7 +27,22 @@ void MarkdownHighlighter::highlightBlock(const QString& text){
         while (matchIterator.hasNext()) {
             QRegularExpressionMatch match = matchIterator.next();
             qDebug() << "Matched " << match.captured() << " ";
-            setFormat(match.capturedStart(), match.capturedEnd(), rule.format);
+            setFormat(match.capturedStart(), match.capturedLength(), rule.format);
+
+            QRegularExpressionMatchIterator mathMatchIterator = mathRule.pattern.globalMatch(text);
+
+            QRegularExpressionMatch mathMatch = mathMatchIterator.next();
+            QTextCursor cursor(this->document());
+            cursor.setPosition(mathMatch.capturedStart());
+            cursor.deletePreviousChar();
+
+            if (mathRenderText.parse(mathMatch.captured())){
+
+                cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(&mathRenderText));
+
+            }
+
+
         }
     }
 }
