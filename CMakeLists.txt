@@ -11,9 +11,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(FetchContent) # once in the project to include the module
 # ... now declare JKQTPlotter5/6
+FetchContent_Declare(MicroTeX
+                     GIT_REPOSITORY https://github.com/NanoMichael/MicroTeX.git
+                     GIT_TAG origin/master
+)
+
+# Kinda risky but it seems to do the job ?
+set(QT ON)
+
 FetchContent_Declare(JKQTPlotter${QT_VERSION_MAJOR}
                      GIT_REPOSITORY https://github.com/jkriege2/JKQtPlotter
                      GIT_TAG origin/master)
+
+
+FetchContent_MakeAvailable(MicroTeX)
 
 # ... finally make JKQTPlotter5/6 available
 FetchContent_MakeAvailable(JKQTPlotter${QT_VERSION_MAJOR})
@@ -70,6 +81,7 @@ target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(${PROJECT_NAME} PUBLIC JKQTPlotter6::JKQTPlotter6)
+target_link_libraries(${PROJECT_NAME} PUBLIC LaTeX)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

@@ -21,5 +21,11 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "Debug")
   "_deps/jkqtplotter-build/lib/jkqtplotter/CMakeFiles/JKQTPlotter6_autogen.dir/AutogenUsed.txt"
   "_deps/jkqtplotter-build/lib/jkqtplotter/CMakeFiles/JKQTPlotter6_autogen.dir/ParseCache.txt"
   "_deps/jkqtplotter-build/lib/jkqtplotter/JKQTPlotter6_autogen"
+  "_deps/microtex-build/CMakeFiles/LaTeXQtSample_autogen.dir/AutogenUsed.txt"
+  "_deps/microtex-build/CMakeFiles/LaTeXQtSample_autogen.dir/ParseCache.txt"
+  "_deps/microtex-build/CMakeFiles/LaTeX_autogen.dir/AutogenUsed.txt"
+  "_deps/microtex-build/CMakeFiles/LaTeX_autogen.dir/ParseCache.txt"
+  "_deps/microtex-build/LaTeXQtSample_autogen"
+  "_deps/microtex-build/LaTeX_autogen"
   )
 endif()

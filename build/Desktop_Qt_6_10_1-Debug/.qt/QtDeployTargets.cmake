@@ -1,3 +1,7 @@
+set(__QT_DEPLOY_TARGET_LaTeX_FILE /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-build/libLaTeX.so)
+set(__QT_DEPLOY_TARGET_LaTeX_TYPE SHARED_LIBRARY)
+set(__QT_DEPLOY_TARGET_LaTeXQtSample_FILE /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-build/LaTeX)
+set(__QT_DEPLOY_TARGET_LaTeXQtSample_TYPE EXECUTABLE)
 set(__QT_DEPLOY_TARGET_JKQTCommon6_FILE /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-build/output/libJKQTCommon6_Debug.so.5.0.0)
 set(__QT_DEPLOY_TARGET_JKQTCommon6_TYPE SHARED_LIBRARY)
 set(__QT_DEPLOY_TARGET_JKQTMath6_FILE /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-build/output/libJKQTMath6_Debug.so.5.0.0)

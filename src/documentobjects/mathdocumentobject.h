@@ -5,6 +5,8 @@
 #include <QAbstractTextDocumentLayout>
 #include <QSize>
 #include <jkqtmathtext.h>
+#include "latex.h"
+#include "platform/qt/graphic_qt.h"
 
 /*This class allows insertion of math objects inside documents,
  only equations for the moment */

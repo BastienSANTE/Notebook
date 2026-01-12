@@ -32,6 +32,10 @@
 		"/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
 		"/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake",
 		"/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FetchContent/CMakeLists.cmake.in",
+		"/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindGit.cmake",
+		"/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"/home/bastien/bin/Qt/Tools/CMake/share/cmake-3.30/Modules/FetchContent/CMakeLists.cmake.in",
 		"/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/home/bastien/bin/Qt/6.10.1/gcc_64/lib/cmake/Qt6/Qt6Config.cmake",
@@ -633,6 +637,7 @@
 	"MOC_COMPILATION_FILE" : "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
+		"BUILD_QT",
 		"JKQTCOMMON_LIB_IN_DLL",
 		"JKQTMATHTEXT_COMPILED_WITH_FIRAMATH",
 		"JKQTMATHTEXT_COMPILED_WITH_XITS",
@@ -668,6 +673,7 @@
 		"/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/lib/jkqtmath",
 		"/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/lib",
 		"/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/lib/jkqtmathtext",
+		"/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-src/src",
 		"/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore",
 		"/home/bastien/bin/Qt/6.10.1/gcc_64/include",
 		"/home/bastien/bin/Qt/6.10.1/gcc_64/mkspecs/linux-g++",
