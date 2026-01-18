@@ -2,9 +2,11 @@
 #define MATHDOCUMENTOBJECT_H
 
 #include <QObject>
-#include <QAbstractTextDocumentLayout>
+#include <QTextObjectInterface>
 #include <QSize>
-#include <jkqtmathtext.h>
+#include <QImage>
+#include <QVariant>
+#include <QPainter>
 #include "latex.h"
 #include "platform/qt/graphic_qt.h"
 
@@ -25,7 +27,7 @@ public:
 
     void drawObject(QPainter *painter, const QRectF &rect, QTextDocument *doc, int posInDocument, const QTextFormat &format) override;
 
-    static QTextCharFormat GenerateFormat(JKQTMathText* text, int width = 0, int height = 0);
+    static QTextCharFormat GenerateFormat(tex::TeXRender* render, int width = 0, int height = 0);
 };
 
 Q_DECLARE_METATYPE(QImage);

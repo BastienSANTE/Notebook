@@ -11856,3 +11856,88 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/jkqtplotter_common_compilersettings.cmake:11 (find_package)"
+      - "build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/CMakeLists.txt:40 (include)"
+    name: "CImg"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake/FindCImg.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/bastien/bin/Qt/6.10.1/gcc_64"
+      ENV{PATH}:
+        - "/home/bastien/.wine/drive_c/psyq/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/home/bastien/.wine/drive_c/psyq/cdemu/BIN/"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/home/bastien/.wine/drive_c/psyq/bin/TIMTOOL"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/home/bastien/bin/gzdoom"
+        - "/home/bastien/bin/pcsx-redux"
+        - "/home/bastien/.local/share/JetBrains/Toolbox/scripts"
+        - "/usr/bin/blender-4.1.1-linux-x64"
+        - "/usr/local/texlive/2025/bin/x86_64-linux"
+        - "/home/bastien/.local/bin/"
+        - "/usr/node-v22.19.0-linux-x64/bin/"
+        - "/usr/fontra/venv/bin/"
+        - "/home/bastien/.local/bin"
+        - "/home/bastien/bin/Qt/Tools/Ninja"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr/local"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake"
+        - "/home/bastien/LocalRepo/Notebook/cmake"
+...

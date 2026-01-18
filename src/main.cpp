@@ -5,9 +5,21 @@
 #include <QApplication>
 #include <QFile>
 
+class TexGuard {
+public:
+    TexGuard() {
+        tex::LaTeX::init();
+    }
+
+    ~TexGuard() {
+        tex::LaTeX::release();
+    }
+};
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    TexGuard texGuard;
 
     QFile file("style.qss");
     if (file.open(QIODevice::ReadOnly)) {

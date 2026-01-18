@@ -81,8 +81,7 @@ void NoteEditorTab::RenderDocument(){
     QString documentText = renderDocument->toPlainText();
 
     QTextCursor cursor(renderDocument);
-    JKQTMathText* mathRender = new JKQTMathText(this);
-    mathRender->setFontSize(defaultMathSize);
+    tex::TeXRender* mathRender;
 
     bool _lastParseResult = true;
 
@@ -95,13 +94,8 @@ void NoteEditorTab::RenderDocument(){
         }
 
         cursor.removeSelectedText();
-
-        if (mathRender->parse(matchText)) {
-            cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
-        }
+         cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
     }
-
-    delete (mathRender);
 }
 
 void NoteEditorTab::ZoomRender(){

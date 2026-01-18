@@ -33,13 +33,18 @@ void MarkdownHighlighter::highlightBlock(const QString& text){
     QRegularExpressionMatchIterator mathMatchIterator = mathRule.pattern.globalMatch(text);
     while(mathMatchIterator.hasNext()){
         QRegularExpressionMatch mathMatch = mathMatchIterator.next();
+        qDebug() << "Matched " << mathMatch.captured() << " ";
+
         QTextCursor cursor(QSyntaxHighlighter::currentBlock());
-        cursor.setPosition(QSyntaxHighlighter::currentBlock().position()+mathMatch.capturedStart());
+
+        cursor.setPosition(QSyntaxHighlighter::currentBlock().position() + mathMatch.capturedStart());
+
         cursor.deletePreviousChar();
+        render = tex::LaTeX::parse(mathMatch.captured().toStdWString(),
+                                   0, 20, 20 / 3.f, 0xff424242);
 
-        if (mathRenderText.parse(mathMatch.captured())){
-            cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(&mathRenderText));
+        setFormat(mathMatch.capturedStart(), mathMatch.capturedLength(), MathDocumentObject::GenerateFormat(render, render->getWidth(), render->getHeight()));
+        cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(render, render->getWidth(), render->getHeight()));
 
-        }
     }
 }

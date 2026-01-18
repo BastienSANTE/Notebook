@@ -31,11 +31,11 @@ to force a line break.
 
 Notebook can parse LaTeX math environements and render them. Example :
 
-$${\displaystyle {\frac {S}{2\pi}}=\int_{x_{0}}^{x_{1}}y{\sqrt{1+\left({\frac{{\text{d}}y}{{\text{d}}x}}\right)^{2}}}~{\text{d}}x\qquad}}$$
+$${\displaystyle {\frac {S}{2\pi}}=\int_{x_{0}}^{x_{1}}y{\sqrt{1+\left({\frac{{\text{d}}y}{{\text{d}}x}}\right)^{2}}}~{\text{d}}x\qquad}$$
 
 ## Fonts in math environments
  
-Lambda-calculus = $$\textit{\lambda x.f(x)}}$$
+Lambda-calculus = $$\textit{\lambda x.f(x)}$$
 
 [Anchor in another file](Test2.md#anchor)
 
@@ -43,7 +43,7 @@ Lambda-calculus = $$\textit{\lambda x.f(x)}}$$
 
 ```cpp
 #include <stdio.h>
-
 int main(){
 	return 0;
 }
+```

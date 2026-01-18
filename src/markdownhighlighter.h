@@ -5,7 +5,7 @@
 #include <QSyntaxHighlighter>
 #include <QRegularExpression>
 #include <QList>
-#include <jkqtmathtext.h>
+#include "samples/qt_texwidget.h"
 #include "documentobjects/mathdocumentobject.h"
 
 class MarkdownHighlighter : public QSyntaxHighlighter
@@ -21,7 +21,7 @@ private:
         QTextCharFormat format;
     };
 
-    JKQTMathText mathRenderText;
+    tex::TeXRender* render;
 
     QList<HighlightingRule> highlightingRules;
     HighlightingRule mathRule;
