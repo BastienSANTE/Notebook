@@ -9,8 +9,26 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(QT ON)
+
 include(FetchContent) # once in the project to include the module
 # ... now declare JKQTPlotter5/6
+ if (WIN32)
+    FetchContent_Declare(tinyxml2
+                      GIT_REPOSITORY https://github.com/leethomason/tinyxml2.git
+                      GIT_TAG origin/master
+                      FIND_PACKAGE_ARGS)
+
+    FetchContent_MakeAvailable(tinyxml2)
+
+    install(
+         TARGETS tinyxml2
+         EXPORT ${PROJECT_NAME}TARGETS
+    )
+
+     find_package(tinyxml2 REQUIRED)
+endif()
+
 FetchContent_Declare(MicroTeX
                      GIT_REPOSITORY https://github.com/NanoMichael/MicroTeX.git
                      GIT_TAG origin/master
@@ -21,7 +39,8 @@ set(QT ON)
 
 FetchContent_Declare(JKQTPlotter${QT_VERSION_MAJOR}
                      GIT_REPOSITORY https://github.com/jkriege2/JKQtPlotter
-                     GIT_TAG origin/master)
+                     GIT_TAG origin/master
+)
 
 
 FetchContent_MakeAvailable(MicroTeX)
@@ -32,8 +51,6 @@ FetchContent_MakeAvailable(JKQTPlotter${QT_VERSION_MAJOR})
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(QT_DEBUG_PLUGINS 1)
@@ -80,7 +97,7 @@ target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
-target_link_libraries(${PROJECT_NAME} PUBLIC JKQTPlotter6::JKQTPlotter6)
+target_link_libraries(${PROJECT_NAME} PRIVATE tinyxml2)
 target_link_libraries(${PROJECT_NAME} PUBLIC LaTeX)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
