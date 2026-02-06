@@ -7,9 +7,9 @@
 #include <QDir>
 #include <QStackedWidget>
 #include <QPlainTextEdit>
-#include "notebrowser.h"
 #include <QBoxLayout>
 #include "markdownhighlighter.h"
+#include "markdowntextedit.h"
 
 /* Class for the note editor tabs. Each tab contains an editor widget &
  * viewer widget, and manages its document. If the tab is closed, it is
@@ -26,10 +26,8 @@ public:
     explicit NoteEditorTab(QWidget* parent, QString fileName, QString contents);
 
     ~NoteEditorTab();
-    QStackedWidget* stackSwitcher;
     QHBoxLayout* tabContentsLayout;
-    QTextEdit* editor;
-    NoteBrowser* browser;
+    MarkdownTextEdit* editor;
     QTextDocument* document;
     QTextDocument* renderDocument;
     QAbstractTextDocumentLayout* documentLayout;
@@ -39,9 +37,6 @@ public:
     int defaultMathSize{10};
 
     void BaseSetup();
-    void ZoomRender();
-    void UnzoomRender();
-    void RenderDocument();
 
     bool GetDocumentModified() const { return _isModified; }
     void SetDocumentModified() { _isModified = true; }
@@ -55,6 +50,10 @@ public:
     void SetDocumentDir(QString dir){ _documentDir = dir; }
     QString GetDocumentDir() const { return _documentDir; }
 
+    virtual void mouseDoubleClickEvent(QMouseEvent* mouseEvent) override;
+
+public slots:
+    void CheckForElements();
 
 signals:
     void documentTextChanged(bool state);
@@ -66,6 +65,9 @@ private:
     QString _documentDir;
     bool _isAFile;    // Is the document already on disk as a file ?
     bool _isModified; // Was the file modified since the last save ?
+
+    //Very simple element editor for TeX
+    QPlainTextEdit* _elementEditor;;
 };
 
 #endif // NOTEEDITORTAB_H

@@ -19,7 +19,6 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
     _isModified = false;
     editor->setDocument(document);
     highlighter = new MarkdownHighlighter(document);
-    browser->setDocument(renderDocument);
 }
 
 NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents) {
@@ -46,69 +45,54 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     documentLayout = new QPlainTextDocumentLayout(document);
     editor->setDocument(document);
     highlighter = new MarkdownHighlighter(document);
-    browser->setDocument(renderDocument);
 }
 
 void NoteEditorTab::BaseSetup(){
-    stackSwitcher = new QStackedWidget(this);
     tabContentsLayout = new QHBoxLayout(this);
     tabContentsLayout->setContentsMargins(0, 0, 0, 0);
     this->setLayout(tabContentsLayout);
-    tabContentsLayout->addWidget(stackSwitcher);
-    editor = new QTextEdit(this);
-    browser = new NoteBrowser(this);
+    editor = new MarkdownTextEdit(this);
 
     renderDocument = new QTextDocument(this);
     renderDocument->setDocumentMargin(20);
-    stackSwitcher->addWidget(editor);
-    stackSwitcher->addWidget(browser);
+    tabContentsLayout->addWidget(editor);
 
-    connect(browser, &NoteBrowser::zoomFactorIncreased, this, &NoteEditorTab::ZoomRender);
-    connect(browser, &NoteBrowser::zoomFactorDecreased, this, &NoteEditorTab::UnzoomRender);
+    _elementEditor = new QPlainTextEdit(nullptr);
+    _elementEditor->setVisible(false);
+
     connect(editor, &QTextEdit::textChanged, [this](){ SetDocumentModified(true); });
 }
 
 
+void NoteEditorTab::CheckForElements(){
+    const QTextCharFormat& _fmt = editor->textCursor().charFormat();
 
-void NoteEditorTab::RenderDocument(){
-    // Clear text doc before new render
-    renderDocument->clear();
+    if(_fmt.objectType() == MathDocumentObject::MathTextFormat){
+        qDebug() << "Math Object encountered";
+        _elementEditor->setPlainText(_fmt.toolTip());
+        _elementEditor->setVisible(true);
+    }
 
-    // Render the basic elements as Markdown
-    renderDocument->setMarkdown(editor->toPlainText(), QTextDocument::MarkdownDialectGitHub);
-
-    // Get all of the text as one large QString
-    QString documentText = renderDocument->toPlainText();
-
-    QTextCursor cursor(renderDocument);
-    tex::TeXRender* mathRender;
-
-    bool _lastParseResult = true;
-
-    while(_lastParseResult) {
-        cursor = renderDocument->find(QRegularExpression("(?=\\${2}).*(?<=\\${2})"), cursor);
-        QString matchText = cursor.selectedText();
-
-        if (matchText == "") {
-            _lastParseResult = false;
-        }
-
-        cursor.removeSelectedText();
-         cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(mathRender));
+    else {
+        _elementEditor->setVisible(false);
     }
 }
 
-void NoteEditorTab::ZoomRender(){
-    defaultMathSize++;
-    qDebug() << defaultMathSize;
-    RenderDocument();
-}
+void NoteEditorTab::mouseDoubleClickEvent(QMouseEvent* mouseEvent){
+    QTextCursor cursor = editor->cursorForPosition(mouseEvent->position().toPoint());
+    cursor.select(QTextCursor::WordUnderCursor);
 
-void NoteEditorTab::UnzoomRender(){
-    if(defaultMathSize < 2) return;
-    defaultMathSize--;
-    qDebug() << defaultMathSize;
-    RenderDocument();
+    const QTextCharFormat& _fmt = cursor.charFormat();
+
+    if(_fmt.objectType() == MathDocumentObject::MathTextFormat){
+        qDebug() << "Math Object encountered";
+        _elementEditor->setPlainText(_fmt.toolTip());
+        _elementEditor->setVisible(true);
+    }
+
+    else {
+        _elementEditor->setVisible(false);
+    }
 }
 
 // Add method to prompt for save before deleting tab.

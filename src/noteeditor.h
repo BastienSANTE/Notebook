@@ -59,7 +59,6 @@ public:
     // Horrible nested methods IG, but let's see if this works
     NoteEditorTab* GetCurrentTab() const { return (NoteEditorTab*)tabs->currentWidget(); }
     QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
-    void RenderDocument(QTextDocument* doc);
 
     void BaseSetup();
 
@@ -67,7 +66,6 @@ public:
 
 private:
     int _currentTabIndex;
-    QShortcut* switchShortcut;
     QShortcut* saveShortcut;
     QShortcut* addTabShortcut;
     QShortcut* removeTabShortcut;
@@ -75,7 +73,6 @@ private:
 signals:
 
 public slots:
-    void SwitchViews();
     void Save();
 };
 

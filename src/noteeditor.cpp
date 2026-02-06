@@ -47,7 +47,6 @@ void Editor::BaseSetup() {
     splitter->addWidget(tree);
     splitter->addWidget(tabs);
 
-    switchShortcut = new QShortcut(QKeySequence("Ctrl+R"), mainWindow);
     saveShortcut = new QShortcut(QKeySequence("Ctrl+S"), mainWindow);
     addTabShortcut = new QShortcut(QKeySequence("Ctrl+N"), mainWindow);
     removeTabShortcut = new QShortcut(QKeySequence("Ctrl+K"), mainWindow);
@@ -58,12 +57,10 @@ void Editor::BaseSetup() {
     mainWindow->menuBar()->addMenu(fileMenu);
 
     layout->addWidget(splitter);
-    //tabBox->addWidget(tabs, 1, Qt::Alignment());
 
     latexRE = new QRegularExpression("(?=\\${2}).*(?<=\\${2})");
 
     connect(tree, &QTreeView::doubleClicked, this, qOverload<QModelIndex>(&Editor::OpenFile));
-    connect(switchShortcut, &QShortcut::activated, this, &Editor::SwitchViews);
     connect(saveShortcut, &QShortcut::activated, this, &Editor::Save);
     connect(addTabShortcut, &QShortcut::activated, this, &Editor::AddTab);
     connect(removeTabShortcut, &QShortcut::activated, this, &Editor::RemoveCurrentTab);
@@ -73,15 +70,12 @@ void Editor::BaseSetup() {
 //Create an empty QTextBrowser
 void Editor::AddTab() {
     NoteEditorTab* newTab = new NoteEditorTab(tabs);
-    connect(newTab->browser, &QTextBrowser::anchorClicked, this, qOverload<const QUrl&>(&Editor::FollowLink));
     tabs->addTab(newTab, "Untitled");
     tabs->setCurrentWidget(newTab);
 }
 
 
-void CreateTabFromModelIndex(){
-
-}
+void CreateTabFromModelIndex(){}
 
 // Create new QTextBrowser with contents of openedFile
 // Function modified to be able to keep a reference to file path
@@ -89,7 +83,6 @@ void Editor::CreateTabFromFile(QFile& openedFile) {
 
     QFileInfo fileInfo(openedFile);
     NoteEditorTab* newFileTab = new NoteEditorTab(tabs, openedFile.fileName(), openedFile.readAll());
-    connect(newFileTab->browser, &QTextBrowser::anchorClicked, this, qOverload<const QUrl&>(&Editor::FollowLink));
     tabs->addTab(newFileTab, openedFile.fileName());
     tabs->setCurrentWidget(newFileTab);
     openedFile.close();
@@ -125,20 +118,6 @@ void Editor::RemoveCurrentTab(){
             break;
         default:
             break;
-    }
-}
-
-void Editor::SwitchViews() {
-    QStackedWidget* switcher = GetCurrentTab()->stackSwitcher;
-
-    if(switcher->currentIndex() == 0) {
-        qDebug() << "Showing MD view";
-        GetCurrentTab()->RenderDocument();
-        switcher->setCurrentIndex(1);
-
-    } else {
-        switcher->setCurrentIndex(0);
-        qDebug() << "Showing plain view";
     }
 }
 
@@ -238,15 +217,10 @@ void Editor::FollowLink(const QUrl& followedFile){
             return;
         }
 
-        GetCurrentTab()->renderDocument->setBaseUrl(resolvedURL);
         GetCurrentTab()->document->setBaseUrl(resolvedURL);
         GetCurrentTab()->editor->setPlainText(openedFile.readAll());
-        GetCurrentTab()->browser->setSource(resolvedURL);
-        GetCurrentTab()->RenderDocument();
 
         openedFile.close();
     }
-
-
     SetTabTitle(filePath);
 }

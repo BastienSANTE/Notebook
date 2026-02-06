@@ -32,7 +32,7 @@ void MathDocumentObject::drawObject(QPainter *painter, const QRectF &rect, QText
     painter->restore();
 }
 
-QTextCharFormat MathDocumentObject::GenerateFormat(tex::TeXRender* render, int width, int height) {
+QTextCharFormat MathDocumentObject::GenerateFormat(tex::TeXRender* render, int width, int height, std::wstring text) {
 
     qDebug() << render->getWidth() << "x" << render->getHeight();
 
@@ -46,9 +46,8 @@ QTextCharFormat MathDocumentObject::GenerateFormat(tex::TeXRender* render, int w
     render->draw(g2, 0, 0);
     textPainter.end();
 
-    //QPicture textImage = _pxm.();
-
     QTextCharFormat format;
+    format.setToolTip(QString(text));
     format.setObjectType(MathDocumentObject::MathTextFormat);
     format.setProperty(MathDocumentObject::PicturePropertyId, QVariant::fromValue(_pxm));
     return format;

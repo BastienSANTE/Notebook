@@ -33,18 +33,22 @@ void MarkdownHighlighter::highlightBlock(const QString& text){
     QRegularExpressionMatchIterator mathMatchIterator = mathRule.pattern.globalMatch(text);
     while(mathMatchIterator.hasNext()){
         QRegularExpressionMatch mathMatch = mathMatchIterator.next();
-        qDebug() << "Matched " << mathMatch.captured() << " ";
+
 
         QTextCursor cursor(QSyntaxHighlighter::currentBlock());
 
-        cursor.setPosition(QSyntaxHighlighter::currentBlock().position() + mathMatch.capturedStart());
+        cursor.setPosition(QSyntaxHighlighter::currentBlock().position() + mathMatch.capturedStart(), QTextCursor::MoveAnchor);
+        cursor.setPosition(cursor.position() + mathMatch.capturedLength(), QTextCursor::MoveAnchor);
+        cursor.select(QTextCursor::BlockUnderCursor);
 
-        cursor.deletePreviousChar();
-        render = tex::LaTeX::parse(mathMatch.captured().toStdWString(),
-                                   0, 20, 20 / 3.f, 0xff424242);
+        cursor.removeSelectedText();
+        std::wstring renderText = mathMatch.captured().toStdWString();
+        render = tex::LaTeX::parse(renderText,
+                                   0, 12, 14 / 3.f, 0xff424242);
 
-        setFormat(mathMatch.capturedStart(), mathMatch.capturedLength(), MathDocumentObject::GenerateFormat(render, render->getWidth(), render->getHeight()));
-        cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(render, render->getWidth(), render->getHeight()));
-
+        cursor.insertText(QString(QChar::ObjectReplacementCharacter), MathDocumentObject::GenerateFormat(
+                                                                        render, render->getWidth(),
+                                                                        render->getHeight(),
+                                                                        renderText));
     }
 }
