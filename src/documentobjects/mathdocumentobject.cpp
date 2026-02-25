@@ -47,7 +47,7 @@ QTextCharFormat MathDocumentObject::GenerateFormat(tex::TeXRender* render, int w
     textPainter.end();
 
     QTextCharFormat format;
-    format.setToolTip(QString(text));
+    format.setToolTip(QString::fromStdWString(text));
     format.setObjectType(MathDocumentObject::MathTextFormat);
     format.setProperty(MathDocumentObject::PicturePropertyId, QVariant::fromValue(_pxm));
     return format;

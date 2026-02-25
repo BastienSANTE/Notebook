@@ -507,6 +507,9 @@ QT_CREATOR_SKIP_MAINTENANCE_TOOL_PROVIDER:BOOL=OFF
 //Skip Qt Creator's package manager auto-setup
 QT_CREATOR_SKIP_PACKAGE_MANAGER_SETUP:BOOL=OFF
 
+//Skip Qt Creator's vcpkg package manager auto-setup
+QT_CREATOR_SKIP_VCPKG_SETUP:BOOL=OFF
+
 //Qt Creator source groups extensions
 QT_CREATOR_SOURCE_GROUPS:BOOL=ON
 
@@ -581,6 +584,9 @@ pkgcfg_lib_PKG_FONTCONFIG_freetype:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreetyp
 
 //Path to a library.
 pkgcfg_lib_tinyxml2_tinyxml2:FILEPATH=/usr/lib/x86_64-linux-gnu/libtinyxml2.so
+
+//Path to a program.
+vcpkg_program:FILEPATH=vcpkg_program-NOTFOUND
 
 
 ########################
@@ -772,6 +778,8 @@ COMPILER_SUPPORTS_CXX20:INTERNAL=1
 CUPS_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUPS_LIBRARIES
 CUPS_LIBRARIES-ADVANCED:INTERNAL=1
+//Details about finding Cups
+FIND_PACKAGE_MESSAGE_DETAILS_Cups:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcups.so][/usr/include][v2.4.2()]
 //Details about finding Fontconfig
 FIND_PACKAGE_MESSAGE_DETAILS_Fontconfig:INTERNAL=[/usr/lib/x86_64-linux-gnu/libfontconfig.so][/usr/include][v2.15.0()]
 //Details about finding OpenGL
@@ -780,6 +788,12 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libOpenG
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.1()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding WrapAtomic
+FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic:INTERNAL=[1][v()]
+//Details about finding WrapOpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_WrapOpenGL:INTERNAL=[ON][v()]
+//Details about finding WrapVulkanHeaders
+FIND_PACKAGE_MESSAGE_DETAILS_WrapVulkanHeaders:INTERNAL=[/usr/include][v()]
 //ADVANCED property for variable: Fontconfig_INCLUDE_DIR
 Fontconfig_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Fontconfig_LIBRARY

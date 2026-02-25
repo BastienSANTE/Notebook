@@ -4,18 +4,21 @@ MarkdownHighlighter::MarkdownHighlighter(QTextDocument* parent)
     : QSyntaxHighlighter{parent}
 {
     HighlightingRule titleRule;
-
     titleFormat.setFontPointSize(20);
     titleRule.pattern = QRegularExpression(QStringLiteral("^#[^#].*"));
     titleRule.format = titleFormat;
     highlightingRules.append(titleRule);
 
+    HighlightingRule quoteRule;
+    quoteRule.pattern = QRegularExpression(QStringLiteral("^[>].*"));
+    QuoteFormat.setForeground(Qt::blue);
+    quoteRule.format = QuoteFormat;
+    highlightingRules.append(quoteRule);
 
     mathSourceFormat.setForeground(Qt::blue);
     //mathFormat = MathDocumentObject::GenerateFormat(&mathRenderText);
     mathRule.pattern = QRegularExpression(QStringLiteral("(?=\\${2}).+(?>\\${2})"));
     mathRule.format = mathSourceFormat;
-    //highlightingRules.append(mathRule);
 }
 
 
@@ -38,8 +41,8 @@ void MarkdownHighlighter::highlightBlock(const QString& text){
         QTextCursor cursor(QSyntaxHighlighter::currentBlock());
 
         cursor.setPosition(QSyntaxHighlighter::currentBlock().position() + mathMatch.capturedStart(), QTextCursor::MoveAnchor);
-        cursor.setPosition(cursor.position() + mathMatch.capturedLength(), QTextCursor::MoveAnchor);
-        cursor.select(QTextCursor::BlockUnderCursor);
+        cursor.setPosition(cursor.position() + mathMatch.capturedLength(), QTextCursor::KeepAnchor);
+        //cursor.select(QTextCursor::WordUnderCursor);
 
         cursor.removeSelectedText();
         std::wstring renderText = mathMatch.captured().toStdWString();

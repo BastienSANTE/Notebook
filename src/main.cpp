@@ -1,5 +1,4 @@
 #include "noteeditor.h"
-#include "documentlist.h"
 
 #include <QDebug>
 #include <QApplication>

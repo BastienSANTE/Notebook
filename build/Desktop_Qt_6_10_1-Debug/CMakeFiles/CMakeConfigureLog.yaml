@@ -11941,3 +11941,44 @@ events:
         - "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/jkqtplotter-src/cmake"
         - "/home/bastien/LocalRepo/Notebook/cmake"
 ...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/auto-setup.cmake:262 (find_program)"
+      - "build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/auto-setup.cmake:371 (qtc_auto_setup_vcpkg)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "vcpkg_program"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vcpkg"
+    candidate_directories:
+      - "/home/bastien/LocalRepo/Notebook/vcpkg/"
+      - "/home/bastien/LocalRepo/Notebook/3rdparty/vcpkg/"
+    searched_directories:
+      - "/home/bastien/LocalRepo/Notebook/vcpkg/vcpkg"
+      - "/home/bastien/LocalRepo/Notebook/3rdparty/vcpkg/vcpkg"
+    found: false
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/bastien/bin/Qt/6.10.1/gcc_64"
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/home/bastien/bin/Qt/Tools/Ninja"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+...

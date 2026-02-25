@@ -28,6 +28,7 @@ private:
 
     QTextCharFormat titleFormat;
     QTextCharFormat subtitleFormat;
+    QTextCharFormat QuoteFormat;
     QTextCharFormat mathFormat;
     QTextCharFormat mathSourceFormat; // math source becomes "invisible" when matched
 

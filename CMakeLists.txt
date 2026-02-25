@@ -54,6 +54,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(QT_DEBUG_PLUGINS 1)
 
@@ -75,9 +76,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
 
         src/markdownhighlighter.h src/markdownhighlighter.cpp
-        src/documentobjects/mathdocumentwidget.h
-        src/documentobjects/mathdocumentwidget.cpp
+
+
         src/markdowntextedit.h src/markdowntextedit.cpp
+        src/documentobjects/linedocumentobject.h src/documentobjects/linedocumentobject.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Notebook APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -103,6 +105,7 @@ target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Notebook PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(${PROJECT_NAME} PRIVATE tinyxml2)
 target_link_libraries(${PROJECT_NAME} PUBLIC LaTeX)
 

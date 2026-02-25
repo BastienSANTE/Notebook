@@ -9,7 +9,6 @@
 NoteEditorTab::NoteEditorTab(QWidget *parent) {
     BaseSetup();
     document = new QTextDocument("Untitled", this);
-    document->setDefaultFont(QFont("Courier", 12));
     documentLayout = new QPlainTextDocumentLayout(document);
 
     MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
@@ -29,7 +28,6 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     SetDocumentDir(info.absoluteDir().path());
 
     document = new QTextDocument(QString(contents), this);
-    document->setDefaultFont(QFont("Courier", 10));     // TODO : Make a font menu
 
     MathDocumentObject* mathDocumentObjectHandler = new MathDocumentObject(this);
     document->documentLayout()->registerHandler(MathDocumentObject::MathTextFormat, mathDocumentObjectHandler);

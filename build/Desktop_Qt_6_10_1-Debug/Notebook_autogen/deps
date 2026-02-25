@@ -1,7 +1,6 @@
 Notebook_autogen/timestamp: \
 	/home/bastien/LocalRepo/Notebook/CMakeLists.txt \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/auto-setup.cmake \
-	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/4.2.0-rc1/CMakeCXXCompiler.cmake \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/4.2.0-rc1/CMakeSystem.cmake \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/moc_predefs.h \
@@ -23,17 +22,20 @@ Notebook_autogen/timestamp: \
 	/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-src/src/utils/utils.h \
 	/home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentobject.cpp \
 	/home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentobject.h \
+	/home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentwidget.cpp \
+	/home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentwidget.h \
 	/home/bastien/LocalRepo/Notebook/src/main.cpp \
 	/home/bastien/LocalRepo/Notebook/src/mainwindow.cpp \
 	/home/bastien/LocalRepo/Notebook/src/mainwindow.h \
 	/home/bastien/LocalRepo/Notebook/src/markdownhighlighter.cpp \
 	/home/bastien/LocalRepo/Notebook/src/markdownhighlighter.h \
-	/home/bastien/LocalRepo/Notebook/src/notebrowser.cpp \
-	/home/bastien/LocalRepo/Notebook/src/notebrowser.h \
+	/home/bastien/LocalRepo/Notebook/src/markdowntextedit.cpp \
+	/home/bastien/LocalRepo/Notebook/src/markdowntextedit.h \
 	/home/bastien/LocalRepo/Notebook/src/noteeditor.cpp \
 	/home/bastien/LocalRepo/Notebook/src/noteeditor.h \
 	/home/bastien/LocalRepo/Notebook/src/noteeditortab.cpp \
 	/home/bastien/LocalRepo/Notebook/src/noteeditortab.h \
+	/home/bastien/LocalRepo/Notebook/vcpkg.json \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QDir \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFile \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QFileInfo \
@@ -199,14 +201,13 @@ Notebook_autogen/timestamp: \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QBrush \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QFileSystemModel \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QFont \
-	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QGuiApplication \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QImage \
+	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QMouseEvent \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QPainter \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QShortcut \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QSyntaxHighlighter \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTextObjectInterface \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTransform \
-	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QWheelEvent \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qaction.h \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qbitmap.h \
@@ -270,7 +271,7 @@ Notebook_autogen/timestamp: \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QSplitter \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QStackedWidget \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTabWidget \
-	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTextBrowser \
+	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTextEdit \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTreeView \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QVBoxLayout \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QWidget \
@@ -303,7 +304,6 @@ Notebook_autogen/timestamp: \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qstyleoption.h \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtabbar.h \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtabwidget.h \
-	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtextbrowser.h \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtextedit.h \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtreeview.h \
 	/home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
