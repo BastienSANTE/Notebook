@@ -17,6 +17,7 @@
   /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-src/src/utils/utf.h \
   /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-src/src/utils/utils.h \
   /home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentobject.h \
+  /home/bastien/LocalRepo/Notebook/src/mainwindow.h \
   /home/bastien/LocalRepo/Notebook/src/markdownhighlighter.h \
   /home/bastien/LocalRepo/Notebook/src/markdowntextedit.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore/QDir \
@@ -183,6 +184,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QImage \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QMouseEvent \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QPainter \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QShortcut \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QSyntaxHighlighter \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTextObjectInterface \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTransform \
@@ -221,6 +223,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qrgba64.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qscreen.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qscreen_platform.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qshortcut.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qsyntaxhighlighter.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextcursor.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextdocument.h \
@@ -236,9 +239,11 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qvectornd.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qwindowdefs.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QBoxLayout \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QMainWindow \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QPlainTextEdit \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QStackedWidget \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTextEdit \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QVBoxLayout \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QWidget \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qboxlayout.h \
@@ -246,9 +251,11 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qgridlayout.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qlayout.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qmainwindow.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qplaintextedit.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qsizepolicy.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qstackedwidget.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtextedit.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \

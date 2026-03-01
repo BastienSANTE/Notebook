@@ -16,6 +16,7 @@ public:
     void highlightBlock(const QString &text);
 
 private:
+
     struct HighlightingRule {
         QRegularExpression pattern;
         QTextCharFormat format;
@@ -24,13 +25,36 @@ private:
     tex::TeXRender* render;
 
     QList<HighlightingRule> highlightingRules;
-    HighlightingRule mathRule;
+    HighlightingRule    H1Rule, H2Rule, H3Rule, H4Rule, H5Rule, H6Rule;
+    QTextCharFormat     H1Fmt, H2Fmt, H3Fmt, H4Fmt, H5Fmt, H6Fmt;
 
-    QTextCharFormat titleFormat;
-    QTextCharFormat subtitleFormat;
+    HighlightingRule    horizontalLineRule;
+    QTextCharFormat     horizontalLineFmt;
+
+    HighlightingRule    orderedListRule;
+    QTextCharFormat     orderedListFmt;
+
+    HighlightingRule    mathRule;
+    QTextCharFormat     mathFormat;
+    QTextCharFormat     mathSourceFormat;
+
+    HighlightingRule    inlineCodeRule;
+    QTextCharFormat     inlineCodeFmt;
+
+    HighlightingRule    codeBlockRule;
+    QTextCharFormat     codeBlockTextFmt;
+    QTextFrameFormat    codeBlockFrameFmt;
+
     QTextCharFormat QuoteFormat;
-    QTextCharFormat mathFormat;
-    QTextCharFormat mathSourceFormat; // math source becomes "invisible" when matched
+
+    enum highlightingStates {
+        NoState,
+        CodeBlock
+    };
+
+    void InitRulesAndFormats();
+
+    void HighlightHeadings(const QString& text);
 
 signals:
 };

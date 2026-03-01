@@ -129,16 +129,6 @@ build CMakeFiles/Notebook.dir/src/markdowntextedit.cpp.o: CXX_COMPILER__Notebook
   OBJECT_FILE_DIR = CMakeFiles/Notebook.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/Notebook.dir
 
-build CMakeFiles/Notebook.dir/src/documentobjects/linedocumentobject.cpp.o: CXX_COMPILER__Notebook_unscanned_Debug /home/bastien/LocalRepo/Notebook/src/documentobjects/linedocumentobject.cpp || cmake_object_order_depends_target_Notebook
-  CONFIG = Debug
-  DEFINES = -DBUILD_QT -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/Notebook.dir/src/documentobjects/linedocumentobject.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/Notebook_autogen/include -I/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-src/src -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtCore -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/mkspecs/linux-g++ -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets -isystem /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui
-  OBJECT_DIR = CMakeFiles/Notebook.dir
-  OBJECT_FILE_DIR = CMakeFiles/Notebook.dir/src/documentobjects
-  TARGET_SUPPORT_DIR = CMakeFiles/Notebook.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Notebook
@@ -147,7 +137,7 @@ build CMakeFiles/Notebook.dir/src/documentobjects/linedocumentobject.cpp.o: CXX_
 #############################################
 # Link the executable Notebook
 
-build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/Notebook_autogen/mocs_compilation.cpp.o CMakeFiles/Notebook.dir/src/main.cpp.o CMakeFiles/Notebook.dir/src/mainwindow.cpp.o CMakeFiles/Notebook.dir/src/noteeditor.cpp.o CMakeFiles/Notebook.dir/src/noteeditortab.cpp.o CMakeFiles/Notebook.dir/src/documentobjects/mathdocumentobject.cpp.o CMakeFiles/Notebook.dir/src/markdownhighlighter.cpp.o CMakeFiles/Notebook.dir/src/markdowntextedit.cpp.o CMakeFiles/Notebook.dir/src/documentobjects/linedocumentobject.cpp.o | /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Widgets.so.6.10.1 _deps/microtex-build/libLaTeX.so /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Gui.so.6.10.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Core.so.6.10.1 || Notebook_autogen Notebook_autogen_timestamp_deps _deps/microtex-build/libLaTeX.so
+build Notebook: CXX_EXECUTABLE_LINKER__Notebook_Debug CMakeFiles/Notebook.dir/Notebook_autogen/mocs_compilation.cpp.o CMakeFiles/Notebook.dir/src/main.cpp.o CMakeFiles/Notebook.dir/src/mainwindow.cpp.o CMakeFiles/Notebook.dir/src/noteeditor.cpp.o CMakeFiles/Notebook.dir/src/noteeditortab.cpp.o CMakeFiles/Notebook.dir/src/documentobjects/mathdocumentobject.cpp.o CMakeFiles/Notebook.dir/src/markdownhighlighter.cpp.o CMakeFiles/Notebook.dir/src/markdowntextedit.cpp.o | /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Widgets.so.6.10.1 _deps/microtex-build/libLaTeX.so /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Gui.so.6.10.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Core.so.6.10.1 || Notebook_autogen Notebook_autogen_timestamp_deps _deps/microtex-build/libLaTeX.so
   CONFIG = Debug
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/bastien/bin/Qt/6.10.1/gcc_64/lib:/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-build:  /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Widgets.so.6.10.1  -ltinyxml2  _deps/microtex-build/libLaTeX.so  /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Gui.so.6.10.1  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /home/bastien/bin/Qt/6.10.1/gcc_64/lib/libQt6Core.so.6.10.1  -Wl,-rpath-link,/home/bastien/bin/Qt/6.10.1/gcc_64/lib

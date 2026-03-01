@@ -594,12 +594,6 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/bastien/LocalRepo/Notebook/src/documentobjects/linedocumentobject.h",
-			"MU",
-			"JAAQIZSSKL/moc_linedocumentobject.cpp",
-			null
-		],
-		[
 			"/home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentobject.h",
 			"MU",
 			"JAAQIZSSKL/moc_mathdocumentobject.cpp",
@@ -696,11 +690,6 @@
 	"SETTINGS_FILE" : "/home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/CMakeFiles/Notebook_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[
-			"/home/bastien/LocalRepo/Notebook/src/documentobjects/linedocumentobject.cpp",
-			"MU",
-			null
-		],
 		[
 			"/home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentobject.cpp",
 			"MU",

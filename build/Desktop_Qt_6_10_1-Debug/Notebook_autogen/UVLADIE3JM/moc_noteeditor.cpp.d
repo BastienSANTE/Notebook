@@ -17,6 +17,7 @@
   /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-src/src/utils/utf.h \
   /home/bastien/LocalRepo/Notebook/build/Desktop_Qt_6_10_1-Debug/_deps/microtex-src/src/utils/utils.h \
   /home/bastien/LocalRepo/Notebook/src/documentobjects/mathdocumentobject.h \
+  /home/bastien/LocalRepo/Notebook/src/mainwindow.h \
   /home/bastien/LocalRepo/Notebook/src/markdownhighlighter.h \
   /home/bastien/LocalRepo/Notebook/src/markdowntextedit.h \
   /home/bastien/LocalRepo/Notebook/src/noteeditortab.h \
@@ -190,6 +191,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QPainter \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QShortcut \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QSyntaxHighlighter \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTextDocumentWriter \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTextObjectInterface \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/QTransform \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
@@ -232,6 +234,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qsyntaxhighlighter.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextcursor.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextdocument.h \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextdocumentwriter.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextformat.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextlayout.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtGui/qtextobject.h \
@@ -257,6 +260,7 @@
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTabWidget \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTextEdit \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QTreeView \
+  /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QVBoxLayout \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/QWidget \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/bastien/bin/Qt/6.10.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \

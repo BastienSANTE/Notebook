@@ -14,9 +14,9 @@
 #include <QSplitter>
 #include <QMenu>
 #include <QMenuBar>
-#include <QRegularExpression>
 #include <QShortcut>
 #include <QMessageBox>
+#include <QTextDocumentWriter>
 #include "noteeditortab.h"
 #include "documentobjects/mathdocumentobject.h"
 
@@ -34,13 +34,11 @@ public:
     QHBoxLayout* tabBox;        // Layout
     QTabWidget* tabs;           // Container for the editor & viewer
 
-
     QFileSystemModel* fsModel;
     QTreeView* tree;
     QSplitter* splitter;
 
     QTextDocument* currentDocument; //document currently open
-    QRegularExpression* latexRE;
 
     QString baseDirectory;
 
@@ -61,8 +59,6 @@ public:
     QString GetCurrentTabTitle() const { return tabs->tabText(tabs->currentIndex()); }
 
     void BaseSetup();
-
-    void FollowLink(const QUrl& followedFile);
 
 private:
     int _currentTabIndex;

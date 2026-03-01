@@ -33,18 +33,20 @@ void Editor::BaseSetup() {
     tabBox->setContentsMargins(0, 0, 0, 0);
     tabs = new QTabWidget(uiFrame);
 
-    fsModel = new QFileSystemModel;
+    /*fsModel = new QFileSystemModel;
     fsModel->setRootPath(QDir::home().path());
     fsModel->setNameFilters({"*.md"});
     tree = new QTreeView(uiFrame);
     tree->setHeaderHidden(true);
 
-    //tree->setColumnHidden(1, true);
     tree->setModel(fsModel);
-
+    for (int i = 1; i < 4; i++){
+        tree->setColumnHidden(i, true);
+    }
+*/
     splitter = new QSplitter(uiFrame);
     splitter->setHandleWidth(0);
-    splitter->addWidget(tree);
+   /* splitter->addWidget(tree);*/
     splitter->addWidget(tabs);
 
     saveShortcut = new QShortcut(QKeySequence("Ctrl+S"), mainWindow);
@@ -57,8 +59,6 @@ void Editor::BaseSetup() {
     mainWindow->menuBar()->addMenu(fileMenu);
 
     layout->addWidget(splitter);
-
-    latexRE = new QRegularExpression("(?=\\${2}).*(?<=\\${2})");
 
     connect(tree, &QTreeView::doubleClicked, this, qOverload<QModelIndex>(&Editor::OpenFile));
     connect(saveShortcut, &QShortcut::activated, this, &Editor::Save);
@@ -126,6 +126,7 @@ void Editor::SetTabTitle(QString title){
 }
 
 void Editor::Save() {
+    QTextDocumentWriter* writer = new QTextDocumentWriter();
     NoteEditorTab* tab = GetCurrentTab();
     QTextDocument* doc = tab->document;
     QString fn = GetCurrentTabTitle();
@@ -141,12 +142,16 @@ void Editor::Save() {
         if (!newFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
             qDebug() << "Could not save file";
         }
-
+/*
         QTextStream stream(&newFile);
         stream << tab->editor->toPlainText();
         SetTabTitle(newFileName);
         tab->SetIsAFile(true);
-        newFile.close();
+        newFile.close();*/
+
+        writer->setFileName(newFileName);
+        writer->setFormat("markdown");
+        writer->write(doc);
 
     } else {
 
@@ -156,10 +161,15 @@ void Editor::Save() {
                 qDebug() << "Could not save file";
             }
 
-        QTextStream stream(&savedFile);
+
+            writer->setFileName(fn);
+            writer->setFormat("markdown");
+            writer->write(doc);
+
+        /*QTextStream stream(&savedFile);
         stream << tab->editor->toPlainText();
         savedFile.close();
-        qDebug() << "Wrote to " << fn;
+        qDebug() << "Wrote to " << fn;*/
         tab->SetIsAFile(true);
     }
 }
@@ -191,36 +201,4 @@ void Editor::OpenFile(QModelIndex idx){
     }
 
     CreateTabFromFile(openedFile);
-}
-
-void Editor::FollowLink(const QUrl& followedFile){
-    Save();
-
-    QUrl resolvedURL = GetCurrentTab()->document->baseUrl().resolved(followedFile);
-    qDebug() << "The resolved URL is" << resolvedURL.toString();
-
-    QString filePath(resolvedURL.toString());
-    qDebug() << filePath;
-
-
-    if(!filePath.isEmpty()) {
-
-        QFile openedFile(filePath);
-
-        if(!openedFile.exists()) {
-            qDebug() << filePath << " does not exist.";
-                return;
-        }
-
-        if (!(openedFile.open(QIODeviceBase::ReadWrite))) {
-            qDebug() << "Error : File could not be opened";
-            return;
-        }
-
-        GetCurrentTab()->document->setBaseUrl(resolvedURL);
-        GetCurrentTab()->editor->setPlainText(openedFile.readAll());
-
-        openedFile.close();
-    }
-    SetTabTitle(filePath);
 }

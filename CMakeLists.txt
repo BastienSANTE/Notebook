@@ -79,7 +79,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
 
         src/markdowntextedit.h src/markdowntextedit.cpp
-        src/documentobjects/linedocumentobject.h src/documentobjects/linedocumentobject.cpp
+        TestDirectory/CodeBlocksTest.md
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Notebook APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

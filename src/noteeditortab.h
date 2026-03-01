@@ -28,8 +28,8 @@ public:
     ~NoteEditorTab();
     QHBoxLayout* tabContentsLayout;
     MarkdownTextEdit* editor;
+    QPlainTextEdit* mdOutputViewer; //Temporary / debugging widget
     QTextDocument* document;
-    QTextDocument* renderDocument;
     QAbstractTextDocumentLayout* documentLayout;
     QUrl* documentPath;
     QFileInfo* tabFileInfo;
@@ -50,10 +50,8 @@ public:
     void SetDocumentDir(QString dir){ _documentDir = dir; }
     QString GetDocumentDir() const { return _documentDir; }
 
-    virtual void mouseDoubleClickEvent(QMouseEvent* mouseEvent) override;
-
 public slots:
-    void CheckForElements();
+    void UpdateMDPreview();
 
 signals:
     void documentTextChanged(bool state);
