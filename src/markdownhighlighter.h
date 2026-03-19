@@ -36,7 +36,6 @@ private:
 
     HighlightingRule    mathRule;
     QTextCharFormat     mathFormat;
-    QTextCharFormat     mathSourceFormat;
 
     HighlightingRule    inlineCodeRule;
     QTextCharFormat     inlineCodeFmt;
@@ -55,6 +54,7 @@ private:
     void InitRulesAndFormats();
 
     void HighlightHeadings(const QString& text);
+    QString TEST_FormatInlineCode(QString text);
 
 signals:
 };

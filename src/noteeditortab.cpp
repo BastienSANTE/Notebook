@@ -15,6 +15,8 @@ NoteEditorTab::NoteEditorTab(QWidget *parent) {
     _isAFile = false;
     _isModified = false;
     editor->setDocument(document);
+
+    highlighter = new MarkdownHighlighter(document);
 }
 
 // If created from a file
@@ -39,6 +41,7 @@ NoteEditorTab::NoteEditorTab(QWidget* parent, QString fileName, QString contents
     tabFileInfo = new QFileInfo(fileName);
     documentLayout = new QPlainTextDocumentLayout(document);
     editor->setDocument(document);
+
     highlighter = new MarkdownHighlighter(document);
 }
 

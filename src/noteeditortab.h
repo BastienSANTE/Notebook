@@ -28,12 +28,12 @@ public:
     ~NoteEditorTab();
     QHBoxLayout* tabContentsLayout;
     MarkdownTextEdit* editor;
-    QPlainTextEdit* mdOutputViewer; //Temporary / debugging widget
+    QPlainTextEdit* mdOutputViewer; // Temporary / debugging widget
+    MarkdownHighlighter* highlighter;
     QTextDocument* document;
     QAbstractTextDocumentLayout* documentLayout;
     QUrl* documentPath;
     QFileInfo* tabFileInfo;
-    MarkdownHighlighter* highlighter;
     int defaultMathSize{10};
 
     void BaseSetup();

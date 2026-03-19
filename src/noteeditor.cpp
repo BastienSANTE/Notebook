@@ -60,7 +60,7 @@ void Editor::BaseSetup() {
 
     layout->addWidget(splitter);
 
-    connect(tree, &QTreeView::doubleClicked, this, qOverload<QModelIndex>(&Editor::OpenFile));
+    //connect(tree, &QTreeView::doubleClicked, this, qOverload<QModelIndex>(&Editor::OpenFile));
     connect(saveShortcut, &QShortcut::activated, this, &Editor::Save);
     connect(addTabShortcut, &QShortcut::activated, this, &Editor::AddTab);
     connect(removeTabShortcut, &QShortcut::activated, this, &Editor::RemoveCurrentTab);

@@ -14,10 +14,11 @@ class MarkdownTextEdit : public QTextEdit
 public:
     MarkdownTextEdit(QWidget* parent);
 
+    //MarkdownHighlighter* highlighter;
     QShortcut* H1Shortcut;
     QShortcut* H2Shortcut;
     QShortcut* H3Shortcut;
-    QShortcut* InsertBlockShortcut;
+    QShortcut* InsertCodeShortcut;
     QShortcut* InsertListShortcut;
 
     QShortcut* InsertTableShortcut;
@@ -31,7 +32,7 @@ public:
 
 
 public slots:
-    void InsertCodeBlock();
+    void InsertCode();
     void SetHeading(int level);
     void InsertList();
     void InsertTable();
